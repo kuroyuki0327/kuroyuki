@@ -3,527 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サムコ株式会社｜制作実績｜エムハンド</title>
-    <!-- Tailwind CSS CDNをロード -->
+    <title>制作実績｜ウェブ制作会社エムハンド風</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* ベーススタイルとフォント設定 */
+        /*
+         * Custom Styles: Importing fonts and defining CSS variables for the color scheme,
+         * based on the provided original CSS file.
+         */
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+        
+        :root {
+            --color-primary-dark: #212836; /* Original dark color */
+            --color-bg-light: #f4f7f8;   /* Original light background color */
+            --color-divider: #dfdfdf;    /* Original divider color */
+        }
+        
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            color: #212836; /* body color */
-            background-color: #f4f7f8; /* body bg */
-            line-height: 1.7;
+            color: var(--color-primary-dark);
+            background-color: #ffffff;
+            font-size: 16px;
         }
-        .u-font-heebo {
+
+        .font-heebo {
             font-family: 'Heebo', sans-serif;
         }
-        
-        /* カスタムカラーとシェード */
-        .bg-primary { background-color: #212836; }
-        .text-primary { color: #212836; }
-        .border-primary { border-color: #212836; }
-        .text-gray-light { color: #b4b8bd; }
-        .bg-gray-light { background-color: #f4f7f8; }
-        .border-gray-med { border-color: #dfdfdf; }
 
-        /* カスタムアイコン（矢印）のスタイル */
-        .c-btn-arrow-in::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 25px;
-            width: 10px;
-            height: 20px;
-            background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221px%22%20height%3D%2220px%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23fff%22%20d%3D%22M10.740%2C19.991%20L9.486%2C18.768%20L18.477%2C9.995%20L9.486%2C1.220%20L10.740%2C-0.003%20L20.984%2C9.995%20L10.740%2C19.991%20Z%22%2F%3E%3C%2Fsvg%3E") no-repeat center/contain;
-            transform: translateY(-50%);
+        /* Responsive Utility for Hamburger Menu (Simplified from original) */
+        .nav-line {
             transition: all 0.4s ease-out;
+            background-color: currentColor; /* Use current text color for dark/light context */
         }
-        .group:hover .c-btn-arrow-in::after {
-            background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221px%22%20height%3D%2220px%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%23212836%22%20d%3D%22M10.740%2C19.991%20L9.486%2C18.768%20L18.477%2C9.995%20L9.486%2C1.220%20L10.740%2C-0.003%20L20.984%2C9.995%20L10.740%2C19.991%20Z%22%2F%3E%3C%2Fsvg%3E") no-repeat center/contain;
+        .is-open .nav-line {
+            background-color: #fff !important;
         }
-        
-        /* ヘッダーの固定/トグル機能用 */
-        .l-nav {
-            transform: translateX(100%);
-            transition: transform 0.4s ease-out;
+        .is-open .nav-line:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
         }
-        .l-nav.is-open {
-            transform: translateX(0);
-        }
-        .l-nav-btn.is-open .l-nav-btn__line:nth-child(1) {
-            transform: translateY(6px) rotate(-45deg);
-        }
-        .l-nav-btn.is-open .l-nav-btn__line:nth-child(2) {
+        .is-open .nav-line:nth-child(2) {
             opacity: 0;
         }
-        .l-nav-btn.is-open .l-nav-btn__line:nth-child(3) {
-            transform: translateY(-6px) rotate(45deg);
-        }
-        .l-nav-btn__line {
-            transition: all 0.4s ease-out;
+        .is-open .nav-line:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
         }
 
+        /* Works Card Hover Effect (Emulating original with utility classes) */
+        .works-card-overlay {
+            background-image: linear-gradient(0deg, var(--color-primary-dark) 0%, rgba(33, 40, 54, 0) 50%);
+            opacity: 0.6;
+            transition: opacity 0.4s ease-out;
+        }
+        .works-card:hover .works-card-overlay {
+            opacity: 0.8;
+        }
+        .works-card:hover .works-card-img {
+            transform: scale(1.05);
+        }
+        .works-card-img {
+            transition: transform 0.4s ease-out;
+        }
+
+        /* Custom scrollbar for desktop categories */
         @media (min-width: 768px) {
-            .l-nav {
-                transform: translateX(0);
+            .category-scroll-list::-webkit-scrollbar {
+                height: 6px;
+            }
+            .category-scroll-list::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 3px;
+            }
+            .category-scroll-list::-webkit-scrollbar-track {
+                background: #f1f1f1;
             }
         }
     </style>
 </head>
-<body id="works" class="bg-gray-light">
-    <!-- Google Tag Manager (noscript) - 通常は外部タグのため、ここでは省略 -->
+<body id="works" class="min-h-screen">
 
-    <div class="l-wrapper min-h-screen relative">
-        <!-- ヘッダー -->
-        <header id="header" class="l-header fixed top-0 left-0 w-full z-2000 md:relative md:max-w-[1920px] md:mx-auto">
-            <div class="l-header-info flex justify-between items-center h-16 px-4 md:h-24 md:max-w-[1100px] md:mx-auto">
-                <!-- ロゴ -->
-                <p class="l-header-info__logo w-24 md:w-32 py-4 md:py-0">
-                    <a href="#" class="text-primary hover:text-gray-light transition-colors duration-300">
-                        <!-- SVGロゴの簡易的なプレースホルダー -->
-                        <span class="text-xl font-bold u-font-heebo">M-HAND</span>
-                    </a>
-                </p>
-                <!-- SP用ボタン -->
-                <div class="l-header-info__btn-wrap flex items-center md:hidden">
-                    <p class="l-header-info__btn-contact w-12 h-12">
-                        <a href="#" class="block w-full h-full bg-primary rounded-full text-white text-xs leading-none flex items-center justify-center">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 162.6 113.81"><path d="M158.1,113.81H4.5a4.5,4.5,0,0,1-4.5-4.5V4.5A4.49,4.49,0,0,1,4.5,0H158.1a4.5,4.5,0,0,1,4.5,4.5V109.31A4.51,4.51,0,0,1,158.1,113.81ZM9,104.81H153.6V9H9Z" class="fill-white"/><path d="M82.06,71.59a19,19,0,0,1-11.93-4.2L15,21.81a4.5,4.5,0,1,1,5.74-6.94L75.83,60.42a10,10,0,0,0,12.63-.12l53.33-45.38a4.5,4.5,0,1,1,5.83,6.85L94.26,67.19A19,19,0,0,1,82.06,71.59Z" class="fill-white"/></svg>
-                        </a>
-                    </p>
-                    <button class="js-nav-btn l-nav-btn w-14 h-14 ml-2" onclick="toggleNav()">
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 top-5"></span>
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></span>
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 bottom-5"></span>
-                    </button>
-                </div>
+    <!-- Mobile Navigation Overlay -->
+    <div id="nav-overlay" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden" onclick="toggleNav()"></div>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1920px] bg-white md:bg-transparent z-50 shadow-md md:shadow-none">
+        <div class="flex justify-between items-center h-16 md:h-24 px-4 md:px-10 max-w-7xl mx-auto">
+            <!-- Logo (Simplified SVG structure) -->
+            <h1 class="text-xl font-heebo font-bold text-gray-800">
+                <a href="#" class="tracking-widest">M-HAND</a>
+            </h1>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                <a href="#" class="hover:text-gray-500 transition">コンセプト</a>
+                <a href="#" class="hover:text-gray-500 transition">専門チーム</a>
+                <a href="#" class="hover:text-gray-500 transition">サービス</a>
+                <a href="#" class="hover:text-gray-500 transition">料金案内</a>
+                <a href="#" class="text-white bg-gray-800 px-4 py-2 rounded-full hover:bg-gray-700 transition">制作実績</a>
+                <a href="#" class="hover:text-gray-500 transition">会社案内</a>
+            </nav>
+
+            <!-- Mobile: Contact Icon and Hamburger Menu -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center relative">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h2m-2 4h16m-7 4h7m-7 4h7m-7 4h7"></path>
+                    </svg>
+                </a>
+                <button id="nav-btn" class="w-12 h-12 flex flex-col justify-center items-center space-y-1 relative z-50" onclick="toggleNav()">
+                    <span class="nav-line w-6 h-px bg-current"></span>
+                    <span class="nav-line w-6 h-px bg-current"></span>
+                    <span class="nav-line w-6 h-px bg-current"></span>
+                </button>
             </div>
-            
-            <!-- ナビゲーションメニュー (SP/PC共通) -->
-            <nav id="nav-content" class="js-nav-content l-nav fixed top-0 right-0 h-screen w-3/4 md:w-auto md:h-auto md:relative bg-primary text-white p-6 md:p-0 z-10 md:flex md:items-center md:justify-end">
-                <ul class="l-nav-list pt-16 md:pt-0 md:flex md:space-x-4">
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">トップ</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">コンセプト</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">専門チーム</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">サービス</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">料金案内</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">制作実績</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">会社案内</a></li>
-                </ul>
-                <div class="l-nav-contact mt-6 md:mt-0 md:ml-4">
-                    <ul class="l-nav-contact__btn flex flex-col md:flex-row md:space-x-4">
-                        <li class="l-nav-contact__btn-contact mt-4 md:mt-0">
-                            <a href="#" class="block px-6 py-3 text-center bg-white text-primary font-bold rounded-full text-sm hover:opacity-75 transition-opacity duration-300">
-                                お問い合わせ
+        </div>
+
+        <!-- Mobile Nav Content (Off-canvas menu) -->
+        <nav id="nav-content" class="fixed top-0 right-0 w-64 h-full bg-gray-800 text-white p-6 pt-20 transform translate-x-full transition-transform duration-300 ease-out z-40">
+            <ul class="space-y-4 text-lg">
+                <li><a href="#" class="block hover:text-gray-400">トップ</a></li>
+                <li><a href="#" class="block hover:text-gray-400">コンセプト</a></li>
+                <li><a href="#" class="block hover:text-gray-400">専門チーム</a></li>
+                <li>
+                    <button class="flex justify-between items-center w-full hover:text-gray-400" onclick="toggleSubMenu(this)">
+                        <span>サービス</span>
+                        <span class="text-sm">▼</span>
+                    </button>
+                    <ul id="sub-menu" class="pl-4 mt-2 hidden space-y-2 text-sm bg-gray-700 p-2 rounded">
+                        <li><a href="#" class="block hover:text-gray-400">コーポレートサイト</a></li>
+                        <li><a href="#" class="block hover:text-gray-400">集客サイト</a></li>
+                        <li><a href="#" class="block hover:text-gray-400">リクルートサイト</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="block hover:text-gray-400">料金案内</a></li>
+                <li><a href="#" class="block font-bold">制作実績</a></li>
+                <li><a href="#" class="block hover:text-gray-400">会社案内</a></li>
+            </ul>
+            <div class="mt-8 pt-4 border-t border-gray-700 text-center">
+                <p class="text-sm">ご相談はお気軽に</p>
+                <a href="#" class="mt-4 inline-block bg-white text-gray-800 px-6 py-3 rounded-full font-bold transition hover:bg-gray-200">お問い合わせ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="pt-16 md:pt-24">
+        <!-- Sub-Image / Title Section -->
+        <div class="relative h-64 md:h-96 flex items-center justify-center text-white bg-gray-600 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x650/424e60/ffffff?text=Works+Header+Image');">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="container mx-auto px-4 relative z-10 max-w-7xl">
+                <p class="text-3xl md:text-6xl font-heebo font-bold tracking-widest opacity-80">Works</p>
+                <h2 class="text-2xl md:text-4xl font-bold mt-2">制作実績</h2>
+                <p class="text-sm md:text-base mt-3 max-w-3xl">コーポレートサイトやリクルートサイト、集客サイトなど幅広い制作実績がございます。成果の伴うホームページを自信と覚悟をもって制作しております。</p>
+            </div>
+        </div>
+
+        <!-- Main Content (Categories & Archive) -->
+        <div class="bg-white min-h-[500px] py-10 md:py-16">
+            <div class="container mx-auto px-4 max-w-7xl">
+                
+                <!-- Category Filters -->
+                <div class="mb-8 md:mb-12 border-b border-gray-300 pb-4">
+                    <ul id="category-list" class="flex flex-wrap md:flex-nowrap gap-2 overflow-x-scroll category-scroll-list">
+                        <li class="flex-shrink-0">
+                            <button data-category="all" class="category-button px-4 py-1.5 text-sm font-semibold rounded-full bg-gray-800 text-white border border-gray-800 transition hover:opacity-80">All</button>
+                        </li>
+                        <li class="flex-shrink-0">
+                            <button data-category="branding" class="category-button px-4 py-1.5 text-sm font-semibold rounded-full bg-white text-gray-800 border border-gray-300 transition hover:bg-gray-100">ブランディング</button>
+                        </li>
+                        <li class="flex-shrink-0">
+                            <button data-category="web-attracting" class="category-button px-4 py-1.5 text-sm font-semibold rounded-full bg-white text-gray-800 border border-gray-300 transition hover:bg-gray-100">Web集客</button>
+                        </li>
+                        <li class="flex-shrink-0">
+                            <button data-category="recruit" class="category-button px-4 py-1.5 text-sm font-semibold rounded-full bg-white text-gray-800 border border-gray-300 transition hover:bg-gray-100">リクルート</button>
+                        </li>
+                        <!-- External Links Emulation -->
+                        <li class="flex-shrink-0">
+                            <a href="#" target="_blank" class="flex items-center px-4 py-1.5 text-sm font-semibold rounded-full bg-white text-gray-800 border border-gray-300 transition hover:bg-gray-100">歯科関係
+                                <svg class="w-3 h-3 ml-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                             </a>
                         </li>
-                        <li class="l-nav-contact__btn-tel mt-4 md:mt-0 hidden md:block">
-                            <a href="tel:0120-868-102" class="block text-white">
-                                <p class="u-font-heebo text-2xl">0120-868-102</p>
+                        <li class="flex-shrink-0">
+                            <a href="#" target="_blank" class="flex items-center px-4 py-1.5 text-sm font-semibold rounded-full bg-white text-gray-800 border border-gray-300 transition hover:bg-gray-100">士業関係
+                                <svg class="w-3 h-3 ml-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                             </a>
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </header>
 
-        <!-- メインビジュアル -->
-        <div class="l-sub-img is-works relative h-80 md:h-[740px] bg-cover bg-center flex items-center" style="background-image: url('https://placehold.co/1200x740/c0c0c0/ffffff?text=Works+Main+Image');">
-            <div class="l-sub-img__inner max-w-7xl mx-auto px-4 md:px-6">
-                <div class="l-sub-img__works text-white">
-                    <div class="l-sub-img__works-info">
-                        <h1 class="l-sub-img__works-info-name text-2xl md:text-4xl font-bold">サムコ株式会社</h1>
-                        <p class="l-sub-img__works-info-cat inline-block bg-primary text-white px-3 py-1 text-xs md:text-sm rounded-full mt-2">ブランディング</p>
+                <!-- Works Archive Grid -->
+                <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Mock Work Item Structure -->
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="branding">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=SAMCO" alt="サムコ株式会社の制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>サムコ株式会社</span>
+                                <span class="hidden md:inline">｜ブランディング</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">世界の技術基盤を支える、装置メーカーとしての価値を伝えるサイト</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="web-attracting">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=Academy" alt="学校法人の制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>学校法人21世紀アカデメイア</span>
+                                <span class="hidden md:inline">｜Web集客</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">確かな実践力が身につけられることを示すサイト</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="web-attracting">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=Railway" alt="鉄道学科の制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>名古屋ホスピタリティ・アカデミー</span>
+                                <span class="hidden md:inline">｜Web集客</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">鉄道への憧れを「実学」で叶える、現場レベルの力が身につくことを伝えるサイト</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="branding">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=SALONIA" alt="SALONIAブランドサイトの制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>株式会社I-ne SALONIA</span>
+                                <span class="hidden md:inline">｜ブランディング</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">「審美歯科発想 × 最新技術」を融合した、新ブランドの世界観を伝えるサイト</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="web-attracting">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=Hot+Service" alt="ダイヤホット・サービスの制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>株式会社ダイヤホット・サービス</span>
+                                <span class="hidden md:inline">｜Web集客</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">豊富な実績と経験を土台に、信頼性と確かな技術力をわかりやすく伝えるサイト</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="branding">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=UENO" alt="株式会社上野忠の制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>株式会社上野忠</span>
+                                <span class="hidden md:inline">｜ブランディング</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">その先を共に創り出す、和の力が可能性を広げる印象を与えるサイト</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruit">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/800x600/363d4b/ffffff?text=Recruit" alt="採用サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
+                            <div class="works-card-overlay absolute inset-0"></div>
+                        </div>
+                        <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                            <p class="text-xs opacity-70 mb-1">
+                                <span>積水成型工業株式会社</span>
+                                <span class="hidden md:inline">｜リクルート</span>
+                            </p>
+                            <p class="text-sm md:text-xl font-bold leading-snug">プラスチックの可能性と企業の姿勢を表現した採用サイト</p>
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <div class="flex space-x-2 items-center text-sm">
+                        <button class="w-10 h-10 border border-gray-400 rounded-full flex items-center justify-center text-gray-400 cursor-not-allowed">&laquo;</button>
+                        <button class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center font-bold">1</button>
+                        <button class="w-10 h-10 border border-gray-400 text-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100">2</button>
+                        <button class="w-10 h-10 border border-gray-400 text-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100">3</button>
+                        <span class="text-gray-500">...</span>
+                        <button class="w-10 h-10 border border-gray-400 text-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100">6</button>
+                        <button class="w-10 h-10 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition">&raquo;</button>
                     </div>
-                    <p class="l-sub-img__works-txt text-xl md:text-5xl font-bold mt-4 md:mt-6">世界の技術基盤を支える、装置メーカーとしての価値を伝えるサイト</p>
-                    <p class="l-sub-img__works-url mt-6 md:mt-8">
-                        <a href="https://www.samco.co.jp/" target="_blank" rel="noopener noreferrer" class="text-white opacity-75 text-sm md:text-base hover:opacity-100 transition-opacity duration-300">
-                            https://www.samco.co.jp/ <span class="ml-1 inline-block">↗</span>
-                        </a>
-                    </p>
                 </div>
             </div>
         </div>
-
-        <div class="l-container is-col1">
-            <div class="l-contents">
-                <main role="main">
-                    <div id="single" class="works-single c-single02 c-bg-white01 pt-8 md:pt-0 pb-16 md:pb-28">
-                        <div class="works-single__inner c-single02__inner bg-white md:shadow-lg md:p-10 lg:p-16">
-                            
-                            <!-- MV画像（SP） -->
-                            <div class="c-single02-mv px-6 md:px-0">
-                                <div class="c-single02-mv__img mb-8">
-                                    <img src="https://placehold.co/400x500/cccccc/ffffff?text=Mobile+Mockup" alt="モバイルイメージ" class="w-full h-auto mx-auto max-w-sm md:max-w-full">
-                                </div>
-                            </div>
-                            
-                            <!-- 概要テキスト -->
-                            <div class="c-single02__area-txt px-6 md:px-0">
-                                <p class="c-single02__txt text-sm md:text-base">薄膜形成・微細加工・表面処理技術に特化した半導体プロセス装置メーカーである、サムコ株式会社様のコーポレートサイトをリニューアルしました。グローバルで一貫性のある、現代的なブランドイメージを確立させるとともに、主要なステークホルダーに向けて製品ポートフォリオや技術的専門性を効果的に訴求することを目指しました。</p>
-                            </div>
-
-                            <!-- 詳細セクション -->
-                            <div class="c-single02-info mt-8 md:mt-20">
-                                <!-- ご依頼時の状況とご要望 -->
-                                <section class="c-single02-info__sec flex flex-wrap md:flex-nowrap border-t border-gray-med pt-8 md:pt-10">
-                                    <header class="c-single02-info__sec-head w-full md:w-72 mb-4 md:mb-0">
-                                        <p class="c-head01__en text-sm md:text-xl font-bold u-font-heebo text-gray-light">Request</p>
-                                        <h2 class="c-head01__ja text-xl md:text-3xl font-bold">ご依頼時の状況とご要望</h2>
-                                    </header>
-                                    <ul class="c-single02-info__sec-list w-full md:w-auto md:flex-1 pl-6 md:pl-8 border-l border-gray-med md:border-none">
-                                        <li class="text-base md:text-lg mb-2 relative pl-4 after:content-[''] after:w-1.5 after:h-1.5 after:bg-primary after:rounded-full after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2">ブランドイメージの訴求</li>
-                                        <li class="text-base md:text-lg relative pl-4 after:content-[''] after:w-1.5 after:h-1.5 after:bg-primary after:rounded-full after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2">ユーザービリティの改善</li>
-                                    </ul>
-                                </section>
-                                
-                                <!-- 戦略 -->
-                                <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8 md:pt-10">
-                                    <div class="c-head01__wrap">
-                                        <header class="c-head01 mb-4 md:mb-6">
-                                            <p class="c-head01__en text-sm md:text-xl font-bold u-font-heebo text-gray-light">Strategy</p>
-                                            <h2 class="c-head01__ja text-xl md:text-3xl font-bold">戦略</h2>
-                                        </header>
-                                        <div class="c-head01__area-txt">
-                                            <p class="c-head01__lead text-lg md:text-2xl font-bold mb-4 md:mb-6">世界の半導体・電子部品産業に貢献する技術企業であると、多角的に伝える構成</p>
-                                            <p class="c-head01__txt text-sm md:text-base">「世界の技術基盤を支える装置メーカーとしての価値を伝えるWebサイト」をコンセプトとし、薄膜技術を核に世界市場へ価値を提供していることを伝えるサイトを目指しました。「株主・投資家様へ」のページでは、IRニュースやカレンダーなどを掲載。また、製品紹介ページではカテゴリーごとに製品一覧を紹介するとともに、用途や使用、関連技術へ深掘りできる構造とすることで、興味を持ったユーザーへの導線に配慮しました。</p>
-                                        </div>
-                                    </div>
-                                </section>
-                                
-                                <!-- デザイン -->
-                                <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8 md:pt-10">
-                                    <div class="c-head01__wrap">
-                                        <header class="c-head01 mb-4 md:mb-6">
-                                            <p class="c-head01__en text-sm md:text-xl font-bold u-font-heebo text-gray-light">Design</p>
-                                            <h2 class="c-head01__ja text-xl md:text-3xl font-bold">デザイン</h2>
-                                        </header>
-                                        <div class="c-head01__area-txt">
-                                            <p class="c-head01__txt text-sm md:text-base">「スケール感と情報の視認性を両立した、グローバルメーカーとしての信頼と存在感を感じる佇まい」をデザインコンセプトに掲げ、画面幅いっぱいに展開するレイアウトで、企業のスケール感とグローバルでの存在感を視覚的に印象づけることを目指しました。白と淡いグレーを基調にした配色で統一し、誠実さや洗練された印象、信頼感を演出。さらに、高さのある画像を効果的に配置することで、静的な構成にダイナミックさを加え、企業の“技術力への自信”を表現しました。</p>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                            
-                            <!-- PC/SP画像モックアップ -->
-                            <div class="c-single02__area-img mt-12 md:mt-32 px-6 md:px-0 flex flex-col md:flex-row md:justify-center md:items-end space-y-8 md:space-y-0 md:space-x-8">
-                                <div class="c-single02__img-pc flex-shrink-0">
-                                    <img src="https://placehold.co/900x500/cccccc/ffffff?text=Desktop+Mockup" alt="PCイメージ" class="w-full h-auto mx-auto">
-                                </div>
-                                <div class="c-single02__img-sp flex-shrink-0 max-w-xs mx-auto md:mx-0">
-                                    <img src="https://placehold.co/400x700/cccccc/ffffff?text=Mobile+Mockup+Detail" alt="SPイメージ" class="w-full h-auto">
-                                </div>
-                            </div>
-
-                            <!-- 企業情報 -->
-                            <div class="c-single02-about mt-12 md:mt-24 px-6 md:px-0">
-                                <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
-                                    <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Company</dt>
-                                    <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">サムコ株式会社</dd>
-                                </dl>
-                                <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
-                                    <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Location</dt>
-                                    <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">京都府京都市</dd>
-                                </dl>
-                                <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
-                                    <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Category</dt>
-                                    <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">ブランディング</dd>
-                                </dl>
-                                <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4 border-b border-gray-med">
-                                    <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Url</dt>
-                                    <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">
-                                        <a href="https://www.samco.co.jp/" class="text-primary hover:opacity-75 transition-opacity duration-300" target="_blank" rel="noopener noreferrer">
-                                            https://www.samco.co.jp/ <span class="ml-1 inline-block">↗</span>
-                                        </a>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
+        
+        <!-- Contact CTA Section (Based on l-cv-contact) -->
+        <section class="bg-gray-800 py-16 md:py-24 text-white" style="background-color: var(--color-primary-dark);">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <header class="text-center md:text-left">
+                    <p class="text-lg font-heebo opacity-70">Contact us</p>
+                    <h3 class="text-3xl md:text-5xl font-bold mt-1 leading-tight">めざすものがあるなら、<br>エムハンド</h3>
+                </header>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <!-- Box 1: Download -->
+                    <div class="bg-[#363d4b] p-8 rounded-lg text-center flex flex-col justify-between">
+                        <h4 class="text-2xl font-bold mb-4 border-b border-white/30 pb-4">会社案内ダウンロード</h4>
+                        <p class="text-sm mb-6 flex-grow">制作会社の選考を社内でご検討されたい方へ<br>pdfでパンフレットをご用意しております。</p>
+                        <a href="#" class="c-btn-white w-full max-w-[280px] mx-auto block py-4 px-6 rounded-full bg-white text-gray-800 font-bold hover:bg-gray-100 transition relative">
+                            ダウンロード
+                        </a>
                     </div>
                     
-                    <!-- その他の制作実績 -->
-                    <section id="other" class="works-single-other bg-gray-light py-16 md:py-24">
-                        <div class="works-single-other__inner max-w-7xl mx-auto px-4 md:px-6">
-                            <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16">
-                                <header class="works-single-other__heading-head w-full md:w-auto">
-                                    <p class="c-head01__en text-sm md:text-xl font-bold u-font-heebo text-gray-light">Other works</p>
-                                    <h2 class="c-head01__ja text-2xl md:text-4xl font-bold">その他の制作実績</h2>
-                                </header>
-                                <div class="works-single-other__heading-btn c-btn01 mt-4 md:mt-0 hidden md:block">
-                                    <a href="#" class="c-btn01__link block w-48 h-12 bg-primary text-white rounded-full flex items-center justify-center relative group overflow-hidden">
-                                        <span class="c-btn01__link-in relative z-10">一覧へ</span>
-                                        <span class="absolute top-0 right-0 bottom-0 w-0 bg-white group-hover:w-full transition-all duration-300"></span>
-                                        <span class="absolute top-0 right-0 bottom-0 w-0 bg-white group-hover:w-full transition-all duration-300"></span>
-                                        <span class="c-btn-arrow-in absolute right-0 top-0 bottom-0 flex items-center justify-center"></span>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="works-single-other__archive">
-                                <ul class="c-archive03 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
-                                    <!-- 制作実績アイテム (1) -->
-                                    <li class="c-archive03__item">
-                                        <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
-                                            <div class="c-archive03__item-img">
-                                                <img src="https://placehold.co/400x250/515c6b/ffffff?text=Works+Image+1" alt="制作実績画像1" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
-                                            </div>
-                                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
-                                            <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
-                                                <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
-                                                    <span class="c-archive03__item-info-in">株式会社I-ne</span>
-                                                    <span class="c-archive03__item-info-cat hidden md:inline">｜ブランディング</span>
-                                                </p>
-                                                <p class="c-archive03__item-head text-sm md:text-lg font-bold">「審美歯科発想 × 最新技術」を融合した、新ブランドの世界観を伝えるサイト</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- 制作実績アイテム (2) -->
-                                    <li class="c-archive03__item">
-                                        <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
-                                            <div class="c-archive03__item-img">
-                                                <img src="https://placehold.co/400x250/515c6b/ffffff?text=Works+Image+2" alt="制作実績画像2" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
-                                            </div>
-                                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
-                                            <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
-                                                <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
-                                                    <span class="c-archive03__item-info-in">学校法人21世紀アカデメイア</span>
-                                                    <span class="c-archive03__item-info-cat hidden md:inline">｜Web集客</span>
-                                                </p>
-                                                <p class="c-archive03__item-head text-sm md:text-lg font-bold">鉄道への憧れを「実学」で叶える、現場レベルの力が身につくことを伝えるサイト</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- 制作実績アイテム (3) -->
-                                    <li class="c-archive03__item hidden md:block">
-                                        <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
-                                            <div class="c-archive03__item-img">
-                                                <img src="https://placehold.co/400x250/515c6b/ffffff?text=Works+Image+3" alt="制作実績画像3" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
-                                            </div>
-                                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
-                                            <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
-                                                <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
-                                                    <span class="c-archive03__item-info-in">株式会社ダイヤホット・サービス</span>
-                                                    <span class="c-archive03__item-info-cat hidden md:inline">｜Web集客</span>
-                                                </p>
-                                                <p class="c-archive03__item-head text-sm md:text-lg font-bold">豊富な実績と経験を土台に、信頼性と確かな技術力をわかりやすく伝えるサイト</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                
-                                <div class="c-btn01 mt-8 md:mt-16 block md:hidden">
-                                    <a href="#" class="c-btn01__link block w-48 h-12 mx-auto bg-primary text-white rounded-full flex items-center justify-center relative group overflow-hidden">
-                                        <span class="c-btn01__link-in relative z-10">一覧へ</span>
-                                        <span class="absolute top-0 right-0 bottom-0 w-0 bg-white group-hover:w-full transition-all duration-300"></span>
-                                        <span class="c-btn-arrow-in absolute right-0 top-0 bottom-0 flex items-center justify-center"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-            </div>
-            
-            <!-- パンくずリスト (PCのみ) -->
-            <div class="l-breadcrumb hidden md:block border-t border-gray-med">
-                <ol class="l-breadcrumb-list max-w-7xl mx-auto px-6 flex justify-end py-6 text-sm text-gray-light">
-                    <li class="l-breadcrumb-list__item"><a href="#" class="hover:text-primary transition-colors">ホームページ制作 大阪のエムハンド</a></li>
-                    <li class="l-breadcrumb-list__item relative ml-3 before:content-[''] before:w-1 before:h-1 before:border-t before:border-r before:border-primary before:absolute before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45"><a href="#" class="hover:text-primary transition-colors">制作実績</a></li>
-                    <li class="l-breadcrumb-list__item relative ml-3 before:content-[''] before:w-1 before:h-1 before:border-t before:border-r before:border-primary before:absolute before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45"><span class="text-primary">サムコ株式会社</span></li>
-                </ol>
-            </div>
-        </div>
-
-        <!-- コンタクトセクション -->
-        <section class="l-cv-contact bg-gray-light py-12 md:py-24">
-            <div class="l-cv-contact__inner max-w-7xl mx-auto px-4 md:px-6">
-                <header class="l-cv-contact__head text-center md:text-left mb-10 md:mb-16">
-                    <h2 class="l-cv-contact__head-tit text-primary">
-                        <span class="l-cv-contact__head-en u-font-heebo block text-xl font-bold text-gray-light">Contact us</span>
-                        <span class="l-cv-contact__head-ja block text-3xl md:text-5xl font-bold mt-1">めざすものがあるなら、<br class="md:hidden">エムハンド</span>
-                    </h2>
-                    <ul class="l-cv-contact__head-list mt-4 md:mt-0 flex justify-center md:justify-end space-x-2 md:absolute md:right-6 md:-bottom-8">
-                        <li class="l-cv-contact__head-item w-20 h-20 md:w-36 md:h-36 border border-primary rounded-full flex items-center justify-center text-center text-primary text-xs md:text-base font-bold leading-tight">オンライン<br>打ち合わせ<br>対応可能</li>
-                    </ul>
-                </header>
-                <ul class="l-cv-contact__box-wrap grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 md:-mx-16">
-                    <li class="l-cv-contact__box bg-gray-700 text-white p-8 md:p-12">
-                        <h3 class="l-cv-contact__box-head text-xl font-bold text-center border-b border-white/50 pb-4 mb-4 relative before:content-[''] before:w-6 before:h-6 before:bg-white before:rounded-full before:absolute before:top-0 before:-translate-y-1/2 before:left-1/2 before:-translate-x-1/2">会社案内ダウンロード</h3>
-                        <p class="l-cv-contact__box-txt text-sm text-center">制作会社の選考を社内でご検討されたい方へ<br>pdfでパンフレットをご用意しております。</p>
-                        <p class="l-cv-contact__box-btn c-btn01 is-bg-white mt-6 w-full max-w-xs mx-auto">
-                            <a href="#" class="block px-6 py-3 text-center bg-white text-primary font-bold rounded-full text-sm hover:bg-gray-100 transition-colors duration-300">ダウンロード</a>
-                        </p>
-                    </li>
-                    <li class="l-cv-contact__box bg-primary text-white p-8 md:p-12">
-                        <h3 class="l-cv-contact__box-head text-xl font-bold text-center border-b border-white/50 pb-4 mb-4 relative before:content-[''] before:w-6 before:h-6 before:bg-white before:rounded-full before:absolute before:top-0 before:-translate-y-1/2 before:left-1/2 before:-translate-x-1/2">フォームでのご相談</h3>
-                        <p class="l-cv-contact__box-txt text-sm text-center">ホームページ制作、運用・更新における<br>ご相談はお気軽にご連絡ください。</p>
-                        <p class="l-cv-contact__box-btn c-btn01 is-bg-white mt-6 w-full max-w-xs mx-auto">
-                            <a href="#" class="block px-6 py-3 text-center bg-white text-primary font-bold rounded-full text-sm hover:bg-gray-100 transition-colors duration-300">お問い合わせ・ご相談</a>
-                        </p>
-                    </li>
-                    <li class="l-cv-contact__box bg-gray-700 text-white p-8 md:p-12">
-                        <h3 class="l-cv-contact__box-head text-xl font-bold text-center border-b border-white/50 pb-4 mb-4 relative before:content-[''] before:w-6 before:h-6 before:bg-white before:rounded-full before:absolute before:top-0 before:-translate-y-1/2 before:left-1/2 before:-translate-x-1/2">お電話でのお問い合わせ</h3>
-                        <p class="l-cv-contact__box-txt text-sm text-center">お電話でのご相談も随時受け付けております。<br>見積依頼などもお気軽にご連絡ください。</p>
-                        <div class="l-cv-contact__box-btn c-btn-tel01 is-center is-white mt-6">
-                            <a href="tel:0120-868-102" class="block hover:opacity-75 transition-opacity duration-300">
-                                <p class="c-btn-tel01__num is-large u-font-heebo text-3xl md:text-4xl font-bold">0120-868-102</p>
-                                <p class="c-btn-tel01__time text-xs md:text-sm mt-1 opacity-75">平日 10:00～19:00</p>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                    <!-- Box 2: Form Contact -->
+                    <div class="bg-gray-700 p-8 rounded-lg text-center flex flex-col justify-between">
+                        <h4 class="text-2xl font-bold mb-4 border-b border-white/30 pb-4">フォームでのご相談</h4>
+                        <p class="text-sm mb-6 flex-grow">ホームページ制作、運用・更新における<br>ご相談はお気軽にご連絡ください。</p>
+                        <a href="#" class="c-btn-white w-full max-w-[280px] mx-auto block py-4 px-6 rounded-full bg-white text-gray-800 font-bold hover:bg-gray-100 transition relative">
+                            お問い合わせ・ご相談
+                        </a>
+                    </div>
+                    
+                    <!-- Box 3: Telephone -->
+                    <div class="bg-gray-700 p-8 rounded-lg text-center flex flex-col justify-between" style="background-color: var(--color-primary-dark);">
+                        <h4 class="text-2xl font-bold mb-4 border-b border-white/30 pb-4">お電話でのお問い合わせ</h4>
+                        <p class="text-sm mb-6 flex-grow">お電話でのご相談も随時受け付けております。<br>見積依頼などもお気軽にご連絡ください。</p>
+                        <a href="tel:0120868102" class="block">
+                            <p class="text-4xl font-heebo font-bold">0120-868-102</p>
+                            <p class="text-sm opacity-50 mt-1">平日 10:00～19:00</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- フッター -->
-        <footer class="l-footer bg-gray-light">
-            <div class="l-footer__inner max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-20">
-                <!-- オフィス情報 -->
-                <div class="l-footer-osaka border-b border-gray-med pb-8 md:pb-16">
-                    <div class="l-footer-osaka__area-txt md:grid md:grid-cols-2 md:gap-10">
-                        <div class="l-footer-osaka__main">
-                            <h2 class="l-footer-osaka__head u-font-heebo uppercase text-2xl md:text-3xl font-bold mb-2">osaka base</h2>
-                            <p class="l-footer-osaka__add text-sm md:text-base">〒541-0056<br>大阪市中央区久太郎町2-5-31<br>関電不動産船場ビル8F</p>
-                            <ul class="l-footer-osaka__access mt-4 space-y-1 text-sm md:text-base">
-                                <li class="relative pl-4 text-gray-700">大阪メトロ堺筋線/中央線 「堺筋本町」駅 徒歩3分</li>
-                                <li class="relative pl-4 text-gray-700">大阪メトロ御堂筋線 「本町」駅 徒歩6分</li>
-                                <li class="relative pl-4 text-gray-700">大阪メトロ四つ橋線 「本町」駅 徒歩8分</li>
-                            </ul>
-                            <p class="l-footer-osaka__map u-font-heebo uppercase mt-4">
-                                <a href="https://goo.gl/maps/xb1L66KgfEf6dij77" target="_blank" rel="noopener noreferrer" class="inline-block text-gray-light text-sm md:text-base hover:text-primary transition-colors">map</a>
-                            </p>
-                        </div>
-                        <div class="l-footer-osaka__other mt-8 md:mt-0 md:flex md:space-x-10">
-                            <div class="l-footer-osaka__other-in flex-1 mb-6 md:mb-0">
-                                <p class="l-footer-osaka__other-in-head u-font-heebo uppercase text-lg md:text-2xl font-bold border-b border-primary pb-1 mb-1">kyoto base</p>
-                                <p class="l-footer-osaka__other-in-add text-sm md:text-base">〒600-8411<br>京都市下京区烏丸通四条下ル水銀屋町612番地</p>
-                            </div>
-                            <div class="l-footer-osaka__other-in flex-1">
-                                <p class="l-footer-osaka__other-in-head u-font-heebo uppercase text-lg md:text-2xl font-bold border-b border-primary pb-1 mb-1">tokyo base</p>
-                                <p class="l-footer-osaka__other-in-add text-sm md:text-base">〒103-0027<br>東京都中央区日本橋3-1-8<br>日本橋貞寿ビル2F</p>
-                            </div>
-                        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f4f7f8] py-10 md:py-16 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <!-- Footer Content (Simplified - Osaka Base Info) -->
+            <div class="border-b border-gray-300 pb-8 mb-8">
+                <div class="md:flex md:justify-between md:items-start">
+                    <div class="mb-8 md:mb-0 md:w-1/3">
+                        <h4 class="text-2xl font-heebo font-bold tracking-widest uppercase">Osaka Base</h4>
+                        <address class="mt-2 text-gray-600">
+                            〒541-0056<br>
+                            大阪市中央区久太郎町2-5-31<br>
+                            関電不動産船場ビル8F
+                        </address>
                     </div>
-                </div>
-                
-                <!-- ナビゲーション・企業情報 -->
-                <div class="l-footer-info mt-8 md:mt-16 flex flex-col md:flex-row md:justify-between">
-                    <div class="l-footer-info__corporate w-full md:w-72 mb-8 md:mb-0">
-                        <p class="l-footer-info__corporate-logo w-32 md:w-36">
-                            <a href="#" class="text-primary hover:text-gray-700 transition-colors duration-300">
-                                <span class="text-xl font-bold u-font-heebo">M-HAND</span>
-                            </a>
+                    
+                    <div class="md:w-2/3 md:pl-10">
+                        <h4 class="text-lg font-bold mb-2">エムハンド大阪 関西地域での取り組み</h4>
+                        <p class="text-gray-600 text-xs md:text-sm">
+                            エムハンドは大阪市中央区にオフィスを構える関西発のホームページ制作会社です。2003年の創業以降、大阪をはじめとする関西のクライアントから多くのご依頼をいただき数々の制作実績を残しています。2019年に現在の大阪オフィスを設置したことで大阪付近のお客様とより綿密なお打合せが可能になりました。遠方のお客様であってもWebお打合せや他オフィスにてご対応させていただいておりますのでお気兼ねなくご相談ください。
                         </p>
-                        <ul class="l-footer-info__corporate-links mt-4 space-y-1 text-sm">
-                            <li class="hover:text-primary transition-colors"><a href="#" target="_blank" rel="noopener noreferrer">Corporate site ↗</a></li>
-                            <li class="hover:text-primary transition-colors"><a href="#" target="_blank" rel="noopener noreferrer">東京オフィスサイト ↗</a></li>
-                            <li class="hover:text-primary transition-colors"><a href="#" target="_blank" rel="noopener noreferrer">更新代行専門サイト ↗</a></li>
-                        </ul>
-                        <!-- BN画像はplaceholderとして省略 -->
-                        <p class="l-footer-info__corporate-cr text-right mt-6 text-sm md:text-base text-gray-700">© M-HAND,Inc.</p>
-                    </div>
-
-                    <div class="l-footer-info__nav w-full md:w-auto md:flex-1 md:pl-16">
-                        <div class="l-footer-info__nav-list-wrap grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 text-sm md:text-base">
-                            <ul class="l-footer-info__nav-list">
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">制作の流れ</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">専門チーム</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">制作実績</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">料金</a></li>
-                            </ul>
-                            <ul class="l-footer-info__nav-list">
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">サービス</a></li>
-                                <li class="l-footer-info__nav-item pl-2"><a href="#" class="hover:text-primary transition-colors text-gray-700">コーポレートサイト</a></li>
-                                <li class="l-footer-info__nav-item pl-2"><a href="#" class="hover:text-primary transition-colors text-gray-700">集客サイト</a></li>
-                                <li class="l-footer-info__nav-item pl-2"><a href="#" class="hover:text-primary transition-colors text-gray-700">リクルートサイト</a></li>
-                            </ul>
-                            <ul class="l-footer-info__nav-list">
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">会社案内</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">コンセプト</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">Mカルチャー</a></li>
-                                <li class="l-footer-info__nav-item mb-2"><a href="#" class="hover:text-primary transition-colors font-bold">資料ダウンロード</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
-                
-                <!-- SNSリンク -->
-                <ul class="l-footer-info__corporate-sns flex justify-center space-x-4 mt-8 md:mt-4 md:justify-end">
-                    <li class="c-btn-sns01__item w-8 h-8 md:w-10 md:h-10">
-                        <a href="#" class="block w-full h-full bg-primary rounded-lg flex items-center justify-center text-white hover:opacity-75 transition-opacity">N</a>
-                    </li>
-                    <li class="c-btn-sns01__item w-8 h-8 md:w-10 md:h-10">
-                        <a href="#" class="block w-full h-full bg-primary rounded-lg flex items-center justify-center text-white hover:opacity-75 transition-opacity">X</a>
-                    </li>
-                    <li class="c-btn-sns01__item w-8 h-8 md:w-10 md:h-10">
-                        <a href="#" class="block w-full h-full bg-primary rounded-lg flex items-center justify-center text-white hover:opacity-75 transition-opacity">I</a>
-                    </li>
-                </ul>
             </div>
-        </footer>
-
-    </div>
+            
+            <!-- Links & Copyright -->
+            <div class="text-center md:text-left">
+                <p class="text-xs text-gray-500 mt-4">© M-HAND,Inc.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // SPナビゲーションの開閉制御
-        const navBtn = document.querySelector('.js-nav-btn');
+        // Data for the mock works
+        const WORKS_DATA = [
+            { category: 'branding', company: 'サムコ株式会社', title: '世界の技術基盤を支える、装置メーカーとしての価値を伝えるサイト' },
+            { category: 'web-attracting', company: '学校法人21世紀アカデメイア', title: '確かな実践力が身につけられることを示すサイト' },
+            { category: 'web-attracting', company: '名古屋ホスピタリティ・アカデミー', title: '鉄道への憧れを「実学」で叶える、現場レベルの力が身につくことを伝えるサイト' },
+            { category: 'branding', company: '株式会社I-ne SALONIA', title: '「審美歯科発想 × 最新技術」を融合した、新ブランドの世界観を伝えるサイト' },
+            { category: 'web-attracting', company: '株式会社ダイヤホット・サービス', title: '豊富な実績と経験を土台に、信頼性と確かな技術力をわかりやすく伝えるサイト' },
+            { category: 'branding', company: '株式会社上野忠', title: 'その先を共に創り出す、和の力が可能性を広げる印象を与えるサイト' },
+            { category: 'recruit', company: '積水成型工業株式会社', title: 'プラスチックの可能性と企業の姿勢を表現した採用サイト' },
+            { category: 'branding', company: '株式会社基礎化粧品研究所', title: '本当に大切なものを届けたいという、想いを表現するサイト' },
+            { category: 'web-attracting', company: 'アイコム株式会社', title: 'シームレスな通話手段が、業務効率改善につながることを印象付けるサイト' },
+        ];
+
+        // Map category keys to Japanese display names
+        const CATEGORY_MAP = {
+            'branding': 'ブランディング',
+            'web-attracting': 'Web集客',
+            'recruit': 'リクルート'
+        };
+
+        const navBtn = document.getElementById('nav-btn');
         const navContent = document.getElementById('nav-content');
-        const navOverlay = document.querySelector('.js-nav-overlay');
-        const body = document.body;
-        const OPEN_CLASS = 'is-open';
+        const navOverlay = document.getElementById('nav-overlay');
+        const categoryButtons = document.querySelectorAll('.category-button');
+        const worksGrid = document.getElementById('works-grid');
+        const worksCards = document.querySelectorAll('.works-card');
 
+        /**
+         * モバイルナビゲーションの表示・非表示を切り替えます。
+         */
         function toggleNav() {
-            if (navContent.classList.contains(OPEN_CLASS)) {
-                w();
+            const isOpen = navContent.classList.contains('translate-x-0');
+
+            if (isOpen) {
+                navContent.classList.remove('translate-x-0');
+                navContent.classList.add('translate-x-full');
+                navBtn.classList.remove('is-open');
+                navOverlay.classList.add('hidden');
+                document.body.style.overflow = '';
             } else {
-                navContent.classList.add(OPEN_CLASS);
-                navBtn.classList.add(OPEN_CLASS);
-                navOverlay.style.display = 'block';
-                body.style.overflow = 'hidden';
+                navContent.classList.remove('translate-x-full');
+                navContent.classList.add('translate-x-0');
+                navBtn.classList.add('is-open');
+                navOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             }
         }
 
-        function w() {
-            navContent.classList.remove(OPEN_CLASS);
-            navBtn.classList.remove(OPEN_CLASS);
-            navOverlay.style.display = 'none';
-            body.style.overflow = '';
+        /**
+         * サービスサブメニューの表示・非表示を切り替えます。
+         */
+        function toggleSubMenu(button) {
+            const subMenu = document.getElementById('sub-menu');
+            subMenu.classList.toggle('hidden');
         }
 
-        if (navBtn) {
-            navBtn.addEventListener('click', toggleNav);
-        }
-        if (navOverlay) {
-            navOverlay.addEventListener('click', w);
-        }
-
-        // スクロール時のヘッダー固定 (MD以上)
-        const header = document.getElementById('header');
-        const scrollThreshold = 100;
-
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth >= 768) {
-                if (window.scrollY > scrollThreshold) {
-                    header.classList.add('is-fixed', 'bg-white', 'shadow-md');
+        /**
+         * 制作実績のフィルタリングを行います。
+         * @param {string} filterCategory - フィルタリングするカテゴリ名 ('all' も含む)
+         */
+        function filterWorks(filterCategory) {
+            worksCards.forEach(card => {
+                const cardCategories = card.getAttribute('data-categories');
+                
+                if (filterCategory === 'all' || cardCategories.includes(filterCategory)) {
+                    card.style.display = 'block';
                 } else {
-                    header.classList.remove('is-fixed', 'bg-white', 'shadow-md');
+                    card.style.display = 'none';
                 }
-            } else {
-                header.classList.remove('is-fixed', 'bg-white', 'shadow-md');
-            }
+            });
+
+            // ボタンのアクティブ状態を更新
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('bg-gray-800', 'text-white', 'border-gray-800');
+                btn.classList.add('bg-white', 'text-gray-800', 'border-gray-300');
+
+                if (btn.getAttribute('data-category') === filterCategory) {
+                    btn.classList.add('bg-gray-800', 'text-white', 'border-gray-800');
+                    btn.classList.remove('bg-white', 'text-gray-800', 'border-gray-300');
+                }
+            });
+        }
+
+        // イベントリスナーの設定
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                filterWorks(category);
+                
+                // モバイルナビゲーションが開いている場合は閉じる
+                if (!navContent.classList.contains('translate-x-full')) {
+                    toggleNav();
+                }
+            });
         });
 
-        // スクロール・リサイズ時にカスタムCSS変数(--vh, --vw)を設定
-        function setCustomVars() {
-            const vh = window.innerHeight * 0.01;
-            const vw = window.innerWidth * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-            document.documentElement.style.setProperty('--vw', `${vw}px`);
-        }
-        window.addEventListener('load', setCustomVars);
-        window.addEventListener('resize', setCustomVars);
-
+        // 初期ロード時に'all'でフィルタリング（アクティブクラスの設定も含む）
+        document.addEventListener('DOMContentLoaded', () => {
+            filterWorks('all');
+        });
     </script>
+
 </body>
+
 </html>
