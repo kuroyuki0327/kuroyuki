@@ -104,17 +104,33 @@
 
         .title-en{
             font-size:3rem;
+            line-height: 3.5rem;
         }
         
         @media (min-width: 768px) {
         .title-en{
             font-size:5rem;
+            line-height: 6rem;
         }
-         }
+        }
         
         .title-jp{
             font-size:1rem;
+            margin-bottom: 1.5rem;
         } 
+        @media (min-width: 768px) {        
+            .title-container{
+                display:flex;
+        }
+        }  
+
+        .title-wrap{
+            width: 50%;
+        } 
+
+        .title-container{
+            max-width: 1100px;
+        }
     </style>
 </head>
 <body id="works" class="min-h-screen">
@@ -187,9 +203,11 @@
         <!-- Sub-Image / Title Section -->
         <div class="work-top relative h-64 md:h-96 flex items-center justify-center bg-cover bg-center">
             <div class="absolute inset-0"></div>
-            <div class="container mx-auto px-4 relative z-10 max-w-7xl">
+            <div class="title-container mx-auto px-4 relative z-10 max-w-7xl">
+                <div class="title-wrap">
                 <p class="font-minerva title-en">Works</p>
                 <h2 class="title-jp">制作実績</h2>
+                </div>
                 <p class="text-sm md:text-base mt-3 max-w-3xl">コーポレートサイトやリクルートサイト、集客サイトなど幅広い制作実績がございます。成果の伴うホームページを自信と覚悟をもって制作しております。</p>
             </div>
         </div>
@@ -525,6 +543,7 @@
 </body>
 
 </html>
+
 
 
 
