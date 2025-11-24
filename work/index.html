@@ -14,6 +14,10 @@
          * based on the provided original CSS file.
          */
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        html{
+            overflow: auto;
+        }
         
         :root {
             --color-dark: #333;
@@ -191,6 +195,8 @@
         .top-bg-white-inner {
             position: relative;
             z-index: 1;
+            margin-right:0;
+            margin-left:auto;
         }
 
         @media all and (min-width: 768px) {
@@ -231,7 +237,62 @@
         .text-dark{
             color:#333;
         }
-        
+
+        .c-archive02 {
+            min-width: 320px;
+        }
+        .c-archive02__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.c-archive02__item {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.c-archive02__notfound {
+    text-align: center;
+}
+
+@media all and (min-width: 768px) {
+    .c-archive02 {
+        width: 93.75%;
+        min-width: 1200px;
+        max-width: 1500px;
+        margin: 0 0 0 auto;
+    }
+
+    .c-archive02__list {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .c-archive02__item {
+        width: calc(100% / 3);
+    }
+}
+
+@media all and (min-width: 1600px) {
+    .c-archive02 {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .c-archive02__list {
+        width: 1500px;
+        margin: 0 0 0 auto;
+    }
+}
     </style>
 </head>
 <body id="works" class="min-h-screen">
@@ -256,7 +317,7 @@
 
         <!-- Main Content (Categories & Archive) -->
         <div class="top-bg-white min-h-[500px] py-10 md:py-16">
-            <div class="top-bg-white-inner container mx-auto px-4 max-w-7xl">
+            <div class="top-bg-white-inner container px-4">
                 
                 <!-- Category Filters -->
                 <div class="mb-8 md:mb-12 border-b border-gray-300 pb-4">
@@ -277,11 +338,11 @@
                 </div>
 
                 <!-- Works Archive Grid -->
-                <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 
                     <!-- Mock Work Item Structure -->
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="branding">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="branding">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design01.jpg" alt="ひめそばの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -294,8 +355,8 @@
                         </div>
                     </a>
 
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="branding">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="branding">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design02.jpg" alt="BIMERAの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -308,8 +369,8 @@
                         </div>
                     </a>
 
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruiting-site">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-site">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design03.jpg" alt="SALONS Beauty Group美容師求人サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -322,8 +383,8 @@
                         </div>
                     </a>
 
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruiting-ads">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-ads">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design04.jpg" alt="美容師求人の制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -336,8 +397,8 @@
                         </div>
                     </a>
 
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruiting-ads">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-ads">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design05.jpg" alt="美容師求人（動画広告）の制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -350,8 +411,8 @@
                         </div>
                     </a>
                     
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruiting-site">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-site">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design06.jpg" alt="アカデミーの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -364,8 +425,8 @@
                         </div>
                     </a>
                     
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruit">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruit">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design07.jpg" alt="採用サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -378,8 +439,8 @@
                         </div>
                     </a>
 
-                    <a href="#" class="works-card relative block rounded-xl overflow-hidden shadow-lg" data-categories="recruit">
-                        <div class="h-60 overflow-hidden">
+                    <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruit">
+                        <div class="overflow-hidden">
                             <img src="https://kuroyuki0327.github.io/kuroyuki/images/design08.jpg" alt="採用サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
                             <div class="works-card-overlay absolute inset-0"></div>
                         </div>
@@ -590,6 +651,7 @@
 </body>
 
 </html>
+
 
 
 
