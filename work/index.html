@@ -132,6 +132,46 @@
         .title-container{
             max-width: 1100px;
         }
+
+        .text-base{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        }
+
+        .top-bg-white {
+            position: relative;
+        }
+        
+        .top-bg-white::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #fff;
+        }
+
+        .top-bg-white-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media all and (min-width: 768px) {
+            .top-bg-white::before {
+                    top: -80px;
+                    width: 100%;
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+        @media all and (min-width: 1801px) {
+                .top-bg-white::before {
+                    left: 160px;
+                }
+            }
+
+        
     </style>
 </head>
 <body id="works" class="min-h-screen">
@@ -214,8 +254,8 @@
         </div>
 
         <!-- Main Content (Categories & Archive) -->
-        <div class="bg-white min-h-[500px] py-10 md:py-16">
-            <div class="container mx-auto px-4 max-w-7xl">
+        <div class="top-bg-white bg-white min-h-[500px] py-10 md:py-16">
+            <div class="top-bg-white-inner container mx-auto px-4 max-w-7xl">
                 
                 <!-- Category Filters -->
                 <div class="mb-8 md:mb-12 border-b border-gray-300 pb-4">
@@ -544,6 +584,7 @@
 </body>
 
 </html>
+
 
 
 
