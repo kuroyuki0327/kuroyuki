@@ -220,66 +220,6 @@
     <!-- Mobile Navigation Overlay -->
     <div id="nav-overlay" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden" onclick="toggleNav()"></div>
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1920px] bg-white md:bg-transparent z-50 shadow-md md:shadow-none">
-        <div class="flex justify-between items-center h-16 md:h-24 px-4 md:px-10 max-w-7xl mx-auto">
-            <!-- Logo (Simplified SVG structure) -->
-            <h1 class="text-xl font-heebo font-bold text-gray-800">
-                <a href="#" class="tracking-widest">M-HAND</a>
-            </h1>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
-                <a href="#" class="hover:text-gray-500 transition">コンセプト</a>
-                <a href="#" class="hover:text-gray-500 transition">専門チーム</a>
-                <a href="#" class="hover:text-gray-500 transition">サービス</a>
-                <a href="#" class="hover:text-gray-500 transition">料金案内</a>
-                <a href="#" class="text-white bg-gray-800 px-4 py-2 rounded-full hover:bg-gray-700 transition">制作実績</a>
-                <a href="#" class="hover:text-gray-500 transition">会社案内</a>
-            </nav>
-
-            <!-- Mobile: Contact Icon and Hamburger Menu -->
-            <div class="flex items-center space-x-4 md:hidden">
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center relative">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h2m-2 4h16m-7 4h7m-7 4h7m-7 4h7"></path>
-                    </svg>
-                </a>
-                <button id="nav-btn" class="w-12 h-12 flex flex-col justify-center items-center space-y-1 relative z-50" onclick="toggleNav()">
-                    <span class="nav-line w-6 h-px bg-current"></span>
-                    <span class="nav-line w-6 h-px bg-current"></span>
-                    <span class="nav-line w-6 h-px bg-current"></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Nav Content (Off-canvas menu) -->
-        <nav id="nav-content" class="fixed top-0 right-0 w-64 h-full bg-gray-800 text-white p-6 pt-20 transform translate-x-full transition-transform duration-300 ease-out z-40">
-            <ul class="space-y-4 text-lg">
-                <li><a href="#" class="block hover:text-gray-400">トップ</a></li>
-                <li><a href="#" class="block hover:text-gray-400">コンセプト</a></li>
-                <li><a href="#" class="block hover:text-gray-400">専門チーム</a></li>
-                <li>
-                    <button class="flex justify-between items-center w-full hover:text-gray-400" onclick="toggleSubMenu(this)">
-                        <span>サービス</span>
-                        <span class="text-sm">▼</span>
-                    </button>
-                    <ul id="sub-menu" class="pl-4 mt-2 hidden space-y-2 text-sm bg-gray-700 p-2 rounded">
-                        <li><a href="#" class="block hover:text-gray-400">コーポレートサイト</a></li>
-                        <li><a href="#" class="block hover:text-gray-400">集客サイト</a></li>
-                        <li><a href="#" class="block hover:text-gray-400">リクルートサイト</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="block hover:text-gray-400">料金案内</a></li>
-                <li><a href="#" class="block font-bold">制作実績</a></li>
-                <li><a href="#" class="block hover:text-gray-400">会社案内</a></li>
-            </ul>
-            <div class="mt-8 pt-4 border-t border-gray-700 text-center">
-                <p class="text-sm">ご相談はお気軽に</p>
-                <a href="#" class="mt-4 inline-block bg-white text-gray-800 px-6 py-3 rounded-full font-bold transition hover:bg-gray-200">お問い合わせ</a>
-            </div>
-        </nav>
-    </header>
 
     <main role="main" class="pt-16 md:pt-24">
         <!-- Sub-Image / Title Section -->
@@ -625,6 +565,7 @@
 </body>
 
 </html>
+
 
 
 
