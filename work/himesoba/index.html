@@ -235,59 +235,7 @@
 <body id="works" class="bg-gray-light">
     <!-- Google Tag Manager (noscript) - 通常は外部タグのため、ここでは省略 -->
 
-    <div class="l-wrapper min-h-screen relative">
-        <!-- ヘッダー -->
-        <header id="header" class="l-header fixed top-0 left-0 w-full z-2000 md:relative md:max-w-[1920px] md:mx-auto">
-            <div class="l-header-info flex justify-between items-center h-16 px-4 md:h-24 md:max-w-[1100px] md:mx-auto">
-                <!-- ロゴ -->
-                <p class="l-header-info__logo w-24 md:w-32 py-4 md:py-0">
-                    <a href="#" class="text-primary hover:text-gray-light transition-colors duration-300">
-                        <!-- SVGロゴの簡易的なプレースホルダー -->
-                        <span class="text-xl font-bold u-font-heebo">M-HAND</span>
-                    </a>
-                </p>
-                <!-- SP用ボタン -->
-                <div class="l-header-info__btn-wrap flex items-center md:hidden">
-                    <p class="l-header-info__btn-contact w-12 h-12">
-                        <a href="#" class="block w-full h-full bg-primary rounded-full text-white text-xs leading-none flex items-center justify-center">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 162.6 113.81"><path d="M158.1,113.81H4.5a4.5,4.5,0,0,1-4.5-4.5V4.5A4.49,4.49,0,0,1,4.5,0H158.1a4.5,4.5,0,0,1,4.5,4.5V109.31A4.51,4.51,0,0,1,158.1,113.81ZM9,104.81H153.6V9H9Z" class="fill-white"/><path d="M82.06,71.59a19,19,0,0,1-11.93-4.2L15,21.81a4.5,4.5,0,1,1,5.74-6.94L75.83,60.42a10,10,0,0,0,12.63-.12l53.33-45.38a4.5,4.5,0,1,1,5.83,6.85L94.26,67.19A19,19,0,0,1,82.06,71.59Z" class="fill-white"/></svg>
-                        </a>
-                    </p>
-                    <button class="js-nav-btn l-nav-btn w-14 h-14 ml-2" onclick="toggleNav()">
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 top-5"></span>
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></span>
-                        <span class="l-nav-btn__line block w-6 h-px bg-primary absolute left-1/2 -translate-x-1/2 bottom-5"></span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- ナビゲーションメニュー (SP/PC共通) -->
-            <nav id="nav-content" class="js-nav-content l-nav fixed top-0 right-0 h-screen w-3/4 md:w-auto md:h-auto md:relative bg-primary text-white p-6 md:p-0 z-10 md:flex md:items-center md:justify-end">
-                <ul class="l-nav-list pt-16 md:pt-0 md:flex md:space-x-4">
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">トップ</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">コンセプト</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">専門チーム</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">サービス</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">料金案内</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">制作実績</a></li>
-                    <li class="l-nav-list__item border-t border-gray-med md:border-none py-2 md:py-0" onclick="w()"><a class="l-nav-list__item-link block p-2 md:p-3 font-bold md:font-normal text-sm md:text-base hover:text-gray-light" href="#">会社案内</a></li>
-                </ul>
-                <div class="l-nav-contact mt-6 md:mt-0 md:ml-4">
-                    <ul class="l-nav-contact__btn flex flex-col md:flex-row md:space-x-4">
-                        <li class="l-nav-contact__btn-contact mt-4 md:mt-0">
-                            <a href="#" class="block px-6 py-3 text-center bg-white text-primary font-bold rounded-full text-sm hover:opacity-75 transition-opacity duration-300">
-                                お問い合わせ
-                            </a>
-                        </li>
-                        <li class="l-nav-contact__btn-tel mt-4 md:mt-0 hidden md:block">
-                            <a href="tel:0120-868-102" class="block text-white">
-                                <p class="u-font-heebo text-2xl">0120-868-102</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+
 
         <!-- メインビジュアル -->
         <div class="work-top relative flex items-center justify-center bg-cover bg-center">
@@ -688,6 +636,7 @@
     </script>
 </body>
 </html>
+
 
 
 
