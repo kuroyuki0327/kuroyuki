@@ -144,6 +144,34 @@
             font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
         }
 
+        .top-inner{
+            height: 365px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-top: 130px;
+        }
+
+        @media (min-width: 768px) {
+            .u-inner {
+                width: 100%;
+               max-width: 1100px;
+               margin: auto;
+               padding-left: 0;
+               padding-right: 0;
+            }
+        }
+        
+        @media all and (min-width: 768px) {
+        .top-inner {
+            height: 650px;
+            padding-top: 260px;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }}
+        
         .top-bg-white {
             position: relative;
             background:#fcfcfc;
@@ -256,7 +284,7 @@
     <main role="main" class="pt-16 md:pt-24">
         <!-- Sub-Image / Title Section -->
         <div class="work-top relative h-64 md:h-96 flex items-center justify-center bg-cover bg-center">
-            <div class="absolute inset-0"></div>
+            <div class="absolute inset-0 top-inner"></div>
             <div class="title-container mx-auto px-4 relative z-10 max-w-7xl">
                 <div class="title-wrap">
                 <p class="font-minerva title-en">Works</p>
@@ -597,6 +625,7 @@
 </body>
 
 </html>
+
 
 
 
