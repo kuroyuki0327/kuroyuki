@@ -270,7 +270,36 @@
     }
 }
 
+ @media (min-width: 768px) {
+    .c-bg-white01.is-top-130::before {
+        top: -130px;
+    }
+}       
         
+@media (min-width: 1801px) {
+    .c-bg-white01::before {
+        left: 160px;
+    }
+}    
+
+@media (min-width: 768px) {
+    .c-bg-white01::before {
+        top: -80px;
+        width: 100%;
+        left: auto;
+        right: 0;
+    }
+}
+
+.c-bg-white01::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+}
         
         .c-single02-mv {
             position: relative;
@@ -347,7 +376,7 @@
         <div class="l-container is-col1">
             <div class="l-contents">
                 <main role="main">
-                    <div id="single" class="works-single c-single02 c-bg-white01 pt-8 md:pt-0 pb-16 md:pb-28">
+                    <div id="single" class="works-single c-single02 c-bg-white01 pt-8 md:pt-0 pb-16 md:pb-28 is-top-130">
                         <div class="works-single__inner c-single02__inner bg-white md:shadow-lg md:p-10 lg:p-16 u-inner">
                             
                             <!-- MV画像（SP） -->
@@ -725,6 +754,7 @@
     </script>
 </body>
 </html>
+
 
 
 
