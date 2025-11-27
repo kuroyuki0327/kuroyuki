@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レモンボトルとは｜LEMON BOTTLE</title>
+    <meta name="description" content="レモンボトルは、これまでの脂肪溶解注射で課題として挙げられていたダウンタイム(腫れ・痛み)が少ない、韓国発の新しい天然成分由来の「レモンボトルAソリューション」です。｜レモンボトルとは">
+    <meta name="keywords" content="レモンボトルとは,LEMONBOTTLE,脂肪溶解,脂肪溶解注射,小顔,ダウンタイムなし">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 外部CSSの代わりにインラインスタイルを統合 -->
+    <style>
+/* common.css & about.css & margin.css の内容を統合 */
+@charset "UTF-8";
+/* default sp
+----------------------------------------------- */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    word-wrap: break-word;
+    border: 0;
+    vertical-align: baseline;
+    outline: none;
+}
+
+/* font
+----------------------------------------------- */
+:root {
+    /* フォント設定を汎用的なものに置き換え */
+    --mincho: "游明朝", YuMincho, "Hiragino Mincho ProN", serif;
+    --gothic: "游ゴシック体", YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic Pro', sans-serif;
+    --brown: #a0522d; /* common.cssにはないが、アクセスリストで使われているため定義 */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-size: 3.5vw;
+    font-family: var(--gothic);
+    -webkit-text-size-adjust: 100%;
+    font-style: normal;
+    line-height: 1;
+}
+
+article, aside, canvas, details, figcaption, figure, header, footer, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+img, video, object {
+    height: auto;
+    border: none;
+    display: block;
+    max-width: 100%;
+}
+
+ins {
+    background: none;
+    color: #000;
+    text-decoration: none;
+}
+
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+hr {
+    height: 1px;
+    padding: 0;
+    margin: 1em 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+    display: block;
+}
+
+*:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    -moz-transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    -o-transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    -webkit-transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.pc {
+    display: none;
+}
+
+.sp {
+    display: block;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding-top: 15vw;
+}
+
+/* Animation Classes */
+.fade {
+    opacity: 0;
+    transition: all 1.5s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+}
+
+.fade-left {
+    transform: translateX(-10px);
+}
+
+.fade-right {
+    transform: translateX(10px);
+}
+
+.fade-bottom {
+    transform: translateY(10px);
+}
+
+.fade-active {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+}
+
+.wave {
+    margin-bottom: 1vw;
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+    display: table;
+}
+
+.wave:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.wave.fade-active:before {
+    opacity: 1;
+    visibility: visible;
+    animation-name: wave;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.wave.fade-active .wave-inner {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.wave-stop {
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+    display: table;
+}
+
+.wave-stop.fade-active:before {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.wave-stop.fade-active .wave-inner {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.wave-stop:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s 0s ease;
+}
+
+.wave-inner {
+    padding: 1vw 1.5vw 0.5vw;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    display: block;
+    transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@keyframes wave {
+    0% {
+        transform-origin: top left;
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform-origin: top left;
+        transform: scaleX(1);
+    }
+
+    50.1% {
+        transform-origin: top right;
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform-origin: top right;
+        transform: scaleX(0);
+    }
+}
+
+/* common sp
+----------------------------------------------- */
+.midashi01 {
+    margin: 0 auto 8vw;
+    position: relative;
+    line-height: 1;
+}
+
+.midashi01 .en {
+    margin-bottom: 2.5vw;
+    font-size: 9.4vw;
+    /* font-family: minerva-modern; */
+    font-weight: 400;
+    letter-spacing: .02em;
+    display: block;
+}
+
+.midashi01 .jp {
+    font-size: 3.4vw;
+    font-family: var(--mincho);
+    display: block;
+}
+
+.more01 {
+    width: auto;
+    min-width: 60vw;
+    padding: 5vw 8vw;
+    margin: auto;
+    color: #fff;
+    font-size: 3.4vw;
+    text-align: center;
+    /* 画像の代わりに背景色とテキストで代替 */
+    background: #111; /* url(../images/arrow01-white.png) no-repeat center right 4vw; */
+    background-size: 3vw;
+    border-radius: 15vw;
+    display: table;
+}
+
+.more01-white {
+    width: auto;
+    min-width: 60vw;
+    padding: 5vw 8vw;
+    margin: auto;
+    font-size: 3.4vw;
+    text-align: center;
+    /* 画像の代わりに背景色とテキストで代替 */
+    background: #fff; /* url(../images/arrow01.png) no-repeat center right 4vw; */
+    background-size: 3vw;
+    border-radius: 15vw;
+    display: table;
+}
+
+p.ast {
+    font-size: 88% !important;
+    padding-left: 1em;
+    text-indent: -1em;
+    text-align: justify;
+    text-justify: auto;
+}
+
+ul.ast li {
+    font-size: 88% !important;
+    padding-left: 1em;
+    text-indent: -1em;
+    text-align: justify;
+    text-justify: auto;
+    margin-bottom: 2%;
+    line-height: 1.5;
+}
+
+ul.ast li a {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+span.ast {
+    font-size: 88%;
+}
+
+.marker {
+    background: linear-gradient(transparent 0%, rgb(255 243 180) 0%);
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 1.5s;
+    font-weight: bold;
+    color: #222;
+}
+
+.marker.on {
+    background-size: 100% 100%;
+}
+
+.tbl {
+    width: 100%;
+}
+
+.tbl th,.tbl td {
+    vertical-align: middle;
+    line-height: 1.6;
+    letter-spacing: .04em;
+}
+
+.tbl th {
+    text-align: center;
+    width: 30%;
+    font-weight: 600;
+    padding: 4% 3% 4% 0;
+    color: #444;
+}
+
+.tbl tr:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+
+.tbl td {
+    width: 70%;
+    padding: 4% 0;
+}
+
+.tbl tr {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.tbl tr:last-child {
+    border-bottom: none;
+}
+
+.tbl td a {
+    /* font-family: futura-pt; */
+    font-weight: 400;
+}
+
+.tbl td a.tel {
+    font-size: 5.6vw;
+    display: inline-block;
+    /* font-family: futura-pt; */
+    font-weight: 400;
+}
+
+.tbl td a.tel span:before {
+    margin-right: 3px;
+    /* font-family: icon; */
+    content: '📞'; /* アイコンの代わりに絵文字を使用 */
+    font-size: 80%;
+}
+
+.tbl tr.access-text ul {
+    margin-bottom: 6vw;
+}
+
+.tbl tr.access-text ul:last-child {
+    margin-bottom: 0;
+}
+
+.tbl tr.access-text li {
+    font-size: 3.3vw;
+}
+
+.tbl tr.access-text li:first-child {
+    background: #f8f4f1;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 3vw;
+    font-weight: bold;
+    color: var(--brown);
+}
+
+.tbl tr.access-text li:last-child {
+    margin-bottom: 0;
+}
+
+/* header sp
+----------------------------------------------- */
+.header {
+    width: 100%;
+    height: 15vw;
+    background: #fff;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header-logo {
+    width: 38vw;
+    position: absolute;
+    top: 50%;
+    left: 4vw;
+    transform: translateY(-50%);
+}
+
+.header-logo img {
+    width: 100%;
+}
+
+.header-sns {
+    font-size: 6.8vw;
+    position: absolute;
+    top: 50%;
+    right: 16vw;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    color: #111;
+}
+
+.header-sns a {
+    margin-left: 2vw;
+}
+
+.header-navi-button {
+    width: 15vw;
+    height: 15vw;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header-navi-button .line {
+    width: 8vw;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    left: 3.5vw;
+    transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+}
+
+.header-navi-button .line-top {
+    top: 6.6vw;
+}
+
+.header-navi-button .line-bottom {
+    top: 8.4vw;
+}
+
+.header-navi {
+    width: 100%;
+    height: 100%;
+    /* 画像の代わりに背景色で代替 */
+    background: #111; /* url(../images/header-navi-bg.png) no-repeat top center; */
+    background-size: cover;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    top: 100%;
+    left: 0;
+}
+
+.header-navi-inner {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.header-navi-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.header-navi-scroll {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1px;
+    overflow-y: auto;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.header-navi-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.header-navi-content {
+    padding-top: 22vw;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header-navi-logo {
+    width: 38vw;
+    position: absolute;
+    top: 5vw;
+    left: 4vw;
+}
+
+.header-navi-logo img {
+    width: 100%;
+}
+
+.header-navi-items {
+    width: 85vw;
+    margin: 0 auto 10vw;
+    border-bottom: 1px solid #666;
+}
+
+.header-navi-items li {
+    width: 100%;
+    margin-bottom: 8vw;
+}
+
+.header-navi-item-title {
+    color: #fff;
+    font-size: 8vw;
+    /* font-family: minerva-modern; */
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.header-navi-initems {
+    padding: 5vw 0 1vw;
+}
+
+.header-navi-initems li {
+    padding-left: 5vw;
+    margin-bottom: 4vw;
+    font-size: 3.4vw;
+    position: relative;
+}
+
+.header-navi-initems li:last-child {
+    margin: 0;
+}
+
+.header-navi-initems li:before {
+    content: '';
+    width: 4vw;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.header-navi-initems a {
+    color: #fff;
+    opacity: 0.9;
+}
+
+.header-navi-sub-items {
+    width: 85vw;
+    margin: 0 auto 100px;
+}
+
+.header-navi-sub-items li {
+    margin-bottom: 4vw;
+    font-size: 3.4vw;
+}
+
+.header-navi-sub-items a {
+    color: #fff;
+    opacity: 0.9;
+}
+
+.animation {
+    opacity: 0;
+}
+
+.header-navi-open {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.header-navi-open .header-logo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header-navi-open .line {
+    width: 10vw;
+    background: #fff;
+    left: 2.5vw;
+}
+
+.header-navi-open .line-top {
+    top: 7.5vw;
+    transform: rotate(20deg);
+}
+
+.header-navi-open .line-bottom {
+    top: 7.5vw;
+    transform: rotate(-20deg);
+}
+
+.header-navi-open .header-navi {
+    animation-name: header-navi-open;
+    animation-delay: 0s;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.header-navi-open .header-navi-content {
+    animation-name: header-navi-in;
+    animation-delay: 0.4s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes header-navi-open {
+    0% {
+        top: 100vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes header-navi-in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.header-navi-closed .header-navi {
+    animation-name: header-navi-closed;
+    animation-delay: 0.4s;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+.header-navi-closed .header-navi-content {
+    animation-name: header-navi-out;
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+@keyframes header-navi-closed {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -100vh;
+    }
+}
+
+@keyframes header-navi-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+    }
+}
+
+/* hero sp
+----------------------------------------------- */
+.hero {
+    width: 100%;
+    position: relative;
+}
+
+.top-hero-content {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1.5vw;
+    position: relative;
+}
+
+.top-hero-image {
+    width: 100%;
+    height: 160vw;
+    /* 画像の代わりに背景色で代替 */
+    background: #f0f0f0; /* url(../images/top-hero-image.png) no-repeat center; */
+    background-size: cover;
+    /* デモ用にテキストを追加 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    color: #333;
+}
+
+.top-hero-window {
+    width: 70vw;
+    padding: 10vw 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 35vw 35vw 0 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 12vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-hero-window:before {
+    content: '';
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: 1px solid #7e7e7d;
+    border-radius: 35vw 35vw 0 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-hero-product {
+    width: 16vw;
+    margin: 0 auto 5vw;
+    text-align: center;
+}
+.top-hero-product::before {
+    content: '[商品画像]';
+    display: block;
+    font-size: 3vw;
+    color: #888;
+}
+
+.top-hero-title {
+    /* font-family: minerva-modern; */
+    font-weight: 400;
+    text-align: center;
+}
+
+.top-hero-title .title {
+    margin-bottom: 2.5vw;
+    font-size: 10vw;
+    letter-spacing: .08em;
+    display: block;
+}
+
+.top-hero-title .sub {
+    font-size: 3.5vw;
+    letter-spacing: .04em;
+    display: block;
+}
+
+.top-hero-ticker-items {
+    width: 100%;
+    padding: 4vw 0 3vw;
+    background: #f5f5f5;
+}
+
+.top-hero-ticker-item {
+    width: 70vw;
+}
+
+.top-hero-ticker-item-title {
+    font-size: 3.5vw;
+    /* font-family: futura-pt; */
+    font-weight: 300;
+    letter-spacing: .02em;
+}
+
+.second-hero {
+    height: 40vw;
+    background-color: #f8f4f1; /* 背景画像の代わりに色で代替 */
+}
+
+.second-hero-title {
+    width: 100%;
+    padding: 0 6vw;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.second-hero-title .en {
+    margin-bottom: 2.5vw;
+    font-size: 13.2vw;
+    /* font-family: minerva-modern; */
+    font-weight: 400;
+    letter-spacing: 1vw;
+    display: block;
+}
+
+.second-hero-title .jp {
+    font-size: 3.5vw;
+    font-family: var(--mincho);
+    display: block;
+}
+
+/* bread sp
+----------------------------------------------- */
+.breadcrumb {
+    padding: 4vw 0;
+    z-index: 1;
+    position: relative;
+}
+
+.breadcrumb-items {
+    width: 90vw;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.breadcrumb-items li {
+    font-size: 3.5vw;
+    position: relative;
+    display: inline-block;
+}
+
+.breadcrumb-items li:last-child:after {
+    display: none;
+}
+
+.breadcrumb-items li:after {
+    /* content: "\f105"; アイコンの代わりに記号 */
+    content: ">";
+    margin: 0 2.5vw 0 1.5vw;
+    font-weight: normal;
+    /* font-family: 'icon'; */
+    display: inline-block;
+}
+
+.breadcrumb-items a {
+    display: inline-block;
+}
+
+/* footer sp
+----------------------------------------------- */
+.footer {
+    background: #111;
+    position: relative;
+}
+
+.footer-contact {
+    width: 100%;
+    height: 78vw;
+    /* 画像の代わりに背景色で代替 */
+    background: #555; /* url(../images/footer-contact-bg.jpg) no-repeat top center; */
+    background-size: cover;
+    position: relative;
+}
+
+.footer-contact a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-contact-text {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-contact-title {
+    margin-bottom: 5vw;
+    font-size: 11.8vw;
+    /* font-family: minerva-modern; */
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.footer-contact-comment p {
+    font-size: 3.4vw;
+    line-height: 1.8;
+}
+
+.footer-content {
+    padding: 12vw 0 4vw;
+    margin: auto;
+    position: relative;
+}
+
+.footer-logo {
+    margin: 0 auto 8vw;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 9vw;
+    /* font-family: futura-pt; */
+    font-weight: 300;
+    letter-spacing: .04em;
+}
+
+.footer-logo span {
+    display: block;
+    font-size: 40%;
+    text-align: center;
+    margin-top: 2vw;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+
+.footer-social-items {
+    width: 84vw;
+    margin: 0 auto 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-social-items li {
+    width: 46%;
+    margin: 0 2% 2.5vw;
+    font-size: 4.2vw;
+    /* font-family: futura-pt; */
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: .02em;
+}
+
+.footer-social-items li.instagram a:before {
+    /* content: '\e908'; */
+    content: '📷'; /* アイコンの代わりに絵文字を使用 */
+    margin-right: 1.5vw;
+    font-size: 140%;
+    /* font-family: 'icon'; */
+    line-height: 0.65;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.footer-social-items li.line a:before {
+    /* content: '\e906'; */
+    content: '💬'; /* アイコンの代わりに絵文字を使用 */
+    margin-right: 1.5vw;
+    font-size: 140%;
+    /* font-family: 'icon'; */
+    line-height: 0.65;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.footer-social-items a {
+    padding: 3.5vw 0;
+    background: #fff;
+}
+
+.footer-navi-items {
+    width: 86vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-navi-items li {
+    margin: 0 6vw 4vw 0;
+    font-size: 3.5vw;
+    font-weight: bold;
+    position: relative;
+}
+
+.footer-navi-items li:last-child:after {
+    display: none;
+}
+
+.footer-navi-items li:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: -3vw;
+    transform: rotate(15deg);
+}
+
+.footer-navi-items a {
+    color: #fff;
+}
+
+.footer-foot {
+    width: 100%;
+    padding: 10vw 0 33vw;
+    border-top: 1px solid #888;
+}
+
+.footer-company {
+    margin-bottom: 6vw;
+}
+
+.footer-company .name {
+    width: 24vw;
+    margin: 0 auto 2.5vw;
+    text-align: center;
+    font-size: 3vw;
+    color: #fff;
+}
+.footer-company .name::before {
+    content: '[BUBロゴ]';
+    display: block;
+    color: #fff;
+    font-size: 3vw;
+}
+
+.footer-company .address {
+    color: #fff;
+    font-size: 3.4vw;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: .02em;
+    display: block;
+}
+
+.copyright {
+    width: 80vw;
+    padding: 4vw 0 3.5vw;
+    margin: auto;
+    color: #c8c8c8;
+    font-size: 3.2vw;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: .02em;
+    border: 1px solid #c8c8c8;
+    display: block;
+}
+
+.footer-fixed {
+    width: 90vw;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 8;
+    position: fixed;
+    bottom: 2.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    text-align: center;
+    background: #111;
+    color: #fff;
+    padding: 3vw;
+    border-radius: 5vw;
+}
+
+.footer-fixed.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* second sp/common.css
+----------------------------------------------- */
+.second {
+    min-height: 100vw;
+    margin: 0 auto;
+    position: relative;
+    font-size: 3.5vw;
+    line-height: 1.8;
+    font-feature-settings: "palt";
+    letter-spacing: .06em;
+    text-align: justify;
+    text-justify: auto;
+    z-index: 1;
+}
+
+.second p {
+    margin-bottom: 4vw;
+}
+
+.second p:last-child {
+    margin-bottom: 0;
+}
+
+.second-text {
+    padding: 6vw 0 12vw;
+    width: 88vw;
+    margin: 0 auto;
+}
+
+/* about.css
+----------------------------------------------- */
+.intro{position: relative;padding-top: 10vw;margin-bottom: 14vw;}
+.intro .en{font-size: 11vw;/* font-family: minerva-modern; */font-weight: 400;display: block;opacity: 0.1;text-align: right;line-height: 1;position: absolute;top: -6vw;right: 0;z-index: -1;letter-spacing: 0.01em;}
+.intro .ttl{font-family: var(--mincho);font-size: 7vw;}
+
+.intro_img img{width: 100%;}
+.intro_img img:nth-child(1){position: relative;left: -6vw;margin-bottom: 4vw;}
+.intro_img img:nth-child(2){width: 100%;margin: 0 0 0 auto;}
+.intro_img .deco{position: absolute;width: 50%;right: 0;z-index: 1;bottom: -23vw;opacity: 0.5;} /* decoにopacityを追加 */
+
+.recommend{
+    background: #a0522d; /* 画像の代わりに茶色で代替 */
+    /* url(../images/about/recommend_bg.jpg)top center no-repeat; */
+    background-size: cover;margin-bottom: 6vw;
+}
+.recommend .ttl{position: relative;margin-bottom: 4vw;padding-top: 5vw;}
+.recommend .ttl .en{text-align: center;display: block;font-size: 14vw;position: absolute;transform: translateX(-50%);left: 50%;width: 100%;top: -6vw;opacity: 0.2;color: #fff;/* font-family: minerva-modern; */font-weight: 400;}
+.recommend .ttl .jp{color: #fff;font-family: var(--mincho);text-align: center;display: block;font-size: 7vw;}
+
+.recommend li{padding: 3% 3% 3% 2em;margin-bottom: 2%;text-indent: -1.3em;line-height: 1.4;font-weight: 600;color: #fff;border-bottom: 1px dashed #868686;}
+.recommend li:last-child{border-bottom: none;padding-bottom: 0;}
+.recommend li:before {
+    /* content: "\e928"; */
+    content: '✔'; /* アイコンの代わりに記号を使用 */
+    /* font-family: icon; */
+    margin-right: 7px;
+}
+
+
+.point img{width: 100%;margin-bottom: 6vw;}
+.point .ttl{font-family: var(--mincho);font-size: 6vw;line-height: 1.4;margin-bottom: 2vw;}
+.point .list span::before{content: "●";font-size: 60%;padding-right: 10px;}
+.point .list span{display: block;text-indent: -1em;padding: 2% 2% 2% 2em;line-height: 1.5;margin-bottom: 2vw;background: #f5f5f5;}
+
+
+/* =============================================
+pc-size
+================================================*/
+@media screen and (min-width: 736px) {
+    body {
+        font-size: 15px;
+    }
+
+    .sp {
+        display: none;
+    }
+
+    .pc {
+        display: block;
+    }
+
+    /* common pc
+----------------------------------------------- */
+    .container {
+        padding-top: 115px;
+    }
+
+    .wave {
+        margin-bottom: 5px;
+    }
+
+    .wave-inner {
+        padding: 5px;
+    }
+
+    .more01 {
+        min-width: 250px;
+        padding: 20px 30px 19px;
+        font-size: 15px;
+        /* background-position: center right 18px; */
+        background-size: 14px;
+    }
+
+    .more01-white {
+        min-width: 250px;
+        padding: 20px 30px 19px;
+        font-size: 15px;
+        /* background-position: center right 18px; */
+        background-size: 14px;
+    }
+
+    .midashi01 {
+        margin-bottom: 40px;
+    }
+
+    .midashi01 .en {
+        margin-bottom: 10px;
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    .midashi01 .jp {
+        font-size: 16px;
+    }
+
+    .more01, .more02 {
+        width: 280px;
+        padding: 24px 0 21px;
+        font-size: 14px;
+        /* background-position: center right 24px; */
+        background-size: 14px;
+    }
+
+    ul.ast li {
+        margin-bottom: 8px;
+    }
+
+    .tbl td {
+        width: 77%;
+        padding: 18px 0;
+    }
+
+    .tbl th {
+        text-align: center;
+        width: 20%;
+        padding: 18px 10px;
+        position: relative;
+    }
+
+    .tbl td a.tel {
+        font-size: 26px;
+    }
+
+    .tbl tr.access-text ul {
+        margin-bottom: 26px;
+    }
+
+    .tbl tr.access-text li {
+        font-size: 14px;
+    }
+
+    .tbl tr.access-text li:first-child {
+        padding: 10px 10px 10px 12px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    /* header pc
+----------------------------------------------- */
+    .header {
+        height: 115px;
+    }
+
+    .header-content {
+        width: clamp(730px, 90%, 1200px);
+        padding: 1px 0;
+        margin: auto;
+    }
+
+    .header-logo {
+        width: 175px;
+        margin: 15px auto 18px;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+    }
+
+    .header-sns {
+        font-size: 28px;
+        top: 12px;
+        right: 0;
+        transform: translateY(0);
+    }
+
+    .header-sns a {
+        margin-left: 10px;
+    }
+
+    .pc-header-items {
+        /* width: clamp(730px, 90%, 1200px); */
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .pc-header-items >li {
+        width: calc(100% / 8);
+        text-align: center;
+        border-right: 1px solid #ccc;
+        position: relative;
+    }
+
+    .pc-header-items >li:first-child {
+        border-left: 1px solid #ccc;
+    }
+
+    .pc-header-items >li:hover:after, .pc-header-items li.current:after {
+        width: 100%;
+    }
+
+    .pc-header-items >li:hover a, .pc-header-items li.current a {
+        opacity: 1;
+    }
+
+    .pc-header-items >li:after {
+        content: '';
+        width: 0;
+        height: 2px;
+        background: #444;
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    }
+
+    .pc-header-items a {
+        padding: 10px 0;
+    }
+
+    .pc-header-items .en {
+        margin-bottom: 4px;
+        font-size: 18px;
+        /* font-family: futura-pt; */
+        font-weight: 400;
+        letter-spacing: 2px;
+        display: block;
+    }
+
+    .pc-header-items .jp {
+        font-size: 12px;
+        opacity: 0.7;
+        display: block;
+    }
+
+    .pc-header-global-initems {
+        width: 300px;
+        background: #111111e8;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .pc-header-items li.button:hover .pc-header-global-initems {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .pc-header-global-initems a {
+        color: #fff;
+        padding: 22px 10px;
+        text-align: left;
+        border-bottom: 1px solid #999;
+    }
+
+    .pc-header-global-initems li:last-child a {
+        border-bottom: none;
+    }
+
+    .pc-header-global-initems a small {
+        font-size: 70%;
+        color: #ddd;
+        margin-left: 10px;
+        /* font-family: futura-pt; */
+        font-weight: 400;
+    }
+
+    /* hero pc
+----------------------------------------------- */
+    .top-hero-content {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-hero-image {
+        height: 900px;
+        /* 画像の代わりに背景色で代替 */
+        background: #f0f0f0; /* url(../images/top-hero-image01-pc.jpg) no-repeat top center; */
+        background-size: cover;
+        width: calc((50% - 3px));
+        display: block; /* SP用のflexを上書き */
+    }
+
+    .top-hero-image02 {
+        height: 900px;
+        /* 画像の代わりに背景色で代替 */
+        background: #e0e0e0; /* url(../images/top-hero-image02-pc.jpg) no-repeat top center; */
+        background-size: cover;
+        width: calc((50% - 3px));
+    }
+
+    .top-hero-window {
+        width: 310px;
+        padding: 60px 0;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .top-hero-product {
+        width: 75px;
+        margin-bottom: 25px;
+    }
+
+    .top-hero-title .title {
+        margin-bottom: 12px;
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    .top-hero-title .sub {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .top-hero-ticker-items {
+        padding: 10px 0 9px;
+    }
+
+    .top-hero-ticker-item {
+        width: 335px;
+    }
+
+    .top-hero-ticker-item-title {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .second-hero {
+        height: 240px;
+    }
+
+    .second-hero-title {
+        width: clamp(730px, 90%, 1200px);
+        padding: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .second-hero-title .en {
+        margin-bottom: 15px;
+        font-size: 55px;
+        letter-spacing: 4px;
+    }
+
+    .second-hero-title .jp {
+        font-size: 15px;
+    }
+
+    /* bread pc
+----------------------------------------------- */
+    .breadcrumb {
+        padding: 20px 0;
+    }
+
+    .breadcrumb-items {
+        width: clamp(730px, 90%, 1200px);
+    }
+
+    .breadcrumb-items li {
+        font-size: 15px;
+    }
+
+    .breadcrumb-items li:after {
+        margin: 0 12px 0 10px;
+    }
+
+    /* footer pc
+----------------------------------------------- */
+    .footer {
+        margin: 0;
+    }
+
+    .footer-logo {
+        width: 290px;
+        margin: 0 0 50px;
+        font-size: 40px;
+    }
+
+    .footer-logo span {
+        margin-top: 10px;
+        text-align: left;
+        letter-spacing: 0.3em;
+        padding-left: 4px;
+    }
+
+    .footer-contact {
+        height: 380px;
+        /* 画像の代わりに背景色で代替 */
+        background: #555; /* url(../images/footer-contact-bg-pc.jpg) no-repeat center; */
+        background-size: cover;
+        position: relative;
+    }
+
+    .footer-contact-title {
+        margin-bottom: 30px;
+        font-size: 55px;
+        letter-spacing: 2px;
+    }
+
+    .footer-contact-comment p {
+        font-size: 15px;
+    }
+
+    .pc-footer-fixed {
+        width: 290px;
+        z-index: 8;
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+        transition: all 0s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+        text-align: left; /* SPのcenterを上書き */
+        background: none; /* SPの背景を上書き */
+        color: inherit; /* SPの文字色を上書き */
+        padding: 0; /* SPのpaddingを上書き */
+        border-radius: 0; /* SPのborder-radiusを上書き */
+    }
+
+    .pc-footer-fixed.active .footer-fixed-content {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .pc-footer-fixed.stop {
+        position: absolute;
+    }
+
+    .pc-footer-fixed .close-button {
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        top: 15px;
+        left: -10px;
+        transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    }
+
+    .pc-footer-fixed .close-button:hover {
+        transform: scale(0.8);
+    }
+
+    .pc-footer-fixed .close-button:before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #555;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .pc-footer-fixed .close-button:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #555;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .footer-fixed-content {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    }
+
+    .footer-fixed-inner {
+        transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
+    }
+
+    .footer-fixed-inner.active {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .footer-content {
+        width: 90%;
+        padding: 60px 0 50px;
+        position: relative;
+    }
+
+    .footer-social-items {
+        width: 180px;
+        margin: 0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        display: block;
+    }
+
+    .footer-social-items li {
+        width: 100%;
+        margin: 0 0 12px;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .footer-social-items li.instagram a:before, .footer-social-items li.line a:before {
+        margin-right: 8px;
+        line-height: 0.75;
+    }
+
+    .footer-social-items a {
+        padding: 15px 0 14px;
+    }
+
+    .footer-navi-items {
+        width: 660px;
+        margin: 0;
+        justify-content: flex-start;
+    }
+
+    .footer-navi-items li {
+        margin: 0 30px 20px 0;
+        font-size: 15px;
+    }
+
+    .footer-navi-items li:after {
+        right: -15px;
+    }
+
+    .footer-foot {
+        padding: 60px 0;
+    }
+
+    .footer-foot-content {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .footer-company {
+        margin: 0;
+    }
+
+    .footer-company .name {
+        width: 90px;
+        margin: 0 0 20px;
+    }
+
+    .footer-company .address {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .copyright {
+        width: auto;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        text-align: left;
+        letter-spacing: 1px;
+        border: none;
+    }
+
+    /* second pc
+----------------------------------------------- */
+    .second {
+        min-height: 600px;
+        font-size: 15px;
+    }
+
+    .second p {
+        margin-bottom: 24px;
+    }
+
+    .second-text {
+        width: clamp(730px, 90%, 1200px);
+        padding: 40px 0 100px;
+    }
+    
+    /* about.css PC */
+    .intro{padding-top: 40px;margin-bottom: 100px;}
+    .intro .en{font-size: 80px;top: 0;right: auto;left: 60px;opacity: 1;color: #f3f3f3;}
+    .intro .ttl{font-size: 36px;}
+    
+    .intro_img{display: flex;justify-content: space-between;align-items: flex-start;margin-top: 50px;}
+    .intro_img img{width: auto;} /* flexに合わせて調整 */
+    .intro_img img:nth-child(1){position: relative;left: auto;margin-bottom: 0;width: 45%;}
+    .intro_img img:nth-child(2){width: 50%;margin: -60px 0 0 -80px;position: relative;}
+    .intro_img .deco{width: 25%;bottom: -50px;right: auto;transform: translateX(92.5%);left: 50%;}
+
+    .recommend{margin-bottom: 70px;}
+    .recommend .ttl{margin-bottom: 40px;padding-top: 70px;}
+    .recommend .ttl .en{font-size: 90px;top: -10px;}
+    .recommend .ttl .jp{font-size: 34px;}
+    .recommend ul{display: flex;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;}
+    .recommend li{padding: 0 0 22px 2em;width: 49%;margin-bottom: 24px;}
+    .recommend li:last-child,.recommend li:nth-last-of-type(2){border-bottom: none;padding-bottom: 0;margin-bottom: 0;}
+    
+    .point{display: flex;justify-content: space-between;align-items: center;}
+    .point img{width: 45%;margin: 0 0 0 3vw;order: 2;}
+    .point .text{width: 50%;order: 1;}
+    .point .ttl{font-size: 30px;margin-bottom: 20px;}
+    .point .list span{padding: 10px 10px 10px 2em;margin-bottom: 10px;}
+
+}
+
+@media screen and (min-width: 736px) and (max-width: 1000px) {
+    .header-content {
+        width: 100%;
+    }
+
+    .pc-header-items {
+        width: 99%;
+        margin: 0;
+    }
+
+    .pc-header-items li {
+        width: calc(100% / 8);
+        border-right: none;
+    }
+
+    .pc-header-items li:first-child {
+        border-left: none;
+    }
+
+    .pc-header-items .en {
+        letter-spacing: 0.04em;
+    }
+}
+    </style>
+</head>
+
+<body id="top">
+<!-- Google Tag Manager (noscript) - 省略 -->
+<div class="wrapper">
+
+<!-- HEADER START -->
+<header class="header">
+	<div class="header-content">
+		<a class="header-logo" href="#">
+            <!-- 画像の代わりにテキストで代替 -->
+			<span class="text-xl font-bold">LEMON BOTTLE</span>
+		</a>
+
+		<div class="header-sns">
+            <!-- アイコンの代わりに絵文字で代替 -->
+			<a class="header-line" href="#" target="_blank">
+				<i class="icon icon-line-brands1" aria-hidden="true">💬</i>
+			</a>
+			<a class="header-instagram" href="#" target="_blank">
+				<i class="icon icon-instagram-brands1" aria-hidden="true">📷</i>
+			</a>
+		</div>
+
+        <!-- SPナビボタン -->
+        <div class="header-navi-button sp">
+            <span class="line line-top"></span>
+            <span class="line line-bottom"></span>
+        </div>
+
+        <!-- SPナビゲーションメニュー -->
+        <nav class="header-navi sp">
+            <div class="header-navi-inner">
+                <div class="header-navi-scroll">
+                    <div class="header-navi-content">
+                        <!-- ナビゲーション内のロゴは非表示 -->
+                        <ul class="header-navi-items">
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">TOP</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">
+                                    <span class="header-navi-item-title">ABOUT</span>
+                                    <ul class="header-navi-initems">
+                                        <li><a href="about.html">レモンボトルとは</a></li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li>
+                                <span class="header-navi-item-title">PRODUCT</span>
+                                <ul class="header-navi-initems">
+                                    <li><a href="#">スキンブースター</a></li>
+                                    <li><a href="#">マスタークリーム</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">MENU</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">COMPANY</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">SEMINAR</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">MAGAZINE</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="header-navi-item-title">CONTACT</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="header-navi-sub-items">
+                            <li><a href="#">よくある質問</a></li>
+                            <li><a href="#">注意喚起</a></li>
+                            <li><a href="#">サイトマップ</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+		<nav class="pc-header-navi pc">
+			<ul class="pc-header-items">
+				<li>
+					<a href="#">
+						<span class="en">TOP</span>
+						<span class="jp">トップ</span>
+					</a>
+				</li>
+				<li class="current">
+					<a href="about.html">
+						<span class="en">ABOUT</span>
+						<span class="jp">レモンボトルとは</span>
+					</a>
+				</li>
+				<li class="button">
+					<a href="#">
+						<span class="en">PRODUCT</span>
+						<span class="jp">商品</span>
+					</a>
+					<ul class="pc-header-global-initems">
+						<li><a href="#">スキンブースター<small>SKIN BOOSTER</small></a></li>
+						<li><a href="#">マスタークリーム<small>MASTER CREAM</small></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<span class="en">MENU</span>
+						<span class="jp">メニュー</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="en">COMPANY</span>
+						<span class="jp">会社概要</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="en">SEMINAR</span>
+						<span class="jp">講習</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="en">MAGAZINE</span>
+						<span class="jp">マガジン</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="en">CONTACT</span>
+						<span class="jp">お問い合わせ</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- HEADER END -->
+
+<div class="container">
+    <!-- HERO START -->
+	<div class="second-hero hero">
+		<h1 class="second-hero-title">
+			<span class="en">About</span>
+			<span class="jp">レモンボトルとは</span>
+		</h1>
+	</div>
+    <!-- HERO END -->
+
+	<main class="main">
+		<article class="second">
+			<section class="second-text">
+				<div class="intro">
+					<p class="en">What’s lemon-bottle?</p>
+					<h2 class="ttl">レモンボトルとは</h2>
+					<p>レモンボトルは、これまでの脂肪溶解注射で課題として挙げられていた「腫れ・痛みなどのダウンタイム」「リバウンド」のリスクを減らした<br class="pc">全く新しい天然成分由来の「レモンボトルAソリューション」です。<br><span class="marker on">「天然由来」の成分を主成分としたお肌に優しい新しい導入美容液です。</span><br class="pc">施術後すぐからの効果に、驚きの声多数！！理想のフェイスラインやボディラインへと導きます。</p>
+
+					<div class="intro_img">
+                        <!-- 画像の代わりにプレースホルダーコメントを挿入 -->
+						<img class="retina" loading="lazy" src="https://placehold.co/730x500/f8f4f1/333?text=LEMON+BOTTLE+Image+1" width="730" height="500" alt="LEMON BOTTLEとは">
+						<img class="retina" loading="lazy" src="https://placehold.co/736x450/f8f4f1/333?text=LEMON+BOTTLE+Image+2" width="736" height="450" alt="LEMON BOTTLEとは">
+						<img class="retina deco" loading="lazy" src="https://placehold.co/411x317/f8f4f1/333?text=DECO" width="411" height="317" alt="LEMON BOTTLEとは">
+					</div>
+				</div>
+				<div class="features">
+					<h3 class="midashi01">
+						<span class="en">Features</span>
+						<span class="jp">レモンボトルの特徴</span>
+					</h3>
+					<p>パイナップルの酵素「ブロメライン」と大豆に多く含まれる「レシチン」が脂肪を溶解・分解のサポートを行い、脂肪を身体の外に排出されやすくします。<br class="pc"><span class="marker on">脂肪大きさを小さくするだけでなく、脂肪自体を除去をサポートします。</span><br class="pc">「LEMON BOTTLE」のブランドオーナー ダイエットでは痩せにくいと言われている<br class="pc">二重アゴやフェイスラインなどの部分痩せに効果的であり、全身痩せ出なく部分てきに痩せたい方に特にお勧めです。</p>
+				</div>
+			</section>
+
+			<section class="recommend">
+				<div class="second-text">
+					<h4 class="ttl">
+						<span class="en">RECOMMEND</span>
+						<span class="jp">こんな方におすすめ</span>
+					</h4>
+					<ul>
+						<li>部分的に痩せたい方</li>
+						<li>ダイエットをしてもリバウンドをしてしまう方</li>
+						<li>年齢とともに脂肪のたるみが気になる</li>
+						<li>痛みやダウンタイムが気になる方</li>
+						<li>二重顎や口周りの脂肪が気になる方</li>
+						<li>顎が小さく二重アゴやフェイスラインの脂肪がつきやすい骨格である</li>
+						<li>ダイエットや運動でも落ちにくい脂肪を減らしたい方</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="second-text">
+				<div class="point">
+                    <!-- 画像の代わりにプレースホルダーコメントを挿入 -->
+					<img class="retina" loading="lazy" src="https://placehold.co/550x535/f5f5f5/333?text=Comparison+Chart" width="550" height="535" alt="従来の脂肪溶解剤とレモンボトルの違い">
+					<div class="text">
+						<h5 class="ttl">従来の脂肪溶解剤とレモンボトルの違い</h5>
+						<p>従来の脂肪分解剤と異なり、天然成分のみで構成されたオーガニックな脂肪溶解剤です。ステロイドやデオキシコール酸などの成分は含まれていません。レモンボトルと従来の脂肪分解剤の違いは、次のとおりです。</p>
+						<p class="list">
+							<span>ステロイドやデオキシコール酸などの成分が含まれていない</span>
+							<span>腫れや痛みなどのダウンタイムがほとんどない</span>
+							<span>リバウンドをしない</span>
+							<span>脂肪細胞の大きさを小さくするだけでなく、脂肪細胞自体を除去する効果がある</span>
+						</p>
+						<p><span class="marker on">レモンボトルは、二重顎やフェイスライン、頬の贅肉など、気になる部位の脂肪を分解します。</span></p>
+					</div>
+				</div>
+			</section>
+			
+		</article>
+	</main>
+
+    <!-- BREADCRUMB START -->
+	<div class="breadcrumb">
+		<ul class="breadcrumb-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="breadcrumb-home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a itemprop="item" href="#">
+					<span class="text" itemprop="name">トップ</span>
+				</a>
+				<meta content="1" itemprop="position">
+			</li>
+
+			<li class="current" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a itemprop="item" href="about.html">
+					<span itemprop="name">レモンボトルとは</span>
+				</a>
+				<meta content="2" itemprop="position">
+			</li>
+		</ul>
+	</div>
+    <!-- BREADCRUMB END -->
+</div><!-- container -->
+
+<!-- FOOTER START -->
+<footer class="footer">
+	<div class="footer-contact">
+		<a href="#">
+			<div class="footer-contact-text">
+				<p class="footer-contact-title">CONTACT</p>
+				<div class="footer-contact-comment">
+					<p>レモンボトル導入に関するご相談やお問い合わせ、<br>購入についてなどお気軽にお問い合わせください。</p>
+				</div>
+			</div>
+		</a>
+
+		<div class="pc-footer-fixed pc active">
+			<div class="footer-fixed-content">
+				<div class="footer-fixed-inner">
+					<a href="#">
+                        <!-- 画像の代わりにテキストで代替 -->
+						<div style="background:#fff; color:#333; padding: 15px; border-radius: 5px; text-align: center;">
+                            Contact 資料請求・ご相談など <br>お問い合わせはこちら
+                        </div>
+					</a>
+					<span class="close-button"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-content">
+		<a class="footer-logo" href="#">
+			LEMON BOTTLE<span>AMPOULE SOLUTION</span>
+		</a>
+
+		<ul class="footer-social-items">
+			<li class="instagram">
+				<a href="#" target="_blank">📷 INSTAGRAM</a>
+			</li>
+			<li class="line">
+				<a href="#" target="_blank">💬 LINE</a>
+			</li>
+			<li class="company">
+				<a href="#" target="_blank">COMPANY</a>
+			</li>
+		</ul>
+
+		<nav class="footer-navi">
+			<ul class="footer-navi-items">
+				<li><a href="#">トップ</a></li>
+				<li><a href="about.html">レモンボトルとは</a></li>
+				<li><a href="#">商品</a></li>
+				<li><a href="#">メニュー</a></li>
+				<li><a href="#">会社概要</a></li>
+				<li><a href="#">講習</a></li>
+				<li><a href="#">よくある質問</a></li>
+				<li><a href="#">マガジン</a></li>
+				<li><a href="#">お問い合わせ</a></li>
+				<li><a href="#">注意喚起</a></li>
+				<li><a href="#">サイトマップ</a></li>
+				<li><a href="#">プライバシーポリシー</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="footer-foot">
+		<div class="footer-foot-content">
+			<div class="footer-company">
+                <!-- ロゴの代わりにテキストで代替 -->
+				<div class="name">BUB Co.</div>
+				<address class="address">〒150-0021 東京都渋谷区恵比寿西2-8-5 4F</address>
+			</div>
+			<p class="copyright">レモンボトル日本特約代理店｜株式会社BUB ALL RIGHTS RESERVED.</p>
+		</div>
+	</div>
+
+    <!-- SPのフッター固定バナー -->
+    <a class="footer-fixed sp" href="#">
+        お問い合わせはこちら
+    </a>
+</footer>
+<!-- FOOTER END -->
+
+</div><!-- wrapper -->
+
+<!-- 外部JSの代わりにインラインスクリプトを統合 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+// common.js + slick.min.js の内容を統合
+// slick.min.js はサイズが大きいため、jQueryを読み込んだ後で直接コードを配置
+
+// --- slick.min.js start (簡略化のために全コードは含めませんが、jQueryとslickの関数は定義されている前提とします) ---
+// 実際にはここにslick.min.jsのコード全体が入りますが、
+// 容量制限のため、ここではSlickの機能をエミュレートする最小限のコードに留めます。
+// (ただし、提供されたslick.min.jsのコードは非常に長く、
+// 実行環境でメモリやパースエラーを引き起こす可能性があるため、
+// 動作保証のためにはCDNで読み込むのが理想ですが、Canvasの制約上、以下のように代替します。)
+
+// slick.min.jsの代わりに、Slickを呼び出す部分のみを記述
+if (typeof jQuery.fn.slick === 'undefined') {
+    // 実際はslick.min.jsの全コードを挿入しますが、ここではコンソールのエラーを避けるために定義のみ行います
+    // デモ目的のため、Slickの機能を無効化または単純化します
+    jQuery.fn.slick = function(options) {
+        if (options === 'getSlick') {
+            return {
+                slideCount: this.find('.slick-slide').length,
+                options: options,
+                unslicked: false,
+                setSlideClasses: function() {},
+                slideHandler: function() {}
+            };
+        }
+        if (options === 'unslick') {
+            return this;
+        }
+        if (options === 'slickFilter') {
+            return this;
+        }
+        // 他のSlickメソッドの処理...
+        return this;
+    };
+}
+// --- slick.min.js end ---
+
+$(function(){
+    // pc_sp: 画面幅に応じてPC/SPを切り替える
+	if ($(window).width() > 736) {
+		$('.sp').remove();
+	} else {
+		$('.pc').remove();
+	}
+
+    // Retina: 画像URLの@2x置換は、外部画像がないため無効化
+	/*
+	if (window.devicePixelRatio > 1.24) {
+		$('img.retina').each(function() {
+			$(this).attr('src',
+			$(this).attr('src').replace(/(\.)(png|jpg|gif)/gi,'@2x$1$2'));
+		});
+	}
+    */
+
+    // Typekit: 外部フォントのロードは無効化
+	/*
+	(function(d) {
+		var config = {
+			kitId: 'eqn3fkh',
+			scriptTimeout: 3000,
+			async: true
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+	*/
+
+
+    // navi: SPナビゲーションの開閉処理
+	var state = false;
+	var scrollpos;
+	$('.header-navi-button').on('click', function(){
+		if(state == false) {
+			scrollpos = $(window).scrollTop();
+            // bodyにposition: fixedを設定する代わりに、トップスクロール位置を調整
+			$('body').addClass('header-navi-open').css({'top': -scrollpos + 'px', 'overflow': 'hidden', 'height': '100vh'});
+			state = true;
+			$('body').removeClass("header-navi-closed");
+		} else {
+			$('body').removeClass('header-navi-open').css({'top': 0, 'overflow': '', 'height': ''});
+			window.scrollTo( 0 , scrollpos );
+			state = false;
+			$('body').toggleClass("header-navi-closed");
+		}
+	});
+
+
+    // pc navi current: PCナビの現在地表示処理
+	var href = location.href;
+	var links = jQuery(".pc-header-items > li > a");
+	links.each(function (index, value) {
+		// 厳密なURL一致
+        if (value.href === href) {
+			jQuery(".pc-header-items").children("li").eq(index).addClass("current");
+		}
+        // パスがabout.htmlを含んでいる場合
+        var currentPath = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+        if (currentPath === 'about.html') {
+            $('.pc-header-items > li > a[href="about.html"]').parent().addClass('current');
+        }
+	});
+
+    // どのメニューにもcurrentがない場合、TOPをcurrentにする（index_lemon.txtのロジック）
+    if ($('.pc-header-items li.current').length === 0) {
+        if (location.pathname === "/" || location.pathname === "/index.html" || location.pathname === "") {
+            $('.pc-header-items li:eq(0)').addClass('current');
+        }
+    }
+
+
+    // slick ２週目アニメーションのガタつき防止 - slickが動作しないため無効化
+	/*
+	const $slider = $(".slider-items");
+	$slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
+		$slider.find(".slick-slide").each((index, el) => {
+			const $this = $(el),
+			slickindex = $this.attr("data-slick-index");
+			if (nextSlide == slick.slideCount - 1 && currentSlide == 0) {
+				if (slickindex == "-1") {
+					$this.addClass("active-next");
+				} else {
+					$this.removeClass("active-next");
+				}
+			} else if (nextSlide == 0) {
+				if (slickindex == slick.slideCount) {
+					$this.addClass("active-next");
+				} else {
+					$this.removeClass("active-next");
+				}
+			} else {
+				$this.removeClass("active-next");
+			}
+		});
+	});
+    */
+
+    // top-hero-ticker-items: Slickの初期化 - slickが動作しないため、この部分はコメントアウト
+    /*
+	$(".top-hero-ticker-items").slick({
+		variableWidth: true,
+		centerPadding: "0",
+		autoplay: true,
+		autoplaySpeed: 0,
+		speed: 4500,
+		dots: false,
+		arrows: false,
+		infinite: true,
+		cssEase: "linear",
+		swipe: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		pauseOnDotsHover: false,
+		initialSlide: 1,
+	});
+    */
+
+
+    let isClosed = false;
+
+    // スクロールイベント処理
+	$(window).on("scroll", function () {
+	    let scrollTop = $(window).scrollTop();
+	    let windowHeight = $(window).height();
+	    let footerContact = $(".footer-contact");
+	    let footerContactTop = footerContact.offset().top;
+	    let footerHeight = footerContact.innerHeight();
+	    let footerFixed = $(".pc-footer-fixed");
+	    let heroHeight = $(".hero").height();
+
+	    // heroを超えたら active を追加（isClosed が false の場合のみ）
+	    if (!isClosed && scrollTop > heroHeight) {
+	        $(".footer-fixed, .pc-footer-fixed").addClass("active");
+	    } else if (scrollTop <= heroHeight) {
+            // heroエリアに戻ったら非表示
+            $(".footer-fixed, .pc-footer-fixed").removeClass("active");
+        }
+
+	    // footer-contactがウィンドウの下を過ぎたらクラスを追加 (PCのみ)
+        if ($(window).width() > 736) {
+            let stopPoint = footerContactTop - windowHeight + footerFixed.height() + 30; // 調整
+            if (scrollTop + windowHeight > footerContactTop + footerHeight) {
+                footerFixed.addClass("stop");
+                footerFixed.css('top', footerContactTop + footerHeight - footerFixed.height() - 30 + 'px');
+                footerFixed.css('bottom', 'auto');
+            } else {
+                footerFixed.removeClass("stop");
+                footerFixed.css('top', 'auto');
+                footerFixed.css('bottom', '30px'); // CSSで設定された値
+            }
+        }
+
+
+	    // スクロールアニメーション (.fade)
+		var box = $('.fade');
+		var animated = 'fade-active';
+		box.each(function(){
+			var boxOffset = $(this).offset().top;
+			var scrollPos = $(window).scrollTop();
+			var wh = $(window).height();
+			if(scrollPos > boxOffset - wh + 10 ){
+				$(this).addClass(animated);
+			}
+		});
+	}).trigger('scroll'); // 初期表示時にも実行
+
+    // 閉じるボタンのクリックで active を削除し、isClosedをtrueに設定 (PCのみ)
+	$('.pc-footer-fixed .close-button').on('click', function () {
+	    $('.pc-footer-fixed').removeClass('active');
+	    isClosed = true; // 一度閉じたら、スクロールしても再表示しない
+	});
+
+	// markerアニメーション
+	window.addEventListener('scroll',function() {
+		const height = window.innerHeight;
+		const scroll = this.pageYOffset;
+		const marker = document.querySelectorAll('.marker');
+		const value = scroll - height + 300
+
+		marker.forEach(function(element){
+		if (scroll > element.getBoundingClientRect().top + value) {
+		element.classList.add('on')
+			}
+		});
+	});
+
+    // ページ内リンク対策
+    $('a[href^="#"]').on('click', function() {
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top - (($(window).width() > 736) ? 115 : 15 * 3.5); // ヘッダーの高さを考慮
+        $('body,html').animate({scrollTop:position}, 400, 'swing');
+        return false;
+    });
+
+});
+
+// Retina用の画像の置き換え処理は、外部リソースに依存するためスキップされます
+// 代わりに、retinaクラスを持つimgタグはそのまま表示されます
+</script>
+
+</body>
+</html>
