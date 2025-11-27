@@ -590,7 +590,7 @@
 
             <!-- Content Side (Navigation Links) -->
             <div class="nav-content-side flex flex-col items-start justify-center p-8 lg:p-0">
-                <ul class="flex flex-col h-full space-y-8 lg:space-y-4">
+                <ul id="nav-list" class="flex flex-col h-full space-y-8 lg:space-y-4">
                     <!-- data-img に PC/SP 共通の画像URLを設定 -->
                     <li data-img="https://placehold.co/1920x1080/DCEBEE/37383C?text=Works+Image" data-sp-img="https://placehold.co/70x70/DCEBEE/37383C?text=W">
                         <!-- Worksページにいるため、#worksではなく、現在のページへのリンクとして設定 -->
@@ -669,7 +669,7 @@
                             <li class="flex-shrink-0">
                                 <button data-category="all" class="category-button text-base px-4 py-1.5 text-sm font-semibold border rounded-full transition hover:opacity-80">All</button>
                             </li>
-                            <li class-shrink-0">
+                            <li class-shrink-0>
                                 <button data-category="branding" class="category-button text-base px-4 py-1.5 text-sm font-semibold rounded-full border transition hover:bg-accent">ブランディング</button>
                             </li>
                             <li class="flex-shrink-0">
@@ -723,7 +723,7 @@
                                     <span>SALONS Beauty Group美容師求人サイト</span>
                                     <span class="hidden md:inline">｜求人サイト</span>
                                 </p>
-                                <p class="text-sm md:text-xl font-bold leading-snug">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
+                                <p class="text-sm md::text-xl font-bold leading-snug">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
                             </div>
                         </a>
 
@@ -864,6 +864,8 @@
         const navLinks = document.querySelectorAll('.nav-link-sp');
         const navImageSideWrapper = document.getElementById('nav-image-side-wrapper'); // 画像ラッパー
         const navListItems = document.querySelectorAll('#sp-nav li[data-img]');
+        // 修正: ナビゲーションリスト全体を取得
+        const navListContainer = document.getElementById('nav-list'); 
         // index_2511_workにはtopセクションがないため、代わりにbodyの先頭を判定基準にする
         const topSection = document.querySelector('.work-top'); 
         const pageTopBtn = document.getElementById('page-top');
@@ -967,6 +969,7 @@
         function showNavImage(imageUrl, forceTransition = true) {
             if (!isDesktop() || !navImageSideWrapper || !imageUrl) return;
 
+            // 修正: 同じURLが連続する場合は処理をスキップ
             if (imageUrl === lastShownImageUrl && currentNavImageElement) {
                  return; 
             }
@@ -987,6 +990,7 @@
                     newImageContainer.classList.add('active');
                 }, 10); 
             } else {
+                // forceTransition=falseの場合はアニメーションなしで即座に表示
                 newImageContainer.classList.add('active');
             }
 
@@ -1000,6 +1004,7 @@
                 oldImageElement.classList.remove('active');
                 
                 setTimeout(() => {
+                    // 古い要素がまだ存在し、かつ新しい要素と異なる場合のみ削除
                     if (oldImageElement.parentNode === navImageSideWrapper && oldImageElement !== currentNavImageElement) {
                         navImageSideWrapper.removeChild(oldImageElement);
                     }
@@ -1007,13 +1012,14 @@
             }
         }
 
+        /**
+         * PCメニュー表示時に、デフォルトのWORKS画像を設定する。
+         * メニューが開いたとき、またはリサイズでPC表示になった時に呼ばれる。
+         */
         function setInitialNavImage() {
-            if (isDesktop()) {
-                if (lastShownImageUrl !== defaultImageUrl || !currentNavImageElement) {
-                    const tempUrl = lastShownImageUrl;
-                    lastShownImageUrl = ""; 
-                    showNavImage(defaultImageUrl, false); // forceTransition=falseでアニメーションをスキップ
-                }
+            if (isDesktop() && !currentNavImageElement) {
+                // 初回表示時またはメニュー再開時
+                showNavImage(defaultImageUrl, false); // アニメーションなしでデフォルト表示
             }
         }
 
@@ -1028,7 +1034,7 @@
                 // 1. 表示/レイアウトを決定
                 if (isDesktop()) {
                     spNav.classList.add('flex'); 
-                    setInitialNavImage(); 
+                    setInitialNavImage(); // ここで初期画像を設定する
                 } else {
                     spNav.classList.add('block'); 
                 }
@@ -1067,7 +1073,7 @@
             setTimeout(toggleMenu, 500); 
         })); 
 
-        // PC Navigation Hover Logic
+        // PC Navigation Hover Logic (mouseenterで画像を切り替え)
         navListItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 if (isDesktop()) {
@@ -1076,6 +1082,17 @@
                 }
             });
         });
+
+        // 修正: ナビゲーションリスト全体からマウスが離れたら、WORKSの画像に戻す処理を追加
+        if (navListContainer) {
+            navListContainer.addEventListener('mouseleave', () => {
+                // PC表示かつメニューが開いている場合のみ実行
+                if (isDesktop() && mainHamburger.classList.contains('open')) {
+                    showNavImage(defaultImageUrl, true); 
+                }
+            });
+        }
+
 
         // Handle PC/SP layout on resize
         window.addEventListener('resize', () => {
@@ -1138,6 +1155,3 @@
 </body>
 
 </html>
-
-
-
