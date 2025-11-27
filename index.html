@@ -33,7 +33,6 @@
             letter-spacing: 0.05em;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            width: 100%;
         }
 
         button{
@@ -65,6 +64,19 @@
             top: 0;
             left: 0;
             z-index: 1;
+        }
+        
+        /* FV画像の上に重ねるオーバーレイ（グレーの透過カバー） */
+        .mv-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* グレー (RBG: 0, 0, 0) を 20% 透過 (0.2) で設定 */
+            background-color: rgba(0, 0, 0, 0.2); 
+            z-index: 10; /* FV画像(z-index: 1)より上で、ロゴテキスト(z-index: 20)より下に配置 */
+            pointer-events: none; /* クリックイベントを透過させる */
         }
         
         /* 変更点: アクティブクラスはフェードインを担当 */
@@ -1066,13 +1078,6 @@
     <main>
         <!-- Top Section (FV / Main Visual) -->
         <section id="top" class="top relative h-screen overflow-hidden">
-            <!-- Background Images (Decorative Blobs) - 削除しました -->
-            <!-- <div class="top__bg-wrapper absolute inset-0 -z-0">
-                <img class="image-01 absolute top-1/4 left-1/4 w-32 md:w-48 opacity-40 -rotate-12" src="https://placehold.co/200x200/84B5C5/fcfcfc?text=BG" alt="Background Element">
-                <img class="image-02 absolute top-1/3 left-0 w-24 md:w-32 opacity-40 rotate-6" src="https://placehold.co/150x150/FBE183/84B5C5?text=BG" alt="Background Element">
-                <img class="image-03 absolute top-1/4 right-0 w-32 md:w-48 opacity-40 rotate-12" src="https://placehold.co/200x200/84B5C5/fcfcfc?text=BG" alt="Background Element">
-            </div> -->
-
             <!-- Main Visual Slider - data-src-sp を追加し、JSで出し分ける -->
             <div id="mv-slider" class="relative h-full w-full">
                 <!-- Slide 1 -->
@@ -1088,6 +1093,9 @@
                      data-src="images/DSC07176.jpeg"
                      data-src-sp="images/DSC09664.jpeg"></div>
             </div>
+
+            <!-- FV画像の上に重ねるグレーの透過カバー -->
+            <div class="mv-overlay"></div>
 
             <!-- Logo Text Overlay -->
             <div class="top__logo-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex flex-col items-center justify-center z-20">
@@ -1670,9 +1678,9 @@
                 // PCからSPへ切り替わった場合は画像をクリア
                 if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
                     navImageSideWrapper.removeChild(currentNavImageElement);
-                    currentNavImageElement = null;
-                    lastShownImageUrl = defaultImageUrl;
                 }
+                currentNavImageElement = null;
+                lastShownImageUrl = defaultImageUrl; // リセット
             }
             // 既に停止しているはずだが、念のため再確認
             stopSlider(); 
