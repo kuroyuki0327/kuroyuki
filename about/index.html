@@ -36,24 +36,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
     outline: none;
 }
-		
-      .sp{
-            display: none;
-        }
 
-        .pc{
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-        .sp{
-            display: block!important;
-        }
-
-        .pc{
-            display: none!important;
-        }
-        }
 /* font
 ----------------------------------------------- */
 
@@ -68,16 +51,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             --color-primary-dark: #363d4b; /* index_2511_workのCTA背景色 */
         }
 		
-        body {
-            font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-            color: var(--color-dark);
-            background-color: var(--color-light);
-            font-size: 15px;
-            letter-spacing: 0.05em;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-		
+body {
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-size: 3.5vw;
+    font-family: var(--gothic);
+    -webkit-text-size-adjust: 100%;
+    font-style: normal;
+    line-height: 1;
+}
+
 article, aside, canvas, details, figcaption, figure, header, footer, hgroup, menu, nav, section, summary {
     display: block;
 }
@@ -312,41 +296,20 @@ a:hover {
 
 .midashi01 .en {
     margin-bottom: 2.5vw;
-    font-size: 1.3rem;
-    font-family: "futura-pt", sans-serif;
+    font-size: 9.4vw;
+    font-family: minerva-modern; 
     font-weight: 400;
     letter-spacing: .02em;
     display: block;
 }
 
 .midashi01 .jp {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 2rem;
-}
-
-.midashi01 {
-    margin: 0 auto 8vw;
-    position: relative;
-    line-height: 1;
-}
-
-.midashi02 .en {
-    margin-bottom: 2.5vw;
-    font-size: 2rem;
-    font-family: minerva-modern;
-    font-weight: 400;
-    letter-spacing: .02em;
+    font-size: 3.4vw;
+    font-family: var(--mincho);
     display: block;
 }
 
-.midashi02 .jp {
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 2rem;
-}		
-
-.more02 {
+.more01 {
     width: auto;
     min-width: 60vw;
     padding: 5vw 8vw;
@@ -1219,29 +1182,74 @@ span.ast {
 .intro{position: relative;padding-top: 10vw;margin-bottom: 14vw;}
 .intro-ttl .en{font-size: 11vw; font-family: minerva-modern; font-weight: 400;display: block;opacity: 0.1;text-align: right;line-height: 1;position: absolute; right: 0;z-index: -1;letter-spacing: 0.01em;}
 .intro .ttl{font-family: var(--mincho);font-size: 7vw;}
-.intro_img{width: 100%; border-radius: 10px; display: flex; flex-direction: column; align-items: center;}
+
 .intro_img img{width: 100%;}
-.intro_img img:nth-child(1){position: relative; margin-bottom: 4vw;}
+.intro_img img:nth-child(1){position: relative;left: -6vw;margin-bottom: 4vw;}
 .intro_img img:nth-child(2){width: 100%;margin: 0 0 0 auto;}
 .intro_img .deco{position: absolute;width: 50%;right: 0;z-index: 1;bottom: -23vw;opacity: 0.5;} /* decoにopacityを追加 */
-.intro-txt{width: 100%; padding: 2rem 1rem; }
-.recommend{
-    background: #a0522d; /* 画像の代わりに茶色で代替 */
-    /* url(../images/about/recommend_bg.jpg)top center no-repeat; */
-    background-size: cover;margin-bottom: 6vw;
-}
-.recommend .ttl{position: relative;margin-bottom: 4vw;padding-top: 5vw;}
-.recommend .ttl .en{text-align: center;display: block;font-size: 14vw;position: absolute;transform: translateX(-50%);left: 50%;width: 100%;top: -6vw;opacity: 0.2;color: #fff;/* font-family: minerva-modern; */font-weight: 400;}
-.recommend .ttl .jp{color: #fff;font-family: var(--mincho);text-align: center;display: block;font-size: 7vw;}
 
-.recommend li{padding: 3% 3% 3% 2em;margin-bottom: 2%;text-indent: -1.3em;line-height: 1.4;font-weight: 600;color: #fff;border-bottom: 1px dashed #868686;}
-.recommend li:last-child{border-bottom: none;padding-bottom: 0;}
-.recommend li:before {
-    /* content: "\e928"; */
-    content: '✔'; /* アイコンの代わりに記号を使用 */
-    /* font-family: icon; */
-    margin-right: 7px;
+.recommend{
+    /* 元のデザインから変更し、参考画像に合わせた淡い背景色とカード形式のベーススタイルを設定 */
+    background: #fcfaf5; /* 淡い背景色に変更 */
+    padding: 10vw 0; 
+    margin-bottom: 6vw;
 }
+.recommend .ttl{position: relative;margin-bottom: 4vw;padding-top: 0;}
+.recommend .ttl .en{text-align: center;display: block;font-size: 14vw;position: absolute;transform: translateX(-50%);left: 50%;width: 100%;top: -6vw;opacity: 0.1;color: #333;/* font-family: minerva-modern; */font-weight: 400;} /* 色を調整し、目立たなくする */
+.recommend .ttl .jp{color: #333;font-family: var(--mincho);text-align: center;display: block;font-size: 7vw; margin-bottom: 8vw;} /* 色とマージンを調整 */
+
+/* 強みカードの新しいスタイル (SP) */
+.strength-cards {
+    display: flex;
+    flex-direction: column; /* SPでは縦並び */
+    gap: 5vw; /* SP間の間隔 */
+}
+
+.strength-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 6vw;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card-number {
+    font-size: 5vw;
+    font-weight: bold;
+    color: var(--color-accent); /* #f1d506 */
+    margin-bottom: 2vw;
+    display: block;
+}
+
+.card-icon {
+    position: absolute;
+    top: 5vw;
+    right: 5vw;
+    font-size: 8vw;
+    color: rgba(0, 0, 0, 0.1); /* 薄いアイコン */
+    line-height: 1;
+}
+
+.card-title {
+    font-size: 4.5vw;
+    font-family: var(--mincho);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 3vw;
+}
+
+.card-text {
+    font-size: 3.5vw;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* 既存の .recommend li スタイルを上書き（表示させない） */
+.recommend li{
+    display: none; 
+}
+
 
 .recommend-ttl{
 	font-size: 2.2rem;
@@ -1255,6 +1263,43 @@ span.ast {
 .point .ttl{font-family: var(--mincho);font-size: 6vw;line-height: 1.4;margin-bottom: 2vw;}
 .point .list span::before{content: "●";font-size: 60%;padding-right: 10px;}
 .point .list span{display: block;text-indent: -1em;padding: 2% 2% 2% 2em;line-height: 1.5;margin-bottom: 2vw;background: #f5f5f5;}
+
+
+/* Magazine List Style (New for Major Tools) */
+.magazine-list {
+    width: 100%;
+    border-top: 1px dotted #ccc;
+    padding: 0;
+    margin-top: 3vw;
+}
+.magazine-item {
+    display: flex;
+    padding: 4vw 0;
+    border-bottom: 1px dotted #ccc;
+    align-items: flex-start;
+}
+.magazine-label {
+    background: #f5f5f5;
+    padding: 1vw 2vw;
+    font-size: 3.2vw;
+    font-weight: bold;
+    color: #333;
+    margin-right: 4vw;
+    white-space: normal;
+    width: 35%; /* Fixed width */
+    min-width: 35%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.3;
+}
+.magazine-content {
+    font-size: 3.4vw;
+    line-height: 1.6;
+    padding-top: 0.5vw;
+    width: 65%;
+}
 
 
 /* =============================================
@@ -1309,7 +1354,9 @@ pc-size
 
     .midashi01 .en {
         margin-bottom: 10px;
+        font-size: 45px;
         letter-spacing: 2px;
+        color: var(--color-accent);
         font-size: 0.8rem;
         left: 0;
     }
@@ -1803,26 +1850,74 @@ pc-size
     .intro{padding-top: 40px;margin-bottom: 100px;}
     .intro-ttl .en{font-size: 80px;right: auto;left: 60px;opacity: 1;color: #f3f3f3;}
     .intro .ttl{font-size: 36px;}
-    .intro_img{width: 45%;}
+    
     .intro_img{display: flex;justify-content: space-between;align-items: flex-start;margin-top: 50px;}
     .intro_img img{width: auto;} /* flexに合わせて調整 */
-    .intro_img img:nth-child(1){position: relative;left: auto;margin-bottom: 0;width: 45%;left: -6vw;}
+    .intro_img img:nth-child(1){position: relative;left: auto;margin-bottom: 0;width: 45%;}
     .intro_img img:nth-child(2){width: 50%;margin: -60px 0 0 -80px;position: relative;}
     .intro_img .deco{width: 25%;bottom: -50px;right: auto;transform: translateX(92.5%);left: 50%;}
-	.intro-txt{width: 50%; padding-left: 20px;}
-    .recommend{margin-bottom: 70px;}
-    .recommend .ttl{margin-bottom: 40px;padding-top: 70px;}
-    .recommend .ttl .en{font-size: 90px;top: -10px;}
-    .recommend .ttl .jp{font-size: 34px;}
-    .recommend ul{display: flex;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;}
-    .recommend li{padding: 0 0 22px 2em;width: 49%;margin-bottom: 24px;}
-    .recommend li:last-child,.recommend li:nth-last-of-type(2){border-bottom: none;padding-bottom: 0;margin-bottom: 0;}
-    
+
+    .recommend{margin-bottom: 70px; padding: 50px 0;} /* paddingをPC向けに調整 */
+    .recommend .ttl{margin-bottom: 40px;padding-top: 0;}
+    .recommend .ttl .en{font-size: 90px;top: -30px;}
+    .recommend .ttl .jp{font-size: 34px; margin-bottom: 40px;}
+
+    /* 既存の .recommend li スタイルを上書き（非表示/無効化） */
+    .recommend ul{
+        display: block; /* ulのflexを解除 */
+        margin: 0;
+        padding: 0;
+    }
+    .recommend li{
+        display: none; /* 元のリストアイテムを非表示に */
+    }
+
+    /* 強みカードの新しいスタイル (PC) */
+    .strength-cards {
+        flex-direction: row; /* PCでは横並び */
+        gap: 30px;
+    }
+    .strength-card {
+        flex: 1;
+        padding: 30px;
+    }
+    .card-number {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .card-icon {
+        top: 25px;
+        right: 25px;
+        font-size: 40px;
+    }
+    .card-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .card-text {
+        font-size: 15px;
+    }
+
     .point{display: flex;justify-content: space-between;align-items: center;}
     .point img{width: 45%;margin: 0 0 0 3vw;order: 2;}
     .point .text{width: 50%;order: 1;}
     .point .ttl{font-size: 30px;margin-bottom: 20px;}
     .point .list span{padding: 10px 10px 10px 2em;margin-bottom: 10px;}
+
+    /* Magazine List PC Style */
+    .magazine-item {
+        padding: 20px 0;
+    }
+    .magazine-label {
+        font-size: 14px;
+        width: 180px;
+        min-width: 180px;
+        margin-right: 30px;
+        padding: 8px 15px;
+    }
+    .magazine-content {
+        font-size: 15px;
+    }
 
 }
 
@@ -1913,8 +2008,7 @@ pc-size
                             <li>
                                 <a href="#">
                                     <span class="header-navi-item-title">CONTACT</span>
-                                </a>
-                            </li>
+                                </li>
                         </ul>
                         <ul class="header-navi-sub-items">
                             <li><a href="#">BLOG</a></li>
@@ -1984,14 +2078,13 @@ pc-size
 					</div>
 					<div class="intro_img">
                         <!-- 写真を挿入 -->
-						<div class="sp"><img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img-sp.jpg" alt="黒野坪祐貴の写真"></div>
-						<div class="pc"><img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img.jpg" alt="黒野坪祐貴の写真"></div>		
+						<img class="retina" loading="lazy" src="https://placehold.co/400x500/f8f4f1/333?text=黒野坪祐貴+Photo" width="400" height="500" alt="黒野坪祐貴の写真" style="width: 45%; border-radius: 10px;">
 						
 						<!-- 自己紹介テキスト (職務経歴書-職務要約と履歴書を基に修正) -->
-						<div class="intro-txt">
+						<div style="width: 50%; padding-left: 20px;">
 							<h3 class="midashi01" style="margin-bottom: 2vw;">
 								<span class="en">Kuronotsubo Yuki</span>		
-								<span class="jp">黒野坪 祐貴</span>
+								<span class="jp" style="font-size: 4vw;">黒野坪 祐貴</span>
 							</h3>
 							<p>新卒で株式会社メニコンに入社し、3年間接客販売（視力検査補助、眼科受付含む）に従事しました。お客様対応を通じて培った「**相手の立場で考える力**」と「**分かりやすく伝える力**」をデザインの基盤としています。</p>
 							<p>2021年より株式会社イーエスホールディングスにて、美容・飲食・ECなど幅広い業界の**販促物、Webサイト、SNS広告の制作**を一貫して担当しています。（デザイナー歴 [2021年4月～現在]）</p>
@@ -2002,76 +2095,112 @@ pc-size
 					</div>
 				</div>
 				
-				<!-- 2. デザインで使えるツールのスキル紹介 (活かせるスキル-グラフィックデザイン/Webデザイン/AIを反映) -->
+				<!-- 2. デザインで使えるツールのスキル紹介 -->
+                <!-- デザイン変更: 元の「主要使用ツール」のデザイン（画像＋テキスト）をここに適用 -->
 				<div class="features">
-					<h3 class="midashi02">
+					<h3 class="midashi01">
 						<span class="en">Skills & Tools</span>
 						<span class="jp">デザインスキルと使用ツール</span>
 					</h3>
-					<div class="point">
-						<!-- 画像の代わりにテキストベースの紹介リストに変換 -->
-						<div class="text" style="width: 100%; order: 1;">
-							<h5 class="ttl">デザイン・制作スキル</h5>
-							<p>グラフィック、Web、EC、広告と多岐にわたるクリエイティブ経験があります。ターゲット別訴求設計と成果創出を意識した制作が得意です。</p>
-							<p class="list">
-								<span style="font-weight: bold;">Webデザイン/構成設計:</span> 求人LP/ECサイト制作（Shopify）の実績多数。業種ごとの構成・デザイン提案力。
-								<span style="font-weight: bold;">グラフィックデザイン:</span> 販促ポスター、店内ポップ、キャンペーンツール、SNS広告バナーなどの企画制作。
-								<span style="font-weight: bold;">コーディング/EC構築:</span> HTML/CSSを用いたレスポンシブコーディング、ECサイトの構築・運用（Shopify/EC-CUBE）。
-								<span style="font-weight: bold;">コピーライティング:</span> 集客・販売導線を意識したキャッチコピー制作。
-								<span style="font-weight: bold;">AIツール活用:</span> ChatGPT、画像生成AIを活用した制作効率化（レイアウト、キャッチコピー、Web/SNS投稿案）。
-							</p>
-						</div>
-					</div>
+					
+                    <!-- .point クラスを使用して画像+テキストのレイアウトに変更 -->
+                    <div class="point">
+                        <img class="retina" loading="lazy" src="https://placehold.co/550x535/f5f5f5/333?text=Skills+List" width="550" height="535" alt="スキル一覧イメージ" style="width: 45%;">
+                        <div class="text" style="width: 50%;">
+                            <h5 class="ttl">デザイン・制作スキル</h5>
+                            <p>グラフィック、Web、EC、広告と多岐にわたるクリエイティブ経験があります。ターゲット別訴求設計と成果創出を意識した制作が得意です。</p>
+                            <p class="list">
+                                <span style="font-weight: bold;">Webデザイン/構成設計:</span> 求人LP/ECサイト制作（Shopify）の実績多数。業種ごとの構成・デザイン提案力。
+                                <span style="font-weight: bold;">グラフィックデザイン:</span> 販促ポスター、店内ポップ、キャンペーンツール、SNS広告バナーなどの企画制作。
+                                <span style="font-weight: bold;">コーディング/EC構築:</span> HTML/CSSを用いたレスポンシブコーディング、ECサイトの構築・運用（Shopify/EC-CUBE）。
+                                <span style="font-weight: bold;">コピーライティング:</span> 集客・販売導線を意識したキャッチコピー制作。
+                                <span style="font-weight: bold;">AIツール活用:</span> ChatGPT、画像生成AIを活用した制作効率化（レイアウト、キャッチコピー、Web/SNS投稿案）。
+                            </p>
+                        </div>
+                    </div>
 				</div>
 			</section>
 
 			<!-- 3. 強み3点（自己PRと実績を基に構成） -->
+			<!-- デザインを添付画像のようなカード形式に更新 -->
 			<section class="recommend">
 				<div class="second-text">
 					<h4 class="ttl">
 						<span class="en">STRENGTHS</span>
 						<span class="jp">私の強み (3つのポイント)</span>
 					</h4>
-					<ul>
-						<li>
-                            <p class="recommend-ttl">成果直結型の提案力</p>
-                            <p class="recommend-subttl">*事業の課題解決を目指すトータルプロデュース経験*</p>
-                            単なる制作に留まらず、幹部会議へ参加し、企画提案から進行までを主導。求人LPリニューアルによる**応募数増加**、SNS広告改善による**反応率向上**など、結果を出すためのクリエイティブに取り組んできました。
-                        </li>
-						<li>
-                            <p class="recommend-ttl">集客導線を意識したECスキル</p>
-                            <p style="font-size: 3vw; font-weight: normal; margin-bottom: 1vw;">*ECサイト（Shopify等）の制作・運営経験*</p>
-                            化粧品ECサイトの**構築・運用経験**を持つため、デザインだけでなく、集客から販売、そしてコンバージョンに至るまでのユーザー導線を意識した制作が可能です。
-                        </li>
-						<li>
-                            <p class="recommend-ttl">マルチな制作対応力と効率化</p>
-                            <p style="font-size: 3vw; font-weight: normal; margin-bottom: 1vw;">*幅広い媒体とAI技術を駆使*</p>
-                            Web、グラフィック、SNS、ECといった多媒体に対応可能。また、AI技術を積極的に活用することで、短期間で質の高いアウトプットを生み出し、制作時間を大幅に短縮しています。
-                        </li>
-					</ul>
+					
+					<!-- カードコンテナ -->
+                    <div class="strength-cards">
+                        
+                        <!-- カード 1: 成果直結型の提案力 -->
+                        <div class="strength-card fade fade-bottom">
+                            <span class="card-number">01</span>
+                            <!-- アイコン: 💡 (アイデア/企画) -->
+                            <span class="card-icon">💡</span> 
+                            <p class="card-title">成果直結型の提案力</p>
+                            <div class="card-text">
+                                *事業の課題解決を目指すトータルプロデュース経験*<br>
+                                単なる制作に留まらず、幹部会議へ参加し、企画提案から進行までを主導。求人LPリニューアルによる**応募数増加**、SNS広告改善による**反応率向上**など、結果を出すためのクリエイティブに取り組んできました。
+                            </div>
+                        </div>
+
+                        <!-- カード 2: 集客導線を意識したECスキル -->
+                        <div class="strength-card fade fade-bottom">
+                            <span class="card-number">02</span>
+                            <!-- アイコン: 🛒 (EC/集客) -->
+                            <span class="card-icon">🛒</span> 
+                            <p class="card-title">集客導線を意識したECスキル</p>
+                            <div class="card-text">
+                                *ECサイト（Shopify等）の制作・運営経験*<br>
+                                化粧品ECサイトの**構築・運用経験**を持つため、デザインだけでなく、集客から販売、そしてコンバージョンに至るまでのユーザー導線を意識した制作が可能です。
+                            </div>
+                        </div>
+
+                        <!-- カード 3: マルチな制作対応力と効率化 -->
+                        <div class="strength-card fade fade-bottom">
+                            <span class="card-number">03</span>
+                            <!-- アイコン: ⚙️ (マルチ/効率化) -->
+                            <span class="card-icon">⚙️</span> 
+                            <p class="card-title">マルチな制作対応力と効率化</p>
+                            <div class="card-text">
+                                *幅広い媒体とAI技術を駆使*<br>
+                                Web、グラフィック、SNS、ECといった多媒体に対応可能。また、AI技術を積極的に活用することで、短期間で質の高いアウトプットを生み出し、制作時間を大幅に短縮しています。
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</section>
 
-			<!-- 4. デザインの使えるツールのスキル紹介 (詳細版として元のpointセクションを再構成) -->
+			<!-- 4. 主要使用ツールとスキルレベル -->
+            <!-- デザイン変更: 添付画像のMagazineリスト風デザインに変更 -->
 			<section class="second-text">
-				<div class="point">
-                    <!-- 画像の代わりにプレースホルダーコメントを挿入 -->
-					<img class="retina" loading="lazy" src="https://placehold.co/550x535/f5f5f5/333?text=Tool+List" width="550" height="535" alt="使用ツールの詳細" style="width: 45%;">
-					<div class="text" style="width: 50%;">
-						<h5 class="ttl">主要使用ツールとスキルレベル</h5>
-						<p>資格情報と実務経験に基づいています。</p>
-						<p class="list">
-							<span style="font-weight: bold;">Adobe Illustrator (上級/資格取得済)</span>
-							グラフィックデザイン、販促物制作、ロゴ・図表のベクター制作全般。
-							<span style="font-weight: bold;">Adobe Photoshop (上級)</span>
-							Webサイト・バナー制作、写真レタッチ、広告クリエイティブ制作。
-							<span style="font-weight: bold;">Web/ECツール (実務経験有)</span>
-							HTML/CSSコーディング、Shopify、EC-CUBE、Dreamweaver。
-							<span style="font-weight: bold;">動画/その他 (経験有)</span>
-							Premiere Pro/Lightroom（動画編集・写真現像）、Canva、Office/Google Workspace。
-						</p>
-						<p><span class="marker on">ターゲット視点でのデザイン設計と、技術理解に基づいた実装性の高い制作が強みです。</span></p>
-					</div>
+				<div class="tool-section">
+                    <h3 class="midashi01">
+                        <span class="en">Tools & Level</span>
+                        <span class="jp">主要使用ツールとスキルレベル</span>
+                    </h3>
+                    
+                    <p>資格情報と実務経験に基づいています。<br><span class="marker on">ターゲット視点でのデザイン設計と、技術理解に基づいた実装性の高い制作が強みです。</span></p>
+
+                    <ul class="magazine-list">
+                        <li class="magazine-item">
+                            <div class="magazine-label">Adobe Illustrator<br>(上級/資格有)</div>
+                            <div class="magazine-content">グラフィックデザイン、販促物制作、ロゴ・図表のベクター制作全般。</div>
+                        </li>
+                        <li class="magazine-item">
+                            <div class="magazine-label">Adobe Photoshop<br>(上級)</div>
+                            <div class="magazine-content">Webサイト・バナー制作、写真レタッチ、広告クリエイティブ制作。</div>
+                        </li>
+                        <li class="magazine-item">
+                            <div class="magazine-label">Web/ECツール<br>(実務経験有)</div>
+                            <div class="magazine-content">HTML/CSSコーディング、Shopify、EC-CUBE、Dreamweaver。</div>
+                        </li>
+                        <li class="magazine-item">
+                            <div class="magazine-label">動画/その他<br>(経験有)</div>
+                            <div class="magazine-content">Premiere Pro/Lightroom（動画編集・写真現像）、Canva、Office/Google Workspace。</div>
+                        </li>
+                    </ul>
 				</div>
 			</section>
 			
@@ -2336,9 +2465,6 @@ $(function(){
     });
 
 });
-
-// Retina用の画像の置き換え処理は、外部リソースに依存するためスキップされます
-// 代わりに、retinaクラスを持つimgタグはそのまま表示されます
 </script>
 
 </body>
