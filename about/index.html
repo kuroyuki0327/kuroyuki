@@ -36,7 +36,24 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
     outline: none;
 }
+		
+      .sp{
+            display: none;
+        }
 
+        .pc{
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+        .sp{
+            display: block!important;
+        }
+
+        .pc{
+            display: none!important;
+        }
+        }
 /* font
 ----------------------------------------------- */
 
@@ -1967,7 +1984,8 @@ pc-size
 					</div>
 					<div class="intro_img">
                         <!-- 写真を挿入 -->
-						<img class="retina" loading="lazy" src="https://placehold.co/400x500/f8f4f1/333?text=黒野坪祐貴+Photo" width="400" height="500" alt="黒野坪祐貴の写真">
+						<div class="sp"><img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img-sp.jpg" alt="黒野坪祐貴の写真"></div>
+						<div class="pc"><img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img.jpg" alt="黒野坪祐貴の写真"></div>		
 						
 						<!-- 自己紹介テキスト (職務経歴書-職務要約と履歴書を基に修正) -->
 						<div class="intro-txt">
