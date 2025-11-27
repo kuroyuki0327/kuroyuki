@@ -9,6 +9,10 @@
     <meta name="keywords" content="ポートフォリオ,自己紹介,Webデザイナー,スキル,強み">
     <meta name="format-detection" content="telephone=no">
 
+	<!-- Font -->
+	<link rel="stylesheet" href="https://use.typekit.net/lpw2bst.css">
+	<link rel="stylesheet" href="https://use.typekit.net/sxz8txc.css">
+	
     <!-- 外部CSSの代わりにインラインスタイルを統合 (変更なし) -->
     <style>
 /* common.css & about.css & margin.css の内容を統合 */
@@ -35,13 +39,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* font
 ----------------------------------------------- */
-:root {
-    /* フォント設定を汎用的なものに置き換え */
-    --mincho: "游明朝", YuMincho, "Hiragino Mincho ProN", serif;
-    --gothic: "游ゴシック体", YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic Pro', sans-serif;
-    --brown: #a0522d; /* common.cssにはないが、アクセスリストで使われているため定義 */
-}
 
+        :root {
+            --color-dark: #333;
+            --color-accent: #f1d506;
+            --color-light: #fcfcfc; /* index_2511に合わせて変更 */
+            --color-gray-light: #dddddd;
+            --color-hover-orange: #ff9900; 
+            --font-jp: "Zen Kaku Gothic New", sans-serif;
+            --font-en: "Albert Sans", sans-serif;
+            --color-primary-dark: #363d4b; /* index_2511_workのCTA背景色 */
+        }
+		
 body {
     padding: 0;
     margin: 0;
@@ -288,7 +297,7 @@ a:hover {
 .midashi01 .en {
     margin-bottom: 2.5vw;
     font-size: 9.4vw;
-    /* font-family: minerva-modern; */
+    font-family: minerva-modern; 
     font-weight: 400;
     letter-spacing: .02em;
     display: block;
@@ -593,7 +602,7 @@ span.ast {
 .header-navi-item-title {
     color: #fff;
     font-size: 8vw;
-    /* font-family: minerva-modern; */
+    font-family: minerva-modern; 
     font-weight: 400;
     letter-spacing: .04em;
 }
@@ -822,7 +831,7 @@ span.ast {
 }
 
 .top-hero-title {
-    /* font-family: minerva-modern; */
+    font-family: minerva-modern; 
     font-weight: 400;
     text-align: center;
 }
@@ -956,7 +965,7 @@ span.ast {
 .footer-contact-title {
     margin-bottom: 5vw;
     font-size: 11.8vw;
-    /* font-family: minerva-modern; */
+    font-family: minerva-modern; 
     font-weight: 400;
     letter-spacing: .04em;
 }
@@ -1171,7 +1180,7 @@ span.ast {
 /* about.css
 ----------------------------------------------- */
 .intro{position: relative;padding-top: 10vw;margin-bottom: 14vw;}
-.intro .en{font-size: 11vw;/* font-family: minerva-modern; */font-weight: 400;display: block;opacity: 0.1;text-align: right;line-height: 1;position: absolute;top: -6vw;right: 0;z-index: -1;letter-spacing: 0.01em;}
+.intro-ttl .en{font-size: 11vw; font-family: minerva-modern; font-weight: 400;display: block;opacity: 0.1;text-align: right;line-height: 1;position: absolute; right: 0;z-index: -1;letter-spacing: 0.01em;}
 .intro .ttl{font-family: var(--mincho);font-size: 7vw;}
 
 .intro_img img{width: 100%;}
@@ -1197,6 +1206,9 @@ span.ast {
     margin-right: 7px;
 }
 
+.recommend-ttl{
+	font-size: 2.2rem;
+}
 
 .point img{width: 100%;margin-bottom: 6vw;}
 .point .ttl{font-family: var(--mincho);font-size: 6vw;line-height: 1.4;margin-bottom: 2vw;}
@@ -1258,6 +1270,9 @@ pc-size
         margin-bottom: 10px;
         font-size: 45px;
         letter-spacing: 2px;
+        color: var(--color-accent);
+        font-size: 0.8rem;
+        left: 0;
     }
 
     .midashi01 .jp {
@@ -1747,7 +1762,7 @@ pc-size
     
     /* about.css PC */
     .intro{padding-top: 40px;margin-bottom: 100px;}
-    .intro .en{font-size: 80px;top: 0;right: auto;left: 60px;opacity: 1;color: #f3f3f3;}
+    .intro-ttl .en{font-size: 80px;right: auto;left: 60px;opacity: 1;color: #f3f3f3;}
     .intro .ttl{font-size: 36px;}
     
     .intro_img{display: flex;justify-content: space-between;align-items: flex-start;margin-top: 50px;}
@@ -1924,9 +1939,10 @@ pc-size
 			<section class="second-text">
 				<!-- 1. 名前と写真と自己紹介文 -->
 				<div class="intro">
+					<div class="intro-ttl">
 					<p class="en">Designer Profile</p>
 					<h2 class="ttl">自己紹介</h2>
-					
+					</div>
 					<div class="intro_img">
                         <!-- 写真を挿入 -->
 						<img class="retina" loading="lazy" src="https://placehold.co/400x500/f8f4f1/333?text=黒野坪祐貴+Photo" width="400" height="500" alt="黒野坪祐貴の写真" style="width: 45%; border-radius: 10px;">
@@ -1934,7 +1950,8 @@ pc-size
 						<!-- 自己紹介テキスト (職務経歴書-職務要約と履歴書を基に修正) -->
 						<div style="width: 50%; padding-left: 20px;">
 							<h3 class="midashi01" style="margin-bottom: 2vw;">
-								<span class="jp" style="font-size: 4vw;">黒野坪 祐貴 (Kuronopo Yuki)</span>
+								<span class="en">Kuronotsubo Yuki</span>		
+								<span class="jp" style="font-size: 4vw;">黒野坪 祐貴</span>
 							</h3>
 							<p>新卒で株式会社メニコンに入社し、3年間接客販売（視力検査補助、眼科受付含む）に従事しました。お客様対応を通じて培った「**相手の立場で考える力**」と「**分かりやすく伝える力**」をデザインの基盤としています。</p>
 							<p>2021年より株式会社イーエスホールディングスにて、美容・飲食・ECなど幅広い業界の**販促物、Webサイト、SNS広告の制作**を一貫して担当しています。（デザイナー歴 [2021年4月～現在]）</p>
@@ -1977,17 +1994,17 @@ pc-size
 					</h4>
 					<ul>
 						<li>
-                            <p style="font-size: 5vw; margin-bottom: 1vw;">**成果直結型の提案力**</p>
+                            <p class="recommend-ttl">成果直結型の提案力</p>
                             <p style="font-size: 3vw; font-weight: normal; margin-bottom: 1vw;">*事業の課題解決を目指すトータルプロデュース経験*</p>
                             単なる制作に留まらず、幹部会議へ参加し、企画提案から進行までを主導。求人LPリニューアルによる**応募数増加**、SNS広告改善による**反応率向上**など、結果を出すためのクリエイティブに取り組んできました。
                         </li>
 						<li>
-                            <p style="font-size: 5vw; margin-bottom: 1vw;">**集客導線を意識したECスキル**</p>
+                            <p class="recommend-ttl">集客導線を意識したECスキル</p>
                             <p style="font-size: 3vw; font-weight: normal; margin-bottom: 1vw;">*ECサイト（Shopify等）の制作・運営経験*</p>
                             化粧品ECサイトの**構築・運用経験**を持つため、デザインだけでなく、集客から販売、そしてコンバージョンに至るまでのユーザー導線を意識した制作が可能です。
                         </li>
 						<li>
-                            <p style="font-size: 5vw; margin-bottom: 1vw;">**マルチな制作対応力と効率化**</p>
+                            <p class="recommend-ttl">マルチな制作対応力と効率化</p>
                             <p style="font-size: 3vw; font-weight: normal; margin-bottom: 1vw;">*幅広い媒体とAI技術を駆使*</p>
                             Web、グラフィック、SNS、ECといった多媒体に対応可能。また、AI技術を積極的に活用することで、短期間で質の高いアウトプットを生み出し、制作時間を大幅に短縮しています。
                         </li>
