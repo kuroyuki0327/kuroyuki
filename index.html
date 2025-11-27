@@ -903,11 +903,17 @@
         .footer__contact{
             position: relative;
             padding: 9rem auto 4rem;
+            height: 43rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow: auto;
         }
 
         @media (min-width: 768px) {
         .footer__contact{
             padding: 8rem auto 4rem;
+            height:700px;
             }
         }
 
@@ -937,20 +943,24 @@
     }
     
     .contact__content-wrapper{
-        padding: 8rem 0 0;
+        padding: 10rem 0 0;
     }
+
+     @media (min-width: 768px) { 
+    .contact__content-wrapper{
+        padding: 12rem 0 0;
+    }}      
 
     .contact__thanks-message{
         font-size: 35px;
         color: #fff;
         text-shadow: 0 0 10px #5f493b;
-        margin-bottom: 55px;
-        margin-top: 45px;
+        margin-bottom: 5rem;
     }
 
     @media (min-width: 768px) { 
     .contact__thanks-message{
-        margin-bottom: 90px;
+        margin-bottom: 6rem;
     }}
 
     .contact-title{
