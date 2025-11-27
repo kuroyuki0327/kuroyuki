@@ -563,6 +563,7 @@
             font-style: normal; 
         }
 
+
         /* About セクションの波型境界線と出現アニメーション */
         .about-section-container {
             position: relative;
@@ -586,6 +587,10 @@
             fill: var(--color-light); 
             transform: translateY(-100%); 
             z-index: 10;
+        }
+
+        .about-title{
+            margin-top: 4rem;
         }
         
         .about-title-en{
@@ -612,11 +617,13 @@
             border-bottom: 1px solid #bbb;
             padding-bottom: 8vw;
         }
+        
 
         @media screen and (min-width: 736px) {
         .about-title{
             padding-bottom: 4vw;
             margin-bottom: 4vw;
+            margin-top: 0;
         }}   
 
         .about-text-wrap {
@@ -664,6 +671,13 @@
             }
         }
 
+        @media (min-width: 736px) and (max-width: 1023px) {
+            .about-image {
+                min-width: 38vw;
+            }
+        }
+
+        
         .about-image img {
             width: 130vw;
             margin-left: -10vw;
