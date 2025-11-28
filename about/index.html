@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- タイトルとメタ情報をポートフォリオ用に変更 -->
     <title>黒野坪 祐貴 | ポートフォリオ</title>
     <meta name="description" content="黒野坪 祐貴のポートフォリオサイトです。デザインスキル、強み、これまでの経験を紹介します。">
     <meta name="keywords" content="ポートフォリオ,自己紹介,Webデザイナー,スキル,強み">
     <meta name="format-detection" content="telephone=no">
 
-	<!-- Font -->
 	<link rel="stylesheet" href="https://use.typekit.net/lpw2bst.css">
 	<link rel="stylesheet" href="https://use.typekit.net/sxz8txc.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	
-    <!-- 外部CSSの代わりにインラインスタイルを統合 (変更なし) -->
     <style>
 /* common.css & about.css & margin.css の内容を統合 */
 @charset "UTF-8";
@@ -44,7 +44,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             --color-accent: #f1d506;
             --color-light: #fcfcfc;
             --color-gray-light: #dddddd;
-            --color-hover-orange: #ff9900;
+            --color-hover-orange: #333; /* index_workから移植 */
             --font-jp: "Zen Kaku Gothic New", sans-serif;
             --font-en: "Albert Sans", sans-serif;
             --color-primary-dark: #363d4b;
@@ -147,6 +147,7 @@ a:hover {
     clear: both;
 }
 
+/* index_aboutのsp/pcクラスは残す */
 .pc {
     display: none;
 }
@@ -482,6 +483,7 @@ span.ast {
 
 /* header sp
 ----------------------------------------------- */
+/* index_workのヘッダーに置き換えるため、一旦無効化または最小化 */
 .header {
     width: 100%;
     height: 15vw;
@@ -490,302 +492,43 @@ span.ast {
     position: fixed;
     top: 0;
     left: 0;
+    /* 既存のPCナビゲーションを維持するための最小限の調整 */
+    padding-top: 50px; /* index_workのハンバーガーの高さ（80px）より下にPCナビが来るように調整 */
 }
 
 .header-content {
     width: 100%;
     height: 100%;
     position: relative;
+    /* index_workのヘッダーと競合するため無効化 */
+    /* display: none; */
 }
 
-.header-logo {
-    width: 38vw;
-    position: absolute;
-    top: 50%;
-    left: 4vw;
-    transform: translateY(-50%);
-}
-
-.header-logo img {
-    width: 100%;
-}
-
-.header-sns {
-    font-size: 6.8vw;
-    position: absolute;
-    top: 50%;
-    right: 16vw;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    color: #111;
-}
-
-.header-sns a {
-    margin-left: 2vw;
-}
-
-.header-navi-button {
-    width: 15vw;
-    height: 15vw;
-    cursor: pointer;
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.header-navi-button .line {
-    width: 8vw;
-    height: 1px;
-    background: #000;
-    position: absolute;
-    left: 3.5vw;
-    transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-}
-
-.header-navi-button .line-top {
-    top: 6.6vw;
-}
-
-.header-navi-button .line-bottom {
-    top: 8.4vw;
-}
-
-.header-navi {
-    width: 100%;
-    height: 100%;
-    /* 画像の代わりに背景色で代替 */
-    background: #111; /* url(../images/header-navi-bg.png) no-repeat top center; */
-    background-size: cover;
-    z-index: 1;
-    overflow: hidden;
+/* PCナビゲーションの調整 */
+.pc-header-navi {
     position: fixed;
-    top: 100%;
+    top: 0; /* ハンバーガーの下に来るように調整 */
     left: 0;
-}
-
-.header-navi-inner {
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.header-navi-inner::-webkit-scrollbar {
-    display: none;
-}
-
-.header-navi-scroll {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 1px;
-    overflow-y: auto;
-    position: relative;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.header-navi-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.header-navi-content {
-    padding-top: 22vw;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.header-navi-logo {
-    width: 38vw;
-    position: absolute;
-    top: 5vw;
-    left: 4vw;
-}
-
-.header-navi-logo img {
-    width: 100%;
-}
-
-.header-navi-items {
-    width: 85vw;
-    margin: 0 auto 10vw;
-    border-bottom: 1px solid #666;
-}
-
-.header-navi-items li {
-    width: 100%;
-    margin-bottom: 8vw;
-}
-
-.header-navi-item-title {
-    color: #fff;
-    font-size: 8vw;
-    font-family: minerva-modern; 
-    font-weight: 400;
-    letter-spacing: .04em;
-}
-
-.header-navi-initems {
-    padding: 5vw 0 1vw;
-}
-
-.header-navi-initems li {
-    padding-left: 5vw;
-    margin-bottom: 4vw;
-    font-size: 3.4vw;
-    position: relative;
-}
-
-.header-navi-initems li:last-child {
-    margin: 0;
-}
-
-.header-navi-initems li:before {
-    content: '';
-    width: 4vw;
-    height: 1px;
     background: #fff;
-    opacity: 0.8;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    z-index: 52; /* ハンバーガーメニュー(z-50)より高く、ボタン(z-60)より低く */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.header-navi-initems a {
-    color: #fff;
-    opacity: 0.9;
-}
-
-.header-navi-sub-items {
-    width: 85vw;
-    margin: 0 auto 100px;
-}
-
-.header-navi-sub-items li {
-    margin-bottom: 4vw;
-    font-size: 3.4vw;
-}
-
-.header-navi-sub-items a {
-    color: #fff;
-    opacity: 0.9;
-}
-
-.animation {
-    opacity: 0;
-}
-
-.header-navi-open {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-}
-
-.header-navi-open .header-logo {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.header-navi-open .line {
-    width: 10vw;
-    background: #fff;
-    left: 2.5vw;
-}
-
-.header-navi-open .line-top {
-    top: 7.5vw;
-    transform: rotate(20deg);
-}
-
-.header-navi-open .line-bottom {
-    top: 7.5vw;
-    transform: rotate(-20deg);
-}
-
-.header-navi-open .header-navi {
-    animation-name: header-navi-open;
-    animation-delay: 0s;
-    animation-duration: 0.4s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-}
-
-.header-navi-open .header-navi-content {
-    animation-name: header-navi-in;
-    animation-delay: 0.4s;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-}
-
-@keyframes header-navi-open {
-    0% {
-        top: 100vh;
+@media screen and (min-width: 736px) {
+    .header {
+        /* PC時のheaderの高さは、PCナビが隠れないよう調整 */
+        height: 115px;
     }
-
-    100% {
-        top: 0;
+    .pc-header-navi {
+        top: 60px; /* ハンバーガーの位置 (h-20) 80px - 15px (上部の隙間) = 65px */
     }
 }
-
-@keyframes header-navi-in {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(15px);
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
+.header-logo, .header-sns, .header-navi-button, .header-navi, .header-navi-open, .header-navi-closed {
+    /* index_aboutのハンバーガー関連のスタイルを無効化 */
+    display: none !important;
 }
 
-.header-navi-closed .header-navi {
-    animation-name: header-navi-closed;
-    animation-delay: 0.4s;
-    animation-duration: 0.4s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-
-.header-navi-closed .header-navi-content {
-    animation-name: header-navi-out;
-    animation-delay: 0s;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-
-@keyframes header-navi-closed {
-    0% {
-        top: 0;
-    }
-
-    100% {
-        top: -100vh;
-    }
-}
-
-@keyframes header-navi-out {
-    0% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-15px);
-    }
-}
 
 /* hero sp
 ----------------------------------------------- */
@@ -956,218 +699,13 @@ span.ast {
 
 /* footer sp
 ----------------------------------------------- */
+/* index_workのフッターに置き換えるため、一旦無効化または最小化 */
 .footer {
-    background: #111;
-    position: relative;
-}
-
-.footer-contact {
-    width: 100%;
-    height: 78vw;
-    /* 画像の代わりに背景色で代替 */
-    background: #555; /* url(../images/footer-contact-bg.jpg) no-repeat top center; */
-    background-size: cover;
-    position: relative;
-}
-
-.footer-contact a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.footer-contact-text {
-    width: 100%;
-    color: #fff;
-    text-align: center;
-}
-
-.footer-contact-title {
-    margin-bottom: 5vw;
-    font-size: 11.8vw;
-    font-family: minerva-modern; 
-    font-weight: 400;
-    letter-spacing: .04em;
-}
-
-.footer-contact-comment p {
-    font-size: 3.4vw;
-    line-height: 1.8;
-}
-
-.footer-content {
-    padding: 12vw 0 4vw;
-    margin: auto;
-    position: relative;
-}
-
-.footer-logo {
-    margin: 0 auto 8vw;
-    position: relative;
-    color: #fff;
-    text-align: center;
-    font-size: 9vw;
-    /* font-family: futura-pt; */
-    font-weight: 300;
-    letter-spacing: .04em;
-}
-
-.footer-logo span {
-    display: block;
-    font-size: 40%;
-    text-align: center;
-    margin-top: 2vw;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-}
-
-.footer-social-items {
-    width: 84vw;
-    margin: 0 auto 6vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-social-items li {
-    width: 46%;
-    margin: 0 2% 2.5vw;
-    font-size: 4.2vw;
-    /* font-family: futura-pt; */
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: .02em;
-}
-
-.footer-social-items li.instagram a:before {
-    /* content: '\e908'; */
-    content: '📷'; /* アイコンの代わりに絵文字を使用 */
-    margin-right: 1.5vw;
-    font-size: 140%;
-    /* font-family: 'icon'; */
-    line-height: 0.65;
-    vertical-align: top;
-    display: inline-block;
-}
-
-.footer-social-items li.line a:before {
-    /* content: '\e906'; */
-    content: '💬'; /* アイコンの代わりに絵文字を使用 */
-    margin-right: 1.5vw;
-    font-size: 140%;
-    /* font-family: 'icon'; */
-    line-height: 0.65;
-    vertical-align: top;
-    display: inline-block;
-}
-
-.footer-social-items a {
-    padding: 3.5vw 0;
-    background: #fff;
-}
-
-.footer-navi-items {
-    width: 86vw;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-navi-items li {
-    margin: 0 6vw 4vw 0;
-    font-size: 3.5vw;
-    font-weight: bold;
-    position: relative;
-}
-
-.footer-navi-items li:last-child:after {
+    /* index_workのフッターを適用するため、既存のスタイルは上書きまたは削除 */
     display: none;
 }
-
-.footer-navi-items li:after {
-    content: '';
-    width: 1px;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    right: -3vw;
-    transform: rotate(15deg);
-}
-
-.footer-navi-items a {
-    color: #fff;
-}
-
-.footer-foot {
-    width: 100%;
-    padding: 10vw 0 33vw;
-    border-top: 1px solid #888;
-}
-
-.footer-company {
-    margin-bottom: 6vw;
-}
-
-.footer-company .name {
-    width: 24vw;
-    margin: 0 auto 2.5vw;
-    text-align: center;
-    font-size: 3vw;
-    color: #fff;
-}
-.footer-company .name::before {
-    content: '[BUBロゴ]';
-    display: block;
-    color: #fff;
-    font-size: 3vw;
-}
-
-.footer-company .address {
-    color: #fff;
-    font-size: 3.4vw;
-    text-align: center;
-    line-height: 1.4;
-    letter-spacing: .02em;
-    display: block;
-}
-
-.copyright {
-    width: 80vw;
-    padding: 4vw 0 3.5vw;
-    margin: auto;
-    color: #c8c8c8;
-    font-size: 3.2vw;
-    text-align: center;
-    line-height: 1.6;
-    letter-spacing: .02em;
-    border: 1px solid #c8c8c8;
-    display: block;
-}
-
-.footer-fixed {
-    width: 90vw;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 8;
-    position: fixed;
-    bottom: 2.5vw;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-    text-align: center;
-    background: #111;
-    color: #fff;
-    padding: 3vw;
-    border-radius: 5vw;
-}
-
-.footer-fixed.active {
-    opacity: 1;
-    visibility: visible;
+.footer-contact, .footer-content, .footer-foot, .footer-fixed {
+    display: none;
 }
 
 /* second sp/common.css
@@ -1241,7 +779,6 @@ span.ast {
     font-size: 5vw;
     font-weight: bold;
     color: var(--color-accent); /* #f1d506 */
-    margin-bottom: 2vw;
 	font-family: "futura-pt", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -1336,6 +873,7 @@ pc-size
         font-size: 15px;
     }
 
+    /* index_aboutのsp/pcクラスは残す */
     .sp {
         display: none;
     }
@@ -1436,6 +974,11 @@ pc-size
 
     /* header pc
 ----------------------------------------------- */
+    /* index_workのハンバーガーヘッダーと競合するため無効化 */
+    .header-content, .header-logo, .header-sns {
+        /* display: none !important; */
+    }
+
     .header {
         height: 115px;
     }
@@ -1462,10 +1005,7 @@ pc-size
         transform: translateY(0);
     }
 
-    .header-sns a {
-        margin-left: 10px;
-    }
-
+    /* index_aboutのPCナビゲーションのスタイルは維持 */
     .pc-header-items {
         /* width: clamp(730px, 90%, 1200px); */
         margin: auto;
@@ -1557,6 +1097,7 @@ pc-size
         /* font-family: futura-pt; */
         font-weight: 400;
     }
+
 
     /* hero pc
 ----------------------------------------------- */
@@ -1661,201 +1202,6 @@ pc-size
         margin: 0 12px 0 10px;
     }
 
-    /* footer pc
------------------------------------------------ */
-    .footer {
-        margin: 0;
-    }
-
-    .footer-logo {
-        width: 290px;
-        margin: 0 0 50px;
-        font-size: 40px;
-    }
-
-    .footer-logo span {
-        margin-top: 10px;
-        text-align: left;
-        letter-spacing: 0.3em;
-        padding-left: 4px;
-    }
-
-    .footer-contact {
-        height: 380px;
-        /* 画像の代わりに背景色で代替 */
-        background: #555; /* url(../images/footer-contact-bg-pc.jpg) no-repeat center; */
-        background-size: cover;
-        position: relative;
-    }
-
-    .footer-contact-title {
-        margin-bottom: 30px;
-        font-size: 55px;
-        letter-spacing: 2px;
-    }
-
-    .footer-contact-comment p {
-        font-size: 15px;
-    }
-
-    .pc-footer-fixed {
-        width: 290px;
-        z-index: 8;
-        position: fixed;
-        right: 20px;
-        bottom: 30px;
-        transition: all 0s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-        text-align: left; /* SPのcenterを上書き */
-        background: none; /* SPの背景を上書き */
-        color: inherit; /* SPの文字色を上書き */
-        padding: 0; /* SPのpaddingを上書き */
-        border-radius: 0; /* SPのborder-radiusを上書き */
-    }
-
-    .pc-footer-fixed.active .footer-fixed-content {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .pc-footer-fixed.stop {
-        position: absolute;
-    }
-
-    .pc-footer-fixed .close-button {
-        width: 20px;
-        height: 20px;
-        padding: 5px;
-        cursor: pointer;
-        z-index: 1;
-        position: absolute;
-        top: 15px;
-        left: -10px;
-        transition: all 0.3s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-    }
-
-    .pc-footer-fixed .close-button:hover {
-        transform: scale(0.8);
-    }
-
-    .pc-footer-fixed .close-button:before {
-        content: '',
-        width: 100%;
-        height: 1px;
-        background: #555;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .pc-footer-fixed .close-button:after {
-        content: '',
-        width: 100%;
-        height: 1px;
-        background: #555;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    .footer-fixed-content {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-    }
-
-    .footer-fixed-inner {
-        transition: all 0.4s cubic-bezier(0.05, 0.05, 0.31, 0.97);
-    }
-
-    .footer-fixed-inner.active {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .footer-content {
-        width: 90%;
-        padding: 60px 0 50px;
-        position: relative;
-    }
-
-    .footer-social-items {
-        width: 180px;
-        margin: 0;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        display: block;
-    }
-
-    .footer-social-items li {
-        width: 100%;
-        margin: 0 0 12px;
-        font-size: 18px;
-        letter-spacing: 1px;
-    }
-
-    .footer-social-items li.instagram a:before, .footer-social-items li.line a:before {
-        margin-right: 8px;
-        line-height: 0.75;
-    }
-
-    .footer-social-items a {
-        padding: 15px 0 14px;
-    }
-
-    .footer-navi-items {
-        width: 660px;
-        margin: 0;
-        justify-content: flex-start;
-    }
-
-    .footer-navi-items li {
-        margin: 0 30px 20px 0;
-        font-size: 15px;
-    }
-
-    .footer-navi-items li:after {
-        right: -15px;
-    }
-
-    .footer-foot {
-        padding: 60px 0;
-    }
-
-    .footer-foot-content {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-
-    .footer-company {
-        margin: 0;
-    }
-
-    .footer-company .name {
-        width: 90px;
-        margin: 0 0 20px;
-    }
-
-    .footer-company .address {
-        font-size: 15px;
-        letter-spacing: 1px;
-    }
-
-    .copyright {
-        width: auto;
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
-        text-align: left;
-        letter-spacing: 1px;
-        border: none;
-    }
 
     /* second pc
 ----------------------------------------------- */
@@ -1983,143 +1329,575 @@ pc-size
         letter-spacing: 0.04em;
     }
 }
+/* -----------------------------------------------------------
+// [index_workから移植] ヘッダー、フッター、追従バナー用のスタイル
+// ----------------------------------------------------------- */
+
+/* Utility Classes for Fonts */
+.font-en { font-family: var(--font-en); }
+.font-jp { font-family: var(--font-jp); }
+.font-minerva{
+    font-family: "minerva-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* --- ハンバーガーアイコンの修正部分 (index_workから移植) --- */
+.hamburger {
+    position: relative;
+    z-index: 60; 
+    width: 40px; 
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 1.5px; 
+    width: 80%;
+    background: var(--color-dark);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+.hamburger.open span {
+    background-color: var(--color-light); 
+}
+.hamburger span:nth-child(1) { top: 38%; }
+.hamburger span:nth-child(2) { bottom: 38%; }
+
+/* Close Button (X) Animation */
+.hamburger.open span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    bottom: auto; 
+    top: 50%; 
+    transform: rotate(-45deg);
+}
+
+/* =========================================================================
+    Navigation Menu Styles (index_workから移植)
+    ========================================================================= */
+
+/* Full-screen Nav Container */
+.sp-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000; 
+    z-index: 50;
+    overflow-y: auto;
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+.sp-nav.opacity-100 {
+    opacity: 1;
+}
+
+/* Mobile: ナビゲーションメニューのリンク色を白に統一 */
+.sp-nav a {
+    color: var(--color-light);
+    font-family: "minerva-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* PC Menu Layout (Side-by-Side) */
+@media (min-width: 1024px) {
+    /* Image Side Container: 透過エフェクト付きの画像を保持するラッパー */
+    .nav-image-side-wrapper {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background-color: #000000; 
+        overflow: hidden; 
+    }
+    
+    /* 画像コンテナ: 画像の切り替えアニメーションを管理する */
+    .nav-image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transform: scale(1.05);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    /* アクティブ時のスタイル */
+    .nav-image-container.active {
+        opacity: 1;
+        transform: scale(1); 
+    }
+    
+    .nav-content-side {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: flex-start; 
+        padding-top: 0;
+        padding-left: 100px;
+        background-color: #000000; 
+        justify-content: space-between; 
+    }
+
+    .sp-nav ul {
+        display: block;
+        padding-top: 6rem;
+        padding-left: 6rem;
+        height: auto;
+        margin-bottom: 4rem;
+    }
+    .sp-nav li {
+        margin-bottom: 4rm !important;
+    }
+    .nav-link-sp {
+        padding: 0;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        letter-spacing: 0.15em;
+        transition: color 0.3s;
+        color: var(--color-light); 
+    }
+    .nav-link-sp:hover {
+        color: var(--color-accent);
+    }
+
+    /* PC Nav Contact/Social */
+    .pc-nav-contact-btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border: 1px solid var(--color-light);
+        color: var(--color-light);
+        text-align: center;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+    }
+    .pc-nav-contact-btn:hover {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+    }
+    .pc-nav-contact-link-wrapper {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+    .pc-nav-contact-link-wrapper a {
+        display: block;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        font-size: 1.875rem;
+        letter-spacing: 0.1em;
+        color: var(--color-gray-light);
+    }
+}
+
+.col-ac{
+    color: var(--color-accent);
+}
+
+/* Mobile Menu Layout (Center Stacked) */
+@media (max-width: 1023px) {
+    .sp-nav {
+        padding-top: 80px;
+    }
+    .sp-nav ul {
+        height: 100%;
+        padding-top: 0;
+        padding-left: 2rem;
+        margin-bottom: 0;
+    }
+    .sp-nav li {
+        margin-bottom: 1.5rem;
+    }
+    .nav-link-sp {
+        font-size: 1.5rem;
+        display: block; 
+        align-items: initial;
+        gap: initial;
+        padding: 1rem 0;
+    }
+    .sp-nav-social {
+        padding: 3rem 2rem 1rem;
+        text-align: center;
+    }
+}
+
+/* ソーシャルアイコン共通スタイル */
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--color-light);
+    transition: color 0.3s;
+}
+.social-icon:hover {
+    color: var(--color-accent);
+}
+
+.z-51{
+    z-index:51;
+}
+
+@media (min-width: 1024px) {
+.nav-pad{
+    padding-bottom: 6rem;
+    padding-left: 6rem;
+        margin-top: 0;
+}}
+.nav-pad{
+    margin-top: 5rem;
+}
+
+/* -----------------------------------------------------------
+// [index_workから移植] Footer / Contact Styles
+// ----------------------------------------------------------- */
+
+footer{
+    position: relative;
+    padding-top: 30px;
+    margin-top: 6rem;
+    /* index_aboutの.footerを上書き */
+    background-color: transparent !important;
+}
+
+footer::before {
+    content: '';
+    top: -1.9rem;
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    z-index: 5;
+    bottom: 0;
+    background-color: #433f37;
+}
+
+footer .contact__content-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    z-index: 5;
+    top: 0;
+    background-color: white;
+}
+
+.footer__contact{
+    position: relative;
+    padding: 9rem auto 4rem;
+    height: 43rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+    .footer__contact{
+        padding: 8rem auto 4rem;
+        height:700px; 
+    }
+}
+
+/* 背景画像の設定 */
+.footer__contact:before{
+    background: url(https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg.jpg) no-repeat center; 
+    content: '';
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@media (min-width: 768px) { 
+    .footer__contact:before{
+        background-image: url(https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg-pc.jpg)!important; 
+        background-size: cover;
+    }
+}
+
+.contact__content-wrapper{
+    padding: 9rem 0 0;
+    position:relative;
+}
+
+@media (min-width: 768px) { 
+.contact__content-wrapper{
+    padding: 12rem 0 0;
+}}
+
+.contact__thanks-message{
+    font-size: 35px;
+    color: #fff;
+    text-shadow: 0 0 10px #5f493b;
+    margin-bottom: 5rem;
+    margin-top: 32px;
+}
+
+@media (min-width: 768px) { 
+.contact__thanks-message{
+    margin-bottom: 5rem; 
+}}
+
+.contact-title{
+    font-family: "minerva-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: center;
+    color: var(--color-dark);
+}
+
+@media (min-width: 768px) { 
+.contact-title{
+    font-size: 7rem;
+}}
+
+.footer__content-wrapper{
+    background-color: #000;
+    color: #fff;
+    margin-top: 4rem;
+}
+
+/* Mail Button */
+.mail-btn {
+    position: relative;
+    transition: all 0.3s;
+}
+.mail-btn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+.mail-btn:hover i {
+    color: var(--color-light);
+}
+
+.email{
+    width:80vw;
+    margin:0 auto;
+}
+
+@media (min-width: 768px) {
+    .email{
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* -----------------------------------------------------------
+// [index_workから移植] Page Top Button Styles
+// ----------------------------------------------------------- */
+.page-top-btn {
+    position: fixed;
+    /* PC: 右下 */
+    right: 40px; 
+    bottom: 40px;
+    z-index: 40;
+    opacity: 0;
+    /* ふわっと出現/消滅のアニメーション */
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    visibility: hidden; /* 初期状態では非表示 */
+}
+
+.page-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ボタン本体のデザイン */
+.page-top-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* 丸のサイズ */
+    height: 80px; /* 丸のサイズ */
+    border-radius: 50%;
+    background-color: var(--color-accent); /* アクセントカラー */
+    color: var(--color-dark);
+    text-align: center;
+    font-size: 0.75rem; /* Page Top の文字サイズ */
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.page-top-link:hover {
+    background-color: #ffd700; /* ホバーで少し明るく */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 矢印のデザイン */
+.page-top-icon {
+    font-size: 1.5rem; /* 矢印のサイズ */
+    margin-bottom: 2px; /* Page Top の文字との隙間 */
+    /* 矢印を少し上に配置するための調整 */
+    transform: translateY(-2px); 
+}
+
+@media (max-width: 768px) {
+    .page-top-btn {
+        /* SP: 右下 */
+        right: 20px;
+        bottom: 20px;
+    }
+    .page-top-link {
+        width: 60px; /* 丸のサイズを小さく */
+        height: 60px; /* 丸のサイズを小さく */
+    }
+    .page-top-icon {
+        font-size: 1.2rem;
+    }
+    .page-top-link span {
+        font-size: 0.6rem;
+    }
+}
+.text-dark{
+    color:#333;
+}
     </style>
 </head>
 
-<body id="top">
-<!-- Google Tag Manager (noscript) - 省略 -->
+<body id="top" class="min-h-screen">
 <div class="wrapper">
+    <div id="cursor" class="hidden lg:block fixed w-2.5 h-2.5 rounded-full bg-gray-500 z-[9999] pointer-events-none transition-all duration-500 ease-out" style="transform: translate(-5px, -5px);"></div>
 
-<!-- HEADER START -->
-<header class="header">
-	<div class="header-content">
-		<a class="header-logo" href="#">
-            <!-- 画像の代わりにテキストで代替 -->
-			<span class="text-xl font-bold">PORTFOLIO</span>
-		</a>
 
-		<div class="header-sns">
-            <!-- アイコンの代わりに絵文字で代替 -->
-			<a class="header-line" href="#" target="_blank">
-				<i class="icon icon-line-brands1" aria-hidden="true">💬</i>
-			</a>
-			<a class="header-instagram" href="#" target="_blank">
-				<i class="icon icon-instagram-brands1" aria-hidden="true">📷</i>
-			</a>
-		</div>
+<header class="fixed top-0 left-0 w-full h-20 z-51 bg-white">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+        <a class="header-logo" href="#" style="width: 175px; position: relative; top: 0; left: 0; transform: translateY(0); margin: 0;">
+            <span class="text-xl font-bold" style="color:var(--color-dark);">PORTFOLIO</span>
+        </a>
 
-        <!-- SPナビボタン -->
-        <div class="header-navi-button sp">
-            <span class="line line-top"></span>
-            <span class="line line-bottom"></span>
+        <button id="main-hamburger" class="hamburger z-50 w-10 h-10 relative" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <nav class="pc-header-navi pc">
+        <ul class="pc-header-items">
+            <li>
+                <a href="#">
+                    <span class="en">HOME</span>
+                    <span class="jp">トップ</span>
+                </a>
+            </li>
+            <li class="current">
+                <a href="about.html">
+                    <span class="en">ABOUT</span>
+                    <span class="jp">自己紹介</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="en">WORKS</span>
+                    <span class="jp">制作実績</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="en">SKILL</span>
+                    <span class="jp">スキル</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="en">CONTACT</span>
+                    <span class="jp">お問い合わせ</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<nav id="sp-nav" class="sp-nav hidden lg:flex-row bg-black">
+    <div id="nav-image-side-wrapper" class="nav-image-side-wrapper hidden lg:block">
         </div>
 
-        <!-- SPナビゲーションメニュー -->
-        <nav class="header-navi sp">
-            <div class="header-navi-inner">
-                <div class="header-navi-scroll">
-                    <div class="header-navi-content">
-                        <!-- ナビゲーション内のロゴは非表示 -->
-                        <ul class="header-navi-items">
-                            <li>
-                                <a href="#">
-                                    <span class="header-navi-item-title">HOME</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="about.html">
-                                    <span class="header-navi-item-title">ABOUT</span>
-                                    <ul class="header-navi-initems">
-                                        <li><a href="about.html">自己紹介</a></li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="header-navi-item-title">WORKS</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="header-navi-item-title">SKILL</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="header-navi-item-title">CONTACT</span>
-                                </li>
-                        </ul>
-                        <ul class="header-navi-sub-items">
-                            <li><a href="#">BLOG</a></li>
-                            <li><a href="#">PRIVACY POLICY</a></li>
-                        </ul>
-                    </div>
+    <div class="nav-content-side flex flex-col items-start justify-center p-8 lg:p-0">
+        <ul id="nav-list" class="flex flex-col h-full space-y-8 lg:space-y-4">
+            <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png">
+                <a class="nav-link-sp font-en font-medium" href="#">
+                     HOME
+                </a>
+            </li>
+            <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png">
+                <a class="nav-link-sp font-en font-medium" href="about.html">
+                    ABOUT
+                </a>
+            </li>
+            <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png">
+                <a class="nav-link-sp font-en font-medium" href="#">
+                  WORKS
+                </a>
+            </li>
+            <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png">
+                <a class="nav-link-sp font-en font-medium" href="#">
+                  CONTACT
+                </a>
+            </li>
+        </ul>
+        
+        <div class="nav-pad">
+            <div class="pc-nav-contact-link-wrapper lg:mt-12">
+                <p class="text-sm col-ac mb-2">CONTACT</p>
+                <a href="mailto:kuro.kuro.yuki0327@gmail.com" class="text-xs">Email: kuro.kuro.yuki0327@gmail.com</a>
+                
+                <div class="pc-nav-social hidden lg:flex space-x-4 mt-4">
+                    <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-lg" aria-label="LINE"><i class="fab fa-line"></i></a>
                 </div>
             </div>
-        </nav>
-
-		<nav class="pc-header-navi pc">
-			<ul class="pc-header-items">
-				<li>
-					<a href="#">
-						<span class="en">HOME</span>
-						<span class="jp">トップ</span>
-					</a>
-				</li>
-				<li class="current">
-					<a href="about.html">
-						<span class="en">ABOUT</span>
-						<span class="jp">自己紹介</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="en">WORKS</span>
-						<span class="jp">制作実績</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="en">SKILL</span>
-						<span class="jp">スキル</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="en">CONTACT</span>
-						<span class="jp">お問い合わせ</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</header>
-<!-- HEADER END -->
-
+        </div>
+    </div>
+    
+    <div class="sp-nav-social block lg:hidden flex justify-center space-x-10 mt-auto">
+        <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-2xl" aria-label="LINE"><i class="fab fa-line"></i></a>
+    </div>
+</nav>
 <div class="container">
-    <!-- HERO START -->
-	<div class="second-hero hero">
+    <div class="second-hero hero">
 		<h1 class="second-hero-title">
 			<span class="en">About Me</span>
 			<span class="jp">私について</span>
 		</h1>
 	</div>
-    <!-- HERO END -->
-
-	<main class="main">
+    <main class="main">
 		<article class="second">
 			<section class="second-text">
-				<!-- 1. 名前と写真と自己紹介文 -->
 				<div class="intro">
 					<div class="intro-ttl">
 					<p class="en">Designer Profile</p>
 					<h2 class="ttl">自己紹介</h2>
 					</div>
 					<div class="intro_img">
-                        <!-- 写真を挿入 -->
-						<img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img.png" width="400" height="500" alt="黒野坪祐貴の写真" style="border-radius: 10px;">
+                        <img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/about-img.png" width="400" height="500" alt="黒野坪祐貴の写真" style="border-radius: 10px;">
 								
-						<!-- 自己紹介テキスト (職務経歴書-職務要約と履歴書を基に修正) -->
 						<div style="width: 50%; padding-left: 20px;">
 							<h3 class="midashi01" style="margin-bottom: 2vw;">
 								<span class="en">Kuronotsubo Yuki</span>		
@@ -2129,20 +1907,16 @@ pc-size
 							<p>2021年より株式会社イーエスホールディングスにて、美容・飲食・ECなど幅広い業界の**販促物、Webサイト、SNS広告の制作**を一貫して担当しています。（デザイナー歴 [2021年4月～現在]）</p>
 							<p><span class="marker on">企画・提案力とマルチなクリエイティブスキルを強みに、集客・採用・ブランディング支援において成果を創出しています。</span></p>
 						</div>
-                        <!-- 装飾画像を削除 -->
-						<img class="retina deco" loading="lazy" src="https://placehold.co/411x317/f8f4f1/333?text=DECO" width="411" height="317" alt="装飾" style="display: none;">
+                        <img class="retina deco" loading="lazy" src="https://placehold.co/411x317/f8f4f1/333?text=DECO" width="411" height="317" alt="装飾" style="display: none;">
 					</div>
 				</div>
 				
-				<!-- 2. デザインで使えるツールのスキル紹介 -->
-                <!-- デザイン変更: 元の「主要使用ツール」のデザイン（画像＋テキスト）をここに適用 -->
 				<div class="features">
 					<h3 class="midashi02">
 						<span class="en">Skills & Tools</span>
 						<span class="jp">デザインスキルと使用ツール</span>
 					</h3>
 					
-                    <!-- .point クラスを使用して画像+テキストのレイアウトに変更 -->
                     <div class="point">
                         <img class="retina" loading="lazy" src="https://kuroyuki0327.github.io/kuroyuki/images/point01.png" width="550" height="535" alt="スキル一覧イメージ" >
                         <div class="text" style="width: 50%;">
@@ -2160,8 +1934,6 @@ pc-size
 				</div>
 			</section>
 
-			<!-- 3. 強み3点（自己PRと実績を基に構成） -->
-			<!-- デザインを添付画像のようなカード形式に更新 -->
 			<section class="recommend">
 				<div class="second-text">
 					<h4 class="ttl">
@@ -2169,13 +1941,10 @@ pc-size
 						<span class="jp">私の強み (3つのポイント)</span>
 					</h4>
 					
-					<!-- カードコンテナ -->
-                    <div class="strength-cards">
+					<div class="strength-cards">
                         
-                        <!-- カード 1: 成果直結型の提案力 -->
                         <div class="strength-card fade fade-bottom">
                             <span class="card-number">01</span>
-                            <!-- アイコン: 💡 (アイデア/企画) -->
                             <span class="card-icon">💡</span> 
                             <p class="card-title">成果直結型の提案力</p>
                             <div class="card-text">
@@ -2184,10 +1953,8 @@ pc-size
                             </div>
                         </div>
 
-                        <!-- カード 2: 集客導線を意識したECスキル -->
                         <div class="strength-card fade fade-bottom">
                             <span class="card-number">02</span>
-                            <!-- アイコン: 🛒 (EC/集客) -->
                             <span class="card-icon">🛒</span> 
                             <p class="card-title">集客導線を意識したECスキル</p>
                             <div class="card-text">
@@ -2196,10 +1963,8 @@ pc-size
                             </div>
                         </div>
 
-                        <!-- カード 3: マルチな制作対応力と効率化 -->
                         <div class="strength-card fade fade-bottom">
                             <span class="card-number">03</span>
-                            <!-- アイコン: ⚙️ (マルチ/効率化) -->
                             <span class="card-icon">⚙️</span> 
                             <p class="card-title">マルチな制作対応力と効率化</p>
                             <div class="card-text">
@@ -2211,8 +1976,6 @@ pc-size
 				</div>
 			</section>
 
-			<!-- 4. 主要使用ツールとスキルレベル -->
-            <!-- デザイン変更: 添付画像のMagazineリスト風デザインに変更 -->
 			<section class="second-text">
 				<div class="tool-section">
                     <h3 class="midashi02">
@@ -2246,8 +2009,7 @@ pc-size
 		</article>
 	</main>
 
-    <!-- BREADCRUMB START -->
-	<div class="breadcrumb">
+    <div class="breadcrumb">
 		<ul class="breadcrumb-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 			<li class="breadcrumb-home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 				<a itemprop="item" href="#">
@@ -2264,146 +2026,87 @@ pc-size
 			</li>
 		</ul>
 	</div>
-    <!-- BREADCRUMB END -->
-</div><!-- container -->
+    </div><footer style="position:relative; margin-top: 5rem;">
+    <div id="contact" class="footer__contact text-center">
+        <div class="contact__content-wrapper mx-auto relative">
+            <p class="contact__thanks-message">ご覧いただき<br class="sp">ありがとうございます</p>
+        </div>
 
-<!-- FOOTER START -->
-<footer class="footer">
-	<div class="footer-contact">
-		<a href="#">
-			<div class="footer-contact-text">
-				<p class="footer-contact-title">CONTACT</p>
-				<div class="footer-contact-comment">
-					<p>お仕事のご相談やお問い合わせなど、<br>お気軽にご連絡ください。</p>
-				</div>
-			</div>
-		</a>
+        <p class="contact-title">CONTACT</p>
+            
+        <div class="contact__mail mb-8">
+            <span class="block mb-6 text-sm">下記の連絡先にお気軽にご連絡ください</span>
+            
+            <div class="email">
+                <a class="mail-btn contact__mail-link inline-flex items-center justify-center w-full max-w-sm py-4 px-8 border border-accent rounded-full bg-white text-dark font-en tracking-wider text-sm" href="mailto:kuro.kuro.yuki0327@gmail.com">
+                    <i class="fas fa-envelope mr-3"></i> kuro.kuro.yuki0327@gmail.com
+                </a>
+            </div>
+            
+        </div>
 
-		<div class="pc-footer-fixed pc active">
-			<div class="footer-fixed-content">
-				<div class="footer-fixed-inner">
-					<a href="#">
-                        <!-- 画像の代わりにテキストで代替 -->
-						<div style="background:#fff; color:#333; padding: 15px; border-radius: 5px; text-align: center;">
-                            Contact お仕事のご依頼 <br>お問い合わせはこちら
-                        </div>
-					</a>
-					<span class="close-button"></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="footer-content">
-		<a class="footer-logo" href="#">
-			PORTFOLIO<span>黒野坪 祐貴</span>
-		</a>
-
-		<ul class="footer-social-items">
-			<li class="instagram">
-				<a href="#" target="_blank">📷 INSTAGRAM</a>
-			</li>
-			<li class="line">
-				<a href="#" target="_blank">💬 LINE</a>
-			</li>
-			<li class="company">
-				<a href="#" target="_blank">WEBSITE</a>
-			</li>
-		</ul>
-
-		<nav class="footer-navi">
-			<ul class="footer-navi-items">
-				<li><a href="#">トップ</a></li>
-				<li><a href="about.html">自己紹介</a></li>
-				<li><a href="#">制作実績</a></li>
-				<li><a href="#">スキル</a></li>
-				<li><a href="#">お問い合わせ</a></li>
-				<li><a href="#">プライバシーポリシー</a></li>
-			</ul>
-		</nav>
-	</div>
-
-	<div class="footer-foot">
-		<div class="footer-foot-content">
-			<div class="footer-company">
-                <!-- ロゴの代わりにテキストで代替 -->
-				<div class="name">DESIGN</div>
-				<address class="address">Email: kuro. kuro. yuki0327@gmail.com</address>
-			</div>
-			<p class="copyright">黒野坪 祐貴 ALL RIGHTS RESERVED.</p>
-		</div>
-	</div>
-
-    <!-- SPのフッター固定バナー -->
-    <a class="footer-fixed sp" href="#">
-        お問い合わせはこちら
-    </a>
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" style="color:var(--color-dark); margin-left: 10px; margin-right: 10px;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" style="color:var(--color-dark); margin-left: 10px; margin-right: 10px;" aria-label="LINE"><i class="fab fa-line"></i></a>
+        </div>
+    </div>
+    
+    <div class="footer__content-wrapper mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
+        <nav class="hidden sm:block">
+            <ul class="flex space-x-6">
+                <li><a href="#" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity">トップ</a></li>
+                <li><a href="about.html" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-dark">私について</a></li>
+                <li><a href="#" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-dark">制作実績</a></li>
+            </ul>
+        </nav>
+        <small class="text-xs font-medium tracking-[0.16em] text-center w-full sm:w-auto">© 2025 YUKI KURONOTSUBO</small>
+    </div>
 </footer>
-<!-- FOOTER END -->
+<div id="page-top" class="page-top-btn" role="button" aria-label="ページトップへ">
+    <a href="#top" class="page-top-link">
+        <i class="fas fa-arrow-up page-top-icon"></i> 
+        <span>Page Top</span>
+    </a>
+</div>
 
-</div><!-- wrapper -->
-
-<!-- 外部JSの代わりにインラインスクリプトを統合 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
-// common.js + slick.min.js の内容を統合
-// slick.min.js はサイズが大きいため、jQueryを読み込んだ後で直接コードを配置
+// index_workから移植した機能と、index_aboutの既存機能を統合
 
-// --- slick.min.js start (簡略化のために全コードは含めませんが、jQueryとslickの関数は定義されている前提とします) ---
-// slick.min.jsの代わりに、Slickを呼び出す部分のみを記述
-if (typeof jQuery.fn.slick === 'undefined') {
-    // デモ目的のため、Slickの機能を無効化または単純化します
-    jQuery.fn.slick = function(options) {
-        if (options === 'getSlick') {
-            return {
-                slideCount: this.find('.slick-slide').length,
-                options: options,
-                unslicked: false,
-                setSlideClasses: function() {},
-                slideHandler: function() {}
-            };
-        }
-        if (options === 'unslick') {
-            return this;
-        }
-        if (options === 'slickFilter') {
-            return this;
-        }
-        // 他のSlickメソッドの処理...
-        return this;
-    };
-}
-// --- slick.min.js end ---
+// --- Global Variables & Constants (index_workから移植) ---
+const cursor = document.getElementById('cursor');
+const mainHamburger = document.getElementById('main-hamburger');
+const spNav = document.getElementById('sp-nav');
+const navLinks = document.querySelectorAll('.nav-link-sp');
+const navImageSideWrapper = document.getElementById('nav-image-side-wrapper');
+const navListItems = document.querySelectorAll('#sp-nav li[data-img]');
+const navListContainer = document.getElementById('nav-list'); 
+// index_aboutのヒーローセクションをPage Topボタンの判定基準に設定
+const topSection = document.querySelector('.second-hero'); 
+const pageTopBtn = document.getElementById('page-top');
+
+// ABOUTページのダミー画像をデフォルトとして使用
+const defaultImageUrl = 'https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png'; 
+let lastShownImageUrl = defaultImageUrl;
+let currentNavImageElement = null;
+
 
 $(function(){
-    // pc_sp: 画面幅に応じてPC/SPを切り替える
+    // --- index_aboutの既存機能の統合 ---
+
+    // pc_sp: 画面幅に応じてPC/SPを切り替える (index_aboutの既存ロジックを維持)
 	if ($(window).width() > 736) {
 		$('.sp').remove();
 	} else {
-		$('.pc').remove();
+		// SP時には、index_aboutのオリジナルのナビゲーション要素を削除して、移植したハンバーガーメニューのみが機能するようにする
+		$('.header-navi-button, .header-navi').remove();
+        $('.pc').remove();
 	}
 
-    // navi: SPナビゲーションの開閉処理
-	var state = false;
-	var scrollpos;
-	$('.header-navi-button').on('click', function(){
-		if(state == false) {
-			scrollpos = $(window).scrollTop();
-            // bodyにposition: fixedを設定する代わりに、トップスクロール位置を調整
-			$('body').addClass('header-navi-open').css({'top': -scrollpos + 'px', 'overflow': 'hidden', 'height': '100vh'});
-			state = true;
-			$('body').removeClass("header-navi-closed");
-		} else {
-			$('body').removeClass('header-navi-open').css({'top': 0, 'overflow': '', 'height': ''});
-			window.scrollTo( 0 , scrollpos );
-			state = false;
-			$('body').toggleClass("header-navi-closed");
-		}
-	});
-
-
-    // pc navi current: PCナビの現在地表示処理
+    // navi: SPナビゲーションの開閉処理 (index_aboutの既存機能はindex_workのtoggleMenuに置き換わるため削除)
+	
+    // pc navi current: PCナビの現在地表示処理 (index_aboutの既存ロジックを維持)
 	var href = location.href;
 	var links = jQuery(".pc-header-items > li > a");
 	links.each(function (index, value) {
@@ -2426,42 +2129,9 @@ $(function(){
     }
 
 
-    let isClosed = false;
-
-    // スクロールイベント処理
+    // スクロールイベント処理 (index_workのPage Top Buttonのロジックに統合するため、既存の追従バナーロジックは削除)
 	$(window).on("scroll", function () {
-	    let scrollTop = $(window).scrollTop();
-	    let windowHeight = $(window).height();
-	    let footerContact = $(".footer-contact");
-	    let footerContactTop = footerContact.offset().top;
-	    let footerHeight = footerContact.innerHeight();
-	    let footerFixed = $(".pc-footer-fixed");
-	    let heroHeight = $(".hero").height();
-
-	    // heroを超えたら active を追加（isClosed が false の場合のみ）
-	    if (!isClosed && scrollTop > heroHeight) {
-	        $(".footer-fixed, .pc-footer-fixed").addClass("active");
-	    } else if (scrollTop <= heroHeight) {
-            // heroエリアに戻ったら非表示
-            $(".footer-fixed, .pc-footer-fixed").removeClass("active");
-        }
-
-	    // footer-contactがウィンドウの下を過ぎたらクラスを追加 (PCのみ)
-        if ($(window).width() > 736) {
-            let stopPoint = footerContactTop - windowHeight + footerFixed.height() + 30; // 調整
-            if (scrollTop + windowHeight > footerContactTop + footerHeight) {
-                footerFixed.addClass("stop");
-                footerFixed.css('top', footerContactTop + footerHeight - footerFixed.height() - 30 + 'px');
-                footerFixed.css('bottom', 'auto');
-            } else {
-                footerFixed.removeClass("stop");
-                footerFixed.css('top', 'auto');
-                footerFixed.css('bottom', '30px'); // CSSで設定された値
-            }
-        }
-
-
-	    // スクロールアニメーション (.fade)
+        // スクロールアニメーション (.fade) (index_aboutの既存ロジックを維持)
 		var box = $('.fade');
 		var animated = 'fade-active';
 		box.each(function(){
@@ -2472,15 +2142,15 @@ $(function(){
 				$(this).addClass(animated);
 			}
 		});
+        
+        // Page Top Button Visibility (index_workのロジックを呼び出し)
+        updatePageTopButton();
+
 	}).trigger('scroll'); // 初期表示時にも実行
 
-    // 閉じるボタンのクリックで active を削除し、isClosedをtrueに設定 (PCのみ)
-	$('.pc-footer-fixed .close-button').on('click', function () {
-	    $('.pc-footer-fixed').removeClass('active');
-	    isClosed = true; // 一度閉じたら、スクロールしても再表示しない
-	});
+    // 閉じるボタンのクリックで active を削除し、isClosedをtrueに設定 (index_workのPage Topボタンにはない機能なので削除)
 
-	// markerアニメーション
+	// markerアニメーション (index_aboutの既存ロジックを維持)
 	window.addEventListener('scroll',function() {
 		const height = window.innerHeight;
 		const scroll = this.pageYOffset;
@@ -2494,15 +2164,228 @@ $(function(){
 		});
 	});
 
-    // ページ内リンク対策
+    // ページ内リンク対策 (index_aboutの既存ロジックを維持)
     $('a[href^="#"]').on('click', function() {
         var href = $(this).attr("href");
         var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top - (($(window).width() > 736) ? 115 : 15 * 3.5); // ヘッダーの高さを考慮
+        var headerHeight = ($(window).width() > 736) ? 115 : 80; // PC時は115px、SP時は80px (ヘッダーの高さ)
+        var position = target.offset().top - headerHeight; 
         $('body,html').animate({scrollTop:position}, 400, 'swing');
         return false;
     });
 
+    // --- index_workから移植したJavaScript関数 ---
+    
+    function isDesktop() {
+        return window.innerWidth >= 1024;
+    }
+
+    // Custom Cursor Logic (Desktop Only)
+    function updateCursor() {
+        if (!isDesktop() || !cursor) return;
+        let mouseX = 0;
+        let mouseY = 0;
+        let posX = window.innerWidth / 2;
+        let posY = window.innerHeight / 2;
+
+        document.addEventListener('mousemove', function (e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            posX += (mouseX - posX) * 0.1;
+            posY += (mouseY - posY) * 0.1;
+            cursor.style.transform = `translate(${posX}px, ${posY}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        if (!cursor.dataset.isAnimating) {
+            cursor.dataset.isAnimating = 'true';
+            animateCursor();
+        }
+
+        document.querySelectorAll('a, button, .works-card, .hamburger').forEach(el => {
+            el.addEventListener('mouseover', () => cursor.classList.add('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
+            el.addEventListener('mouseout', () => cursor.classList.remove('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
+        });
+    }
+
+    // PC Navigation Image Logic (Element Switching)
+    function showNavImage(imageUrl, forceTransition = true) {
+        if (!isDesktop() || !navImageSideWrapper || !imageUrl) return;
+
+        if (imageUrl === lastShownImageUrl && currentNavImageElement) {
+             return; 
+        }
+        
+        const oldImageElement = currentNavImageElement;
+
+        const newImageContainer = document.createElement('div');
+        newImageContainer.classList.add('nav-image-container');
+        newImageContainer.style.backgroundImage = `url('${imageUrl}')`;
+        
+        navImageSideWrapper.appendChild(newImageContainer);
+
+        if (forceTransition) {
+             setTimeout(() => {
+                newImageContainer.classList.add('active');
+            }, 10); 
+        } else {
+            newImageContainer.classList.add('active');
+        }
+
+        currentNavImageElement = newImageContainer;
+        lastShownImageUrl = imageUrl;
+
+        if (oldImageElement) {
+            oldImageElement.classList.remove('active');
+            
+            setTimeout(() => {
+                if (oldImageElement.parentNode === navImageSideWrapper && oldImageElement !== currentNavImageElement) {
+                    navImageSideWrapper.removeChild(oldImageElement);
+                }
+            }, 600); 
+        }
+    }
+
+    function setInitialNavImage() {
+        if (isDesktop() && !currentNavImageElement) {
+            showNavImage(defaultImageUrl, false); 
+        }
+    }
+
+    // Hamburger Menu Logic
+    function toggleMenu() {
+        const isOpen = mainHamburger.classList.toggle('open'); 
+
+        if (isOpen) {
+            spNav.classList.remove('hidden');
+            
+            if (isDesktop()) {
+                spNav.classList.add('flex'); 
+                setInitialNavImage(); 
+            } else {
+                spNav.classList.add('block'); 
+            }
+            
+            setTimeout(() => {
+                spNav.classList.add('opacity-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+            
+            // SPナビの背景とPCナビの背景が被るため、PCナビを非表示にする
+            if(isDesktop()) {
+                $('.pc-header-navi').css('visibility', 'hidden');
+            }
+        } else {
+            spNav.classList.remove('opacity-100');
+
+            setTimeout(() => {
+                spNav.classList.add('hidden');
+                spNav.classList.remove('flex', 'block');
+                document.body.style.overflow = ''; 
+                
+                if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
+                    navImageSideWrapper.removeChild(currentNavImageElement);
+                }
+                currentNavImageElement = null;
+                lastShownImageUrl = defaultImageUrl;
+
+                // PCナビを再表示
+                if(isDesktop()) {
+                    $('.pc-header-navi').css('visibility', 'visible');
+                }
+            }, 500); 
+        }
+    }
+
+    mainHamburger.addEventListener('click', toggleMenu);
+    navLinks.forEach(link => link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if(href.startsWith('#')){
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if(targetElement) {
+                // スムーズスクロール (index_aboutのロジックを流用)
+                var headerHeight = ($(window).width() > 736) ? 115 : 80;
+                var position = targetElement.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: position,
+                    behavior: 'smooth'
+                });
+            }
+            setTimeout(toggleMenu, 500); 
+        } else {
+             // 外部リンクの場合はそのまま遷移
+            setTimeout(toggleMenu, 500);
+        }
+    })); 
+
+    // PC Navigation Hover Logic
+    navListItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            if (isDesktop()) {
+                const imageUrl = item.getAttribute('data-img');
+                showNavImage(imageUrl, true); 
+            }
+        });
+    });
+
+    if (navListContainer) {
+        navListContainer.addEventListener('mouseleave', () => {
+            if (isDesktop() && mainHamburger.classList.contains('open')) {
+                showNavImage(defaultImageUrl, true); 
+            }
+        });
+    }
+
+    // Handle PC/SP layout on resize
+    window.addEventListener('resize', () => {
+        const isOpen = mainHamburger.classList.contains('open');
+        updateCursor();
+
+        if (isOpen) {
+            spNav.classList.remove('hidden', 'flex', 'block');
+            spNav.classList.add('opacity-100'); 
+            if (isDesktop()) {
+                spNav.classList.add('flex');
+                setInitialNavImage();
+            } else {
+                spNav.classList.add('block');
+                if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
+                    navImageSideWrapper.removeChild(currentNavImageElement);
+                    currentNavImageElement = null;
+                    lastShownImageUrl = defaultImageUrl;
+                }
+            }
+        } else {
+            spNav.classList.add('hidden');
+            spNav.classList.remove('flex', 'block', 'opacity-100');
+        }
+    });
+
+    // Page Top Button Visibility
+    function updatePageTopButton() {
+        const fvHeight = topSection ? topSection.offsetHeight : 0; 
+
+        if (window.scrollY > fvHeight) { 
+            pageTopBtn.classList.add('visible');
+        } else {
+            pageTopBtn.classList.remove('visible');
+        }
+    }
+
+    pageTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // --- Initialization ---
+    updateCursor();
+    updatePageTopButton(); 
+    window.dispatchEvent(new Event('resize')); 
 });
 </script>
 
