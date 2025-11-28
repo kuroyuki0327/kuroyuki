@@ -660,7 +660,25 @@
             padding: 10vw 0; 
             margin-bottom: 6vw;
 			left: 11rem;
+			position:relative;
         }
+
+		.recommend::before{
+		    content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: #fcfaf5;
+		}
+
+		@media (min-width: 1801px) {
+		.recommend::before{
+		   left: 11rem;
+		}
+		}
+		
         .recommend .ttl{position: relative;margin-bottom: 4vw;padding-top: 0;}
         .recommend .ttl .en{text-align: center;display: block;font-size: 14vw;position: absolute;transform: translateX(-50%);left: 50%;width: 100%;top: -6vw;opacity: 0.1;color: #333;font-family: minerva-modern; font-weight: 400;} 
         .recommend .ttl .jp{color: #333;font-family: "游明朝", YuMincho, serif;text-align: center;display: block;font-size: 7vw; margin-bottom: 8vw;} 
