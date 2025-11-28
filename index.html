@@ -1622,10 +1622,20 @@
 
     mainHamburger.addEventListener('click', toggleMenu);
 
-    // ナビゲーションリンクのクリック処理
+  // ナビゲーションリンクのクリック処理
     navLinks.forEach(link => link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
+        const href = link.getAttribute('href');
+        
+        // ページ内リンクの場合のみ、デフォルト動作をキャンセル
+        if (href.startsWith('#')) {
+            e.preventDefault();
+        } else {
+            // ページ遷移が起こるため、そのまま処理を終了
+            // メニューを閉じる動作もキャンセルして、すぐに遷移させる
+            return;
+        }
+
+        const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
         
         if(targetElement) {
@@ -1638,9 +1648,10 @@
             setTimeout(toggleMenu, 500); 
         } else {
              // リンク先がセクションでない場合（e.g., #top, #contactなど）はそのまま閉じる
+             // ただし、このポートフォリオの構造では、外部ページリンクは既にreturnで処理されている
              setTimeout(toggleMenu, 500);
         }
-    })); 
+    }));
 
     // PC Navigation Hover Logic 
     navListItems.forEach(item => {
