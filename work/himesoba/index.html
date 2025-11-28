@@ -437,10 +437,10 @@
         @media all and (min-width: 768px) {
         .top-inner {
             /* index_2511_himesoba.html の高さを維持 (800px) */
-            height: 800px;
-            padding-top: 200px;
+            height: 41rem;
+            padding-top:10rem;
             width: 100%;
-            max-width: 1100px;
+            max-width: 53rem;
             margin: auto;
             padding-left: 0;
             padding-right: 0;
@@ -470,6 +470,13 @@
                 top: -130px;
             }
         }
+        @media all and (min-width:1801px) {
+            .c-bg-white01.is-top-130::before {
+                left: 7rem;
+            }
+        }
+
+        
         @media all and (max-width: 767px) {
             .c-bg-white01::before {
                 border-radius: 0;
@@ -477,11 +484,69 @@
         }
         /* Works詳細固有のクラスを維持 */
         .c-bg-white01__inner { position: relative; z-index: 1; }
-        .works-single__inner { padding-top: 40px; padding-bottom: 55px; }
+        .works-single__inner {  padding-bottom: 55px; }
 
         /* 不要になったスタイルを削除または調整 (例: Header/Footerがないため) */
         /* l-nav, l-nav-btn, l-cv-contact, l-footer などは削除または上書き */
 
+        @media all and (max-width: 767px) {
+            .c-single02__area-img{
+                flex-direction: column;
+            }}
+        
+        .c-single02-info__sec{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 4.5rem;
+        }
+
+        .c-single02-mv__img{
+            width: 46rem;
+            margin: 0 auto;
+        }
+
+.c-single02-mv__img::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    bottom: 0;
+    height: 150px;
+    background: #f4f7f8;
+    z-index: -1;
+}
+        
+@media (min-width: 768px) {
+    .c-single02-mv__img::before {
+        bottom: 0;
+        left: 0px;
+        right: 0px;
+        height: 400px;
+    }
+}
+
+        .c-single02__txt{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .c-head01__en{
+            font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--color-accent);
+            font-size: 0.8rem;
+        }
+        .c-head01__ja{
+            font-size: 2.5rem;
+        }
+        .c-single02__img-pc{
+            width: 30vw;
+        }
+        
+        .c-single02__img-sp{
+            width: 27.5vw;
+        }
     </style>
 </head>
 <body id="himesoba" class="bg-gray-light min-h-screen">
@@ -677,9 +742,16 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- パンくずリスト (既存のものを削除し、Worksのデザインに合わせるため削除) -->
+                        <!-- <div class="l-breadcrumb hidden md:block border-t border-gray-med">...</div> -->
+                    </div>
+                </div>
+            </div>
 
                             <!-- その他の制作実績 -->
-                            <section id="other" class="works-single-other bg-gray-light py-16 md:py-24">
+                            <section id="other" class="works-single-other py-16 md:py-24">
                                 <div class="works-single-other__inner max-w-7xl mx-auto px-4 md:px-6">
                                     <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16">
                                         <header class="works-single-other__heading-head w-full md:w-auto">
@@ -756,17 +828,8 @@
                                     </div>
                                 </div>
                             </section>
-                        </div>
 
-                        <!-- パンくずリスト (既存のものを削除し、Worksのデザインに合わせるため削除) -->
-                        <!-- <div class="l-breadcrumb hidden md:block border-t border-gray-med">...</div> -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- コンタクトセクション (Worksページのものに置き換え) -->
-            <!-- 既存のl-cv-contactセクションは削除されました -->
-
+            
         </main>
 
         <!-- Footer (index_2511_work.html から移植) -->
@@ -1052,3 +1115,4 @@
 
 </body>
 </html>
+
