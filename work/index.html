@@ -452,14 +452,6 @@
             font-family: 'Heebo', sans-serif;
         }
 
-        .font-albert {
-            font-family: 'Albert Sans', sans-serif;
-        }
-
-        .font-jp-gothic {
-            font-family: 'Zen Kaku Gothic New', sans-serif;
-        }
-
         /* Works Card Hover Effect */
         .works-card-overlay {
             background-image: linear-gradient(0deg, var(--color-dark) 0%, rgba(33, 40, 54, 0) 50%);
@@ -490,52 +482,142 @@
             }
         }
 
-        /* Work Top Section (Revised) */
         .work-top{
-            /* 背景画像はそのまま使用し、HTML側のオーバーレイで白っぽく見せる */
             background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/img_work_sp.jpg");
             background-attachment: fixed; /* 背景画像を固定 */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            /* 以前のheight設定は削除し、min-heightを使用 */
-            min-height: 400px;
         }
         
         @media (min-width: 768px) {
-            .work-top{
-                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/img_work_pc.jpg");
-                min-height: 500px;
+        .work-top{
+            background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/img_work_pc.jpg");
             }
         }
 
-        /* 旧スタイルの残骸（必要に応じて削除可能ですが、念のため残しておきます） */
         .font-minerva{
             font-family: "minerva-modern", sans-serif;
             font-weight: 400;
             font-style: normal;
         }
+
         .font-futura{
             font-family: "futura-pt", sans-serif;
             font-weight: 400;
             font-style: normal; 
         }
 
-        .text-base-jp{
+        .title-en{
+            font-size:3rem;
+            line-height: 3.5rem;
+            color: #fff;
+        }
+        
+        @media (min-width: 768px) {
+        .title-en{
+            font-size:5rem;
+            line-height: 6rem;
+        }
+        }
+        
+        .title-jp{
+            font-size:1rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        } 
+        @media (min-width: 768px) {        
+            .title-container{
+                align-items: center;
+                display:flex;
+        }
+        }  
+
+        .title-wrap{
+            width: 50%;
+        } 
+
+        .title-container{
+            max-width: 1100px;
+        }
+
+        .title-txt{
+            font-size: 1.1rem;
+            line-height: 2rem;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .text-base{
             font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
         }
 
-        /* * top-bg-white 関連の調整
-         * work-topのデザイン変更に伴い、重なりなどの調整
-         */
+        .top-inner{
+            height: 365px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-top: 130px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .u-inner {
+                width: 100%;
+               max-width: 1100px;
+               margin: auto;
+               padding-left: 0;
+               padding-right: 0;
+            }
+        }
+        
+        @media all and (min-width: 768px) {
+        .top-inner {
+            height: 650px;
+            padding-top: 260px;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }}
+        
         .top-bg-white {
             position: relative;
             background:#fbfbf5;
         }
-        /* 前のデザインの「丸い切り込み」が不要な場合は削除するか、調整してください。
-           今回はシンプルなデザインに合わせて、border-topなどは控えめにします。
-        */
         
+        .top-bg-white::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #fff;
+            border-top: solid 6px var(--color-accent);
+            border-radius: 5rem;
+        }
+
+        .top-bg-white-inner {
+            position: relative;
+            z-index: 1;
+            margin-right:0;
+            margin-left:auto;
+        }
+
+        @media all and (min-width: 768px) {
+            .top-bg-white::before {
+                    top: -80px;
+                    width: 100%;
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+        @media all and (min-width: 1801px) {
+                .top-bg-white::before {
+                    left: 160px;
+                }
+            }
+
         .category-button {
             background-color: var(--color-light);
             color: var(--color-dark);
@@ -639,44 +721,27 @@
         </nav>
 
         <main role="main">
-            <!-- 
-                Title Section (Work Top)
-                添付画像のデザインに合わせて修正 
-                - 背景画像の上に白いオーバーレイ
-                - 左にタイトル、右に説明文の2カラムレイアウト
-            -->
-            <div class="work-top relative flex items-center justify-center">
-                <!-- White Overlay (うっすら背景が見えるように透過度調整) -->
-                <div class="absolute inset-0 bg-white/90 z-0"></div>
-                
-                <!-- Content Container -->
-                <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-40">
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-16">
-                        
-                        <!-- Left Side: Title -->
-                        <div class="lg:w-5/12">
-                            <h1 class="font-albert font-bold text-[#333] text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none">
-                                Works
-                            </h1>
-                            <p class="mt-4 font-jp-gothic text-[#333] text-sm md:text-base font-medium tracking-widest pl-1">
-                                制作実績
-                            </p>
-                        </div>
-                        
-                        <!-- Right Side: Description -->
-                        <div class="lg:w-6/12">
-                            <p class="font-jp-gothic text-[#333] text-sm md:text-base lg:text-lg leading-relaxed lg:leading-loose">
-                                コーポレートサイトやリクルートサイト、集客サイトなど幅広い制作実績がございます。成果の伴うホームページを自信と覚悟をもって制作しております。
-                            </p>
-                        </div>
-                        
+            <!-- Sub-Image / Title Section (FVとみなすセクション) -->
+            <div class="work-top relative flex items-center justify-center bg-cover bg-center">
+                <div class="inset-0 top-inner">
+                    <div class="l-sub-img__works text-white">
+                    <div class="l-sub-img__works-info">
+                        <h1 class="l-sub-img__works-info-name text-2xl md:text-4xl font-bold">サムコ株式会社</h1>
+                        <p class="l-sub-img__works-info-cat inline-block bg-primary text-white px-3 py-1 text-xs md:text-sm rounded-full mt-2">ブランディング</p>
                     </div>
+                    <p class="l-sub-img__works-txt text-xl md:text-5xl font-bold mt-4 md:mt-6">世界の技術基盤を支える、装置メーカーとしての価値を伝えるサイト</p>
+                    <p class="l-sub-img__works-url mt-6 md:mt-8">
+                        <a href="https://www.samco.co.jp/" target="_blank" rel="noopener noreferrer" class="text-white opacity-75 text-sm md:text-base hover:opacity-100 transition-opacity duration-300">
+                            https://www.samco.co.jp/ <span class="ml-1 inline-block">↗</span>
+                        </a>
+                    </p>
+                </div>
                 </div>
             </div>
 
             <!-- Main Content (Categories & Archive) -->
             <div class="top-bg-white min-h-[500px] py-10 md:py-16">
-                <div class="top-bg-white-inner container px-4 mx-auto max-w-6xl">
+                <div class="top-bg-white-inner container px-4">
                     
                     <!-- Category Filters -->
                     <div class="mb-8 md:mb-12 border-b border-gray-300 pb-4">
@@ -697,118 +762,118 @@
                     </div>
 
                     <!-- Works Archive Grid -->
-                    <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 
                         <!-- Mock Work Item Structure -->
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="branding">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="branding">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design01.jpg" alt="ひめそばの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>十割そば ひめそば</span>
                                     <span class="hidden md:inline font-futura">｜ブランディング</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">十割そば「ひめそば」の魅力を伝えるサイトづくり</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">十割そば「ひめそば」の魅力を伝えるサイトづくり</p>
                             </div>
                         </a>
 
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="branding">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="branding">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design02.jpg" alt="BIMERAの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>トータルビューティーサロン BIMERA(ビメラ）</span>
                                     <span class="hidden md:inline font-futura">｜ブランディング</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">BIMERAのメニューやこだわり、店の雰囲気を伝える</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">BIMERAのメニューやこだわり、店の雰囲気を伝える</p>
                             </div>
                         </a>
 
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruiting-site">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-site">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design03.jpg" alt="SALONS Beauty Group美容師求人サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>SALONS Beauty Group美容師求人サイト</span>
                                     <span class="hidden md:inline">｜求人サイト</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
+                                <p class="text-sm md::text-xl font-bold leading-snug">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
                             </div>
                         </a>
 
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruiting-ads">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-ads">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design04.jpg" alt="美容師求人の制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>SALONS Beauty Group美容師求人広告</span>
                                     <span class="hidden md:inline">｜求人広告</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">ビジュアルと惹きつけるキャッチで魅力を伝える</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">ビジュアルと惹きつけるキャッチで魅力を伝えるInstagram求人フィード広告画像</p>
                             </div>
                         </a>
 
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruiting-ads">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-ads">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design05.jpg" alt="美容師求人（動画広告）の制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>SALONS Beauty Group美容師求人広告</span>
                                     <span class="hidden md:inline">｜求人広告</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">スタッフの実際の声を取り込んだInstagramストーリーズ広告</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">スタッフの実際の声を取り込んだInstagramストーリーズ広告動画</p>
                             </div>
                         </a>
                         
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruiting-site">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruiting-site">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design06.jpg" alt="アカデミーの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>SALONSアカデミー</span>
                                     <span class="hidden md:inline">｜求人サイト</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">その先を共に創り出す、和の力が可能性を広げる印象を与える</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">その先を共に創り出す、和の力が可能性を広げる印象を与えるサイト</p>
                             </div>
                         </a>
                         
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruit">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruit">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design07.jpg" alt="採用サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>積水成型工業株式会社</span>
                                     <span class="hidden md:inline">｜リクルート</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">プラスチックの可能性と企業の姿勢を表現した採用サイト</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">プラスチックの可能性と企業の姿勢を表現した採用サイト</p>
                             </div>
                         </a>
 
-                        <a href="#" class="works-card relative block overflow-hidden shadow-lg group" data-categories="recruit">
-                            <div class="overflow-hidden aspect-video relative">
+                        <a href="#" class="works-card relative block overflow-hidden shadow-lg" data-categories="recruit">
+                            <div class="overflow-hidden">
                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/design08.jpg" alt="採用サイトの制作実績画像" class="works-card-img w-full h-full object-cover">
-                                <div class="works-card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50"></div>
+                                <div class="works-card-overlay absolute inset-0"></div>
                             </div>
-                            <div class="p-4 bg-white">
-                                <p class="text-xs text-gray-500 mb-1">
+                            <div class="p-4 absolute inset-x-0 bottom-0 text-white z-10">
+                                <p class="text-xs opacity-70 mb-1">
                                     <span>積水成型工業株式会社</span>
                                     <span class="hidden md:inline">｜リクルート</span>
                                 </p>
-                                <p class="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-amber-500 transition-colors">プラスチックの可能性と企業の姿勢を表現した採用サイト</p>
+                                <p class="text-sm md:text-xl font-bold leading-snug">プラスチックの可能性と企業の姿勢を表現した採用サイト</p>
                             </div>
                         </a>
                     </div>
@@ -1178,3 +1243,4 @@
 </body>
 
 </html>
+
