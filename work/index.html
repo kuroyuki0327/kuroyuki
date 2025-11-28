@@ -124,7 +124,10 @@
 
         /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
         .sp-nav a {
-            color: var(--color-light); 
+    color: var(--color-light);
+    font-family: "minerva-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
         }
 
         /* PC Menu Layout (Side-by-Side) */
@@ -171,14 +174,14 @@
             }
 
             .sp-nav ul {
-                display: block;
-                padding-top: 0;
-                padding-left: 0;
-                height: auto;
-                margin-bottom: 4rem; 
+        display: block;
+        padding-top: 6rem;
+        padding-left: 6rem;
+        height: auto;
+        margin-bottom: 4rem;
             }
             .sp-nav li {
-                margin-bottom: 1.5rem; 
+                margin-bottom: 4rem; 
             }
             .nav-link-sp {
                 padding: 0;
@@ -214,11 +217,16 @@
             }
             .pc-nav-contact-link-wrapper a {
                 display: block;
-                margin-bottom: 0.5rem;
-                font-size: 0.875rem;
+                margin-bottom: 1.5rem;
+                margin-top: 1rem;
+                font-size: 1.875rem;
                 letter-spacing: 0.1em;
                 color: var(--color-gray-light);
             }
+        }
+
+        .col-ac{
+            color: var(--color-accent);
         }
 
         /* Mobile Menu Layout (Center Stacked) */
@@ -260,7 +268,14 @@
         .z-51{
             z-index:51;
         }
+        
+        @media (min-width: 1024px) {
+        .nav-pad{
+        padding-bottom: 6rem;
+        padding-left: 6rem;
+        }}
 
+        
         /* --- Footer / Contact Styles (index_2511から移植) --- */
 
         footer{
@@ -696,7 +711,7 @@
                 </ul>
                 
                 <!-- PC Nav Contact/Social (index_2511から移植) -->
-                <div class="lg:mt-auto lg:pb-12">
+                <div class="nav-pad">
                      <!-- 添付画像の「オンラインストア」相当のボタン -->
                     <a href="#" class="pc-nav-contact-btn mb-6" style="border-color: var(--color-accent); color: var(--color-accent);">ONLINE STORE</a>
                     
@@ -705,7 +720,7 @@
 
                     <!-- 添付画像の「お問合せ」相当のコンタクトリンク -->
                     <div class="pc-nav-contact-link-wrapper lg:mt-12">
-                        <p class="text-sm text-gray-400 mb-2">CONTACT</p>
+                        <p class="text-sm col-ac mb-2">CONTACT</p>
                         <a href="mailto:peche.toitoitoi@gmail.com" class="text-xs">Email: peche.toitoitoi@gmail.com</a>
                         
                         <!-- PC Nav Social Icons -->
@@ -1253,4 +1268,5 @@
 </body>
 
 </html>
+
 
