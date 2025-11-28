@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- タイトルは詳細ページに合わせる -->
     <title>SALONS Beauty Group美容師求人サイト｜制作実績</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome (ソーシャルメディアアイコン用) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Font -->
     <link rel="stylesheet" href="https://use.typekit.net/lpw2bst.css">
     <link rel="stylesheet" href="https://use.typekit.net/sxz8txc.css">
-    <!-- Font Awesomeの代わりに、Worksページで使用しているカスタムフォントを維持し、追加で読み込む -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         /*
-         * index_2511_work.html から移植されたカスタムスタイルと変数を追加
+         * --- 変数とベーススタイルの統合 ---
          */
         @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
 
@@ -26,14 +21,13 @@
             --color-accent: #f1d506;
             --color-light: #fcfcfc;
             --color-gray-light: #dddddd;
-            --color-hover-orange: #333; /* index_topに合わせる */
+            --color-hover-orange: #333; 
             --font-jp: "Zen Kaku Gothic New", sans-serif;
             --font-en: "Albert Sans", sans-serif;
             --color-primary-dark: #363d4b;
         }
 
         body {
-            /* index_2511_work.html のフォント設定を反映 */
             font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
             color: var(--color-dark);
             background-color: var(--color-light);
@@ -89,7 +83,7 @@
         }
 
         /* =========================================================================
-            Header & Navigation Styles (index_2511_work.html から移植)
+            Header & Navigation Styles (index_work.html から移植)
             ========================================================================= */
 
         /* --- ハンバーガーアイコンの修正部分 --- */
@@ -149,6 +143,9 @@
         /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
         .sp-nav a {
             color: var(--color-light);
+            font-family: "minerva-modern", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
         /* PC Menu Layout (Side-by-Side) */
@@ -187,7 +184,7 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: flex-start;
                 padding-top: 0;
                 padding-left: 100px;
@@ -196,13 +193,13 @@
 
             .sp-nav ul {
                 display: block;
-                padding-top: 0;
-                padding-left: 0;
+                padding-top: 6rem;
+                padding-left: 6rem;
                 height: auto;
                 margin-bottom: 4rem;
             }
             .sp-nav li {
-                margin-bottom: 1.5rem;
+                margin-bottom: 4rem !important;
             }
             .nav-link-sp {
                 padding: 0;
@@ -215,33 +212,28 @@
             .nav-link-sp:hover {
                 color: var(--color-accent);
             }
-
+             
             /* PC Nav Contact/Social */
-            .pc-nav-contact-btn {
-                display: inline-block;
-                padding: 0.75rem 2rem;
-                border: 1px solid var(--color-light);
-                color: var(--color-light);
-                text-align: center;
-                transition: all 0.3s ease;
-                font-size: 1rem;
-                letter-spacing: 0.1em;
-                margin-bottom: 1rem;
-            }
-            .pc-nav-contact-btn:hover {
-                background-color: var(--color-light);
-                color: var(--color-dark);
-            }
             .pc-nav-contact-link-wrapper {
-                margin-top: 4rem;
+                margin-top: 0;
                 margin-bottom: 2rem;
+            }
+             /* index_workのクラス */
+            .col-ac{
+                color: var(--color-accent);
             }
             .pc-nav-contact-link-wrapper a {
                 display: block;
-                margin-bottom: 0.5rem;
-                font-size: 0.875rem;
+                margin-bottom: 1.5rem;
+                margin-top: 1rem;
+                font-size: 1.875rem;
                 letter-spacing: 0.1em;
                 color: var(--color-gray-light);
+            }
+             .nav-pad{
+                padding-bottom: 6rem;
+                padding-left: 6rem;
+                margin-top: 0;
             }
         }
 
@@ -308,7 +300,7 @@
 
         /* 背景画像の設定 - index_top.htmlから移植 */
         .footer__contact:before{
-            background: url("https://placehold.co/400x400/DCEBEE/37383C?text=Contact+BG+SP") no-repeat center; /* ダミー画像 SP */
+            background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg.jpg") no-repeat center;
             content: '';
             width: 100%;
             height: 400px;
@@ -325,38 +317,38 @@
 
         @media (min-width: 768px) {
             .footer__contact:before{
-                background: url("https://placehold.co/1920x400/DCEBEE/37383C?text=Contact+BG+PC") no-repeat center; /* PC用ダミー画像 */
+                background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg-pc.jpg") no-repeat center;
                 background-size: cover;
             }
         }
 
         .contact__content-wrapper{
-            padding: 10rem 0 0; /* index_topに合わせる */
+            padding: 10rem 0 0; 
         }
 
         @media (min-width: 768px) {
         .contact__content-wrapper{
-            padding: 12rem 0 0; /* index_topに合わせる */
+            padding: 12rem 0 0; 
         }}
 
         .contact__thanks-message{
             font-size: 35px;
             color: #fff;
             text-shadow: 0 0 10px #5f493b;
-            margin-bottom: 5rem; /* index_topに合わせる */
+            margin-bottom: 5rem; 
         }
 
         @media (min-width: 768px) {
         .contact__thanks-message{
-            margin-bottom: 5rem; /* index_topに合わせる */
+            margin-bottom: 5rem; 
         }}
 
         .contact-title{
             font-family: "minerva-modern", sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 4rem; /* index_topに合わせる */
-            letter-spacing: 0.2rem; /* index_topに合わせる */
+            font-size: 4rem; 
+            letter-spacing: 0.2rem; 
             display: flex;
             justify-content: center;
         }
@@ -384,19 +376,19 @@
         .mail-btn:hover i {
             color: var(--color-light);
         }
-        .email{ /* index_topに合わせる */
+        .email{ 
             width:80vw;
             margin:0 auto;
         }
 
-        /* Page Top Button */
+        /* Page Top Button (index_top.htmlから移植) */
         .page-top-btn {
             position: fixed;
             right: 70px;
             bottom: 180px;
             z-index: 40;
             opacity: 0;
-            transform: translateY(0); /* index_topに合わせる */
+            transform: translateY(0); 
             transition: opacity 0.5s, transform 0.5s;
         }
         .page-top-btn.visible {
@@ -500,7 +492,7 @@
         /* 既存のスタイルを調整/統合 */
         .bg-primary { background-color: #212836; } /* index_2511_himesobaの既存カラー */
 
-        /* MV画像のパスを調整 (index_2511_himesobaの既存パスを維持) */
+        /* MV画像のパスを調整 */
         .work-top{
             background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/recruit_sp_top.jpg");
             background-attachment: fixed; /* 背景画像を固定 */
@@ -647,16 +639,13 @@
         }
     </style>
 </head>
-<body id="himesoba" class="bg-gray-light min-h-screen">
+<body id="recruit" class="bg-gray-light min-h-screen">
 
     <div class="body-wrapper">
-        <!-- Custom Cursor (Desktop Only) -->
         <div id="cursor" class="hidden lg:block fixed w-2.5 h-2.5 rounded-full bg-gray-500 z-[9999] pointer-events-none transition-all duration-500 ease-out" style="transform: translate(-5px, -5px);"></div>
 
-        <!-- Header (index_2511_work.html から移植) -->
         <header class="fixed top-0 left-0 w-full h-20 z-51">
             <div class="mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-end items-center">
-                <!-- Hamburger Icon (PC & Mobile) - Xボタンの役割を兼ねる -->
                 <button id="main-hamburger" class="hamburger z-50 w-10 h-10 relative" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
@@ -664,70 +653,59 @@
             </div>
         </header>
 
-        <!-- SP & PC Full-Screen Navigation Menu (index_2511_work.html から移植) -->
         <nav id="sp-nav" class="sp-nav hidden lg:flex-row bg-black">
-            <!-- Image Side (PC Only) -->
             <div id="nav-image-side-wrapper" class="nav-image-side-wrapper hidden lg:block">
-                <!-- 画像コンテナがここに入り、画像が切り替わるたびに新しい要素が追加される -->
-            </div>
+                </div>
 
-            <!-- Content Side (Navigation Links) -->
             <div class="nav-content-side flex flex-col items-start justify-center p-8 lg:p-0">
-                <ul class="flex flex-col h-full space-y-8 lg:space-y-4">
-                    <!-- data-img に PC/SP 共通の画像URLを設定 -->
-                    <li data-img="https://placehold.co/1920x1080/DCEBEE/37383C?text=Works+Image" data-sp-img="https://placehold.co/70x70/DCEBEE/37383C?text=W">
-                        <a class="nav-link-sp font-en font-medium" href="index_2511_work.html#works">
+                <ul id="nav-list" class="flex flex-col h-full space-y-8 lg:space-y-4">
+                     <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png">
+                        <a class="nav-link-sp font-en font-medium" href="index_top.html#top">
+                             TOP
+                        </a>
+                    </li>
+                    <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png">
+                        <a class="nav-link-sp font-en font-medium" href="index_work.html#works">
                             WORKS
                         </a>
                     </li>
-                    <li data-img="https://placehold.co/1920x1080/FBE183/37383C?text=About+Image" data-sp-img="https://placehold.co/70x70/FBE183/37383C?text=A">
-                        <a class="nav-link-sp font-en font-medium" href="index_2511.html#about">
-                            ABOUT
+                    <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png">
+                        <a class="nav-link-sp font-en font-medium" href="index_about.html#top">
+                           ABOUT
                         </a>
                     </li>
-                    <li data-img="https://placehold.co/1920x1080/B5D7E0/37383C?text=Contact+Image" data-sp-img="https://placehold.co/70x70/B5D7E0/37383C?text=C">
+                    <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png">
                         <a class="nav-link-sp font-en font-medium" href="#contact">
                            CONTACT
                         </a>
                     </li>
                 </ul>
 
-                <!-- PC Nav Contact/Social -->
-                <div class="lg:mt-auto lg:pb-12">
-                     <!-- 添付画像の「オンラインストア」相当のボタン -->
-                    <a href="#" class="pc-nav-contact-btn mb-6" style="border-color: var(--color-accent); color: var(--color-accent);">ONLINE STORE</a>
-
-                    <!-- 添付画像の「セミナー・ワークショップ」相当のボタン -->
-                    <a href="#" class="pc-nav-contact-btn">SEMINAR / WORKSHOP</a>
-
-                    <!-- 添付画像の「お問合せ」相当のコンタクトリンク -->
-                    <div class="pc-nav-contact-link-wrapper lg:mt-12">
-                        <p class="text-sm text-gray-400 mb-2">CONTACT</p>
-                        <a href="mailto:peche.toitoitoi@gmail.com" class="text-xs">Email: peche.toitoitoi@gmail.com</a>
-
-                        <!-- PC Nav Social Icons -->
+                <div class="nav-pad">
+                    <div class="pc-nav-contact-link-wrapper">
+                        <p class="text-sm col-ac mb-2">CONTACT</p>
+                        <a href="mailto:kuro.kuro.yuki0327@gmail.com" class="text-xs">Email: kuro.kuro.yuki0327@gmail.com</a>
+                        
                         <div class="pc-nav-social hidden lg:flex space-x-4 mt-4">
-                            <a href="#" class="social-icon text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon text-lg" aria-label="LINE"><i class="fab fa-line"></i></a>
+                            <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-lg" aria-label="LINE"><i class="fab fa-line"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SP Nav Social Icons (Mobile Only) -->
             <div class="sp-nav-social block lg:hidden flex justify-center space-x-10 mt-auto">
-                <a href="#" class="social-icon text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon text-2xl" aria-label="LINE"><i class="fab fa-line"></i></a>
+                <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-2xl" aria-label="LINE"><i class="fab fa-line"></i></a>
             </div>
         </nav>
 
         <main role="main">
-            <!-- メインビジュアル (既存のコンテンツを維持) -->
-            <div class="work-top relative flex items-center justify-center bg-cover bg-center">
+            <div id="work-top" class="work-top relative flex items-center justify-center bg-cover bg-center">
                 <div class="inset-0 top-inner">
                 <div class="l-sub-img__works text-white ttl-wrap">
                         <div class="l-sub-img__works-info">
-                            <h1 class="l-sub-img__works-info-name text-2xl md:text-4xl font-bold">LONS Beauty Group美容師求人サイト</h1>
+                            <h1 class="l-sub-img__works-info-name text-2xl md:text-4xl font-bold">SALONS Beauty Group美容師求人サイト</h1>
                             <p class="l-sub-img__works-info-cat inline-block bg-primary text-white px-3 py-1 text-xs md:text-sm rounded-full mt-2">求人サイト</p>
                         </div>
                         <p class="l-sub-img__works-txt text-xl md:sub-ttl font-bold mt-4 md:mt-6">美容師のキャリアを応援する、未来志向の職場環境を伝えるサイトづくり</p>
@@ -740,7 +718,6 @@
                 </div>
             </div>
 
-            <!-- Main Content (既存のコンテンツを維持) -->
             <div class="c-bg-white01">
                 <div class="c-bg-white01__inner">
                     <div class="l-container is-col1">
@@ -748,21 +725,17 @@
                             <div id="single" class="works-single c-single02 c-bg-white01 pt-8 md:pt-0 pb-16 md:pb-28 is-top-130">
                                 <div class="works-single__inner c-single02__inner c-bg-white01__inner u-inner">
                                     <div class="">
-                                        <!-- MV画像（SP） -->
                                         <div class="c-single02-mv px-6 md:px-0">
                                             <div class="c-single02-mv__img mb-8">
                                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/recruit_sp3.png" alt="モバイルイメージ" class="w-full h-auto mx-auto md:max-w-full">
                                             </div>
                                         </div>
 
-                                        <!-- 概要テキスト -->
                                         <div class="c-single02__area-txt px-6 md:px-0">
                                             <p class="c-single02__txt">西日本を中心に55店舗展開する美容室グループの採用に特化したリクルートサイトを制作しました。給与・福利厚生といった条件面だけでなく、個人の成長や多様な働き方を尊重する企業文化を明確に伝え、美容業界を志すターゲット層に響く魅力的な採用体験を提供することを目指しました。</p>
                                         </div>
 
-                                        <!-- 詳細セクション -->
                                         <div class="c-single02-info mt-8 md:mt-20">
-                                            <!-- 課題 -->
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
@@ -776,7 +749,6 @@
                                                 </div>
                                             </section>
 
-                                            <!-- 戦略 -->
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
@@ -790,7 +762,6 @@
                                                 </div>
                                             </section>
 
-                                            <!-- デザイン -->
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
@@ -804,7 +775,6 @@
                                             </section>
                                         </div>
 
-                                        <!-- PC/SP画像モックアップ -->
                                         <div class="c-single02__area-img mt-12 md:mt-32 px-6 md:px-auto flex md:justify-center space-y-8 md:space-y-0 md:space-x-8">
                                             <div class="c-single02__img-pc flex-shrink-0">
                                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/recruit_pc.png" alt="PCイメージ" class="w-full h-auto mx-auto">
@@ -814,7 +784,6 @@
                                             </div>
                                         </div>
 
-                                        <!-- 企業情報 -->
                                         <div class="c-single02-about mt-12 md:mt-24 px-6 md:px-0">
                                             <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
                                                 <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Company</dt>
@@ -845,23 +814,19 @@
                 </div>
             </div>
 
-            <!-- その他の制作実績 -->
             <section id="other" class="works-single-other py-16 md:py-24">
                 <div class="works-single-other__inner max-w-7xl mx-auto px-4 md:px-6">
                     <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16">
                         <header class="works-single-other__heading-head w-full md:w-auto">
-                            <!-- Worksページのフォントスタイルとカラーを使用 -->
                             <p class="c-head01__en text-sm md:text-xl font-bold font-en text-gray-700">Other works</p>
                             <h2 class="c-head01__ja text-2xl md:text-4xl font-bold">その他の制作実績</h2>
                         </header>
-                        <!-- Works一覧へのボタン: index_topの「すべてみる」ボタンに置き換え (PC版) -->
                         <div class="works-single-other__heading-btn mt-4 md:mt-0 hidden md:block">
-                            <a href="index_2511_work.html#works" class="custom-big-btn inline-flex items-center justify-center group">
+                            <a href="index_work.html#works" class="custom-big-btn inline-flex items-center justify-center group">
                                 <p class="btn-text-jp font-medium tracking-[0.1em] text-sm ml-6 mr-6">すべてみる</p>
                                 <div class="btn-circle-wrapper w-[40px] h-[40px] rounded-full flex items-center justify-center">
                                     <div class="btn-circle"></div>
                                     <div class="btn-arrow-container w-full h-full">
-                                        <!-- Arrow Icon SVG -->
                                         <svg class="btn-arrow w-5 h-5 transition-transform duration-400 ease-out absolute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M5 12h14M12 5l7 7-7 7"/>
                                         </svg>
@@ -873,7 +838,6 @@
 
                     <div class="works-single-other__archive">
                         <ul class="c-archive03 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
-                            <!-- 制作実績アイテム (1) -->
                             <li class="c-archive03__item">
                                 <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
                                     <div class="c-archive03__item-img">
@@ -889,7 +853,6 @@
                                     </div>
                                 </a>
                             </li>
-                            <!-- 制作実績アイテム (2) -->
                             <li class="c-archive03__item">
                                 <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
                                     <div class="c-archive03__item-img">
@@ -905,7 +868,6 @@
                                     </div>
                                 </a>
                             </li>
-                            <!-- 制作実績アイテム (3) -->
                             <li class="c-archive03__item hidden md:block">
                                 <a href="#" class="c-archive03__item-link block relative overflow-hidden group">
                                     <div class="c-archive03__item-img">
@@ -923,14 +885,12 @@
                             </li>
                         </ul>
 
-                        <!-- Works一覧へのボタン: index_topの「すべてみる」ボタンに置き換え (SP版) -->
                         <div class="c-btn01 mt-8 md:mt-16 block md:hidden text-center">
                             <a href="index_2511_work.html#works" class="custom-big-btn inline-flex items-center justify-center group w-full max-w-xs h-12">
                                 <p class="btn-text-jp font-medium tracking-[0.1em] text-sm ml-6 mr-6">すべてみる</p>
                                 <div class="btn-circle-wrapper w-[40px] h-[40px] rounded-full flex items-center justify-center">
                                     <div class="btn-circle"></div>
                                     <div class="btn-arrow-container w-full h-full">
-                                        <!-- Arrow Icon SVG -->
                                         <svg class="btn-arrow w-5 h-5 transition-transform duration-400 ease-out absolute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M5 12h14M12 5l7 7-7 7"/>
                                         </svg>
@@ -945,10 +905,8 @@
             
         </main>
 
-        <!-- Footer (index_top.html から完全に移植) -->
         <footer>
             <div id="contact" class="footer__contact text-center">
-                <!-- Animated Border -->
                 <div class="contact__content-wrapper mx-auto relative">
                     <p class="contact__thanks-message">ご覧いただき<br class="sp">ありがとうございます</p>
    
@@ -956,13 +914,10 @@
 
                <p class="contact-title">CONTACT</p>
                 
-                <!-- Contact Section Links -->
                 <div class="contact__mail mb-8">
                     <span class="block mb-6 text-sm">下記の連絡先にお気軽にご連絡ください</span>
                     
-                    <!-- Email -->
                     <div class="email">
-                        <!-- index_topのメールアドレスに修正 -->
                         <a class="mail-btn contact__mail-link inline-flex items-center justify-center w-full max-w-sm py-4 px-8 border border-accent rounded-full bg-white text-accent font-en tracking-wider text-sm" href="mailto:kuro.kuro.yuki0327@gmail.com">
                             <i class="fas fa-envelope mr-3"></i> kuro.kuro.yuki0327@gmail.com
                         </a>
@@ -970,27 +925,21 @@
                     
                 </div>
 
-                            <!-- Social Media Icons (Contact Section) -->
-                <div class="flex justify-center space-x-6">
-                    <!-- index_topのInstagram/LINEリンクに修正 -->
+                            <div class="flex justify-center space-x-6">
                     <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&utm_source=qr" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" aria-label="LINE"><i class="fab fa-line"></i></a>
                 </div>
-            <!-- Page Top Button -->
-            <!-- targetを#himesobaセクションに設定 -->
-            <p id="page-top" class="page-top-btn"><a href="#himesoba"><img class="w-16 h-16" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2337383C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 19V5M5 12l7-7 7 7'/></svg>" alt="ページトップへ"></a></p>
+            <p id="page-top" class="page-top-btn"><a href="#recruit"><img class="w-16 h-16" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2337383C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 19V5M5 12l7-7 7 7'/></svg>" alt="ページトップへ"></a></p>
             </div>
             
             <div class="footer__content-wrapper mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
                 <nav class="hidden sm:block">
-                    <!-- index_topのリンクとテキストに修正 -->
                     <ul class="flex space-x-6">
                         <li><a href="https://kuroyuki0327.github.io/kuroyuki/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity">トップ</a></li>
                         <li><a href="https://kuroyuki0327.github.io/kuroyuki/work/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-white">制作実績</a></li>
                         <li><a href="https://kuroyuki0327.github.io/kuroyuki/about/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-white">私について</a></li>
                     </ul>
                 </nav>
-                <!-- index_topのコピーライト表記に修正 -->
                 <small class="text-xs font-medium tracking-[0.16em] text-center w-full sm:w-auto">© 2025 YUKI KURONOTSUBO</small>
             </div>
         </footer>
@@ -1004,12 +953,13 @@
         const navLinks = document.querySelectorAll('.nav-link-sp');
         const navImageSideWrapper = document.getElementById('nav-image-side-wrapper'); // 画像ラッパー
         const navListItems = document.querySelectorAll('#sp-nav li[data-img]');
-        // index_2511_himesobaにはtopセクションがないため、代わりにwork-topを判定基準にする
-        const topSection = document.querySelector('.work-top');
+        const navListContainer = document.getElementById('nav-list');
+        const topSection = document.querySelector('.work-top'); // メインビジュアルセクションを基準に
         const pageTopBtn = document.getElementById('page-top');
 
-        // Works一覧へのリンクを想定して、デフォルト画像URLを定義
-        const defaultImageUrl = navListItems[0] ? navListItems[0].getAttribute('data-img') : 'https://placehold.co/1920x1080/DCEBEE/37383C?text=Default';
+        // WORKSのナビゲーションアイテムからデフォルト画像URLを取得
+        const defaultNavImageItem = Array.from(navListItems).find(item => item.querySelector('a').getAttribute('href') === 'index_work.html#works');
+        const defaultImageUrl = defaultNavImageItem ? defaultNavImageItem.getAttribute('data-img') : 'https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png';
 
         let lastShownImageUrl = defaultImageUrl; // 最後に表示された画像URLを保持
         let currentNavImageElement = null;
@@ -1046,7 +996,7 @@
             }
 
             // Hover effect for links
-            document.querySelectorAll('a, button, .works-card, .custom-big-btn').forEach(el => {
+            document.querySelectorAll('a, button, .works-card, .custom-big-btn, .c-archive03__item-link').forEach(el => {
                 el.addEventListener('mouseover', () => cursor.classList.add('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
                 el.addEventListener('mouseout', () => cursor.classList.remove('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
             });
@@ -1125,16 +1075,16 @@
                 if (isDesktop()) {
                     spNav.classList.add('flex');
                     setInitialNavImage();
+                    document.body.style.overflow = 'hidden'; 
                 } else {
                     spNav.classList.add('block');
+                    document.body.style.overflow = 'hidden'; 
                 }
 
-                // 2. フェードインアニメーションを開始
                 setTimeout(() => {
                     spNav.classList.add('opacity-100');
                 }, 10);
 
-                document.body.style.overflow = 'hidden'; // スクロール禁止
             } else {
                 // メニューを閉じる
 
@@ -1158,9 +1108,33 @@
         }
 
         mainHamburger.addEventListener('click', toggleMenu);
+        
+        // ナビゲーションリンクのクリック処理
         navLinks.forEach(link => link.addEventListener('click', (e) => {
-            // スムーズスクロールが完了してからメニューを閉じる
-            setTimeout(toggleMenu, 500);
+            const href = link.getAttribute('href');
+            
+            // ページ内リンクの場合 (#contact, #recruit)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if(targetElement) {
+                    // スムーズスクロール
+                    window.scrollTo({
+                        top: targetElement.offsetTop - (isDesktop() ? 80 : 60), // ヘッダーの高さ分調整
+                        behavior: 'smooth'
+                    });
+                    setTimeout(toggleMenu, 500); 
+                } else {
+                    // #recruit (#topの代わり) の場合はトップにスクロール
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(toggleMenu, 500);
+                }
+            } else {
+                 // 外部リンク（index_work.htmlなど）の場合はそのまま遷移
+                setTimeout(toggleMenu, 500);
+            }
         }));
 
         // PC Navigation Hover Logic
@@ -1172,11 +1146,13 @@
                 }
             });
         });
+        
+        // ナビゲーションリスト全体からマウスが離れたら、WORKSの画像に戻す
+        // NavListContainerが存在しないため、処理を省略
 
         // Handle PC/SP layout on resize
         window.addEventListener('resize', () => {
             const isOpen = mainHamburger.classList.contains('open');
-            // カーソル更新
             updateCursor();
 
             if (isOpen) {
@@ -1189,9 +1165,9 @@
                     spNav.classList.add('block');
                     if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
                         navImageSideWrapper.removeChild(currentNavImageElement);
-                        currentNavImageElement = null;
-                        lastShownImageUrl = defaultImageUrl;
                     }
+                    currentNavImageElement = null;
+                    lastShownImageUrl = defaultImageUrl;
                 }
             } else {
                 spNav.classList.add('hidden');
@@ -1204,7 +1180,7 @@
 
         // Page Top Button Visibility
         function updatePageTopButton() {
-            // work-topセクションの高さを超えたら表示
+            // work-topセクションの約半分の高さを超えたら表示
             if (topSection && window.scrollY > topSection.offsetHeight / 2) {
                 pageTopBtn.classList.add('visible');
             } else {
@@ -1232,4 +1208,3 @@
 
 </body>
 </html>
-
