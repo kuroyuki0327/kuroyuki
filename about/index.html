@@ -39,28 +39,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* font
 ----------------------------------------------- */
-
-        :root {
+       :root {
             --color-dark: #333;
             --color-accent: #f1d506;
-            --color-light: #fcfcfc; /* index_2511に合わせて変更 */
+            --color-light: #fcfcfc;
             --color-gray-light: #dddddd;
-            --color-hover-orange: #ff9900; 
+            --color-hover-orange: #ff9900;
             --font-jp: "Zen Kaku Gothic New", sans-serif;
             --font-en: "Albert Sans", sans-serif;
-            --color-primary-dark: #363d4b; /* index_2511_workのCTA背景色 */
+            --color-primary-dark: #363d4b;
         }
-		
-body {
-    padding: 0;
-    margin: 0;
-    color: #000;
-    font-size: 3.5vw;
-    font-family: var(--gothic);
-    -webkit-text-size-adjust: 100%;
-    font-style: normal;
-    line-height: 1;
-}
+
+        body {
+            /* index_2511_work.html のフォント設定を反映 */
+            font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
 
 article, aside, canvas, details, figcaption, figure, header, footer, hgroup, menu, nav, section, summary {
     display: block;
