@@ -86,11 +86,10 @@
             Header & Navigation Styles (index_work.html から移植)
             ========================================================================= */
 
-        /* --- ハンバーガーアイコンの修正部分 --- */
         .hamburger {
             position: relative;
-            z-index: 60;
-            width: 40px;
+            z-index: 60; 
+            width: 40px; 
             height: 40px;
             padding: 0;
             display: flex;
@@ -101,13 +100,13 @@
         .hamburger span {
             display: block;
             position: absolute;
-            height: 1.5px;
+            height: 1.5px; 
             width: 80%;
             background: var(--color-dark);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
         }
         .hamburger.open span {
-            background-color: var(--color-light);
+            background-color: var(--color-light); 
         }
         .hamburger span:nth-child(1) { top: 38%; }
         .hamburger span:nth-child(2) { bottom: 38%; }
@@ -118,10 +117,15 @@
             transform: rotate(45deg);
         }
         .hamburger.open span:nth-child(2) {
-            bottom: auto;
-            top: 50%;
+            bottom: auto; 
+            top: 50%; 
             transform: rotate(-45deg);
         }
+        /* ---------------------------------- */
+
+        /* =========================================================================
+            Navigation Menu Styles (index_top.htmlベース & index_work.htmlのコンテンツ)
+            ========================================================================= */
 
         /* Full-screen Nav Container */
         .sp-nav {
@@ -130,23 +134,25 @@
             right: 0;
             width: 100%;
             height: 100vh;
-            background-color: #000000;
+            background-color: #000000; 
             z-index: 50;
             overflow-y: auto;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            opacity: 0; 
+            transition: opacity 0.5s ease; 
         }
+        /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
+        .sp-nav a {
+            color: var(--color-light); 
+            font-family: "minerva-modern", sans-serif; /* index_workから移植 */
+            font-weight: 400; /* index_workから移植 */
+            font-style: normal; /* index_workから移植 */
+        }
+
+        /* フェードイン用クラス (JSで付与) */
         .sp-nav.opacity-100 {
             opacity: 1;
         }
 
-        /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
-        .sp-nav a {
-            color: var(--color-light);
-            font-family: "minerva-modern", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
 
         /* PC Menu Layout (Side-by-Side) */
         @media (min-width: 1024px) {
@@ -155,10 +161,10 @@
                 position: relative;
                 width: 50%;
                 height: 100%;
-                background-color: #000000;
-                overflow: hidden;
+                background-color: #000000; 
+                overflow: hidden; 
             }
-
+            
             /* 画像コンテナ: 画像の切り替えアニメーションを管理する */
             .nav-image-container {
                 position: absolute;
@@ -173,33 +179,33 @@
                 transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             }
 
-            /* アクティブ時のスタイル */
+            /* アクティブ時のスタイル (正常サイズに戻り、フェードイン完了) */
             .nav-image-container.active {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1); 
             }
-
+            
             .nav-content-side {
                 width: 50%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
+                justify-content: space-between; /* index_workから修正 */
+                align-items: flex-start; 
                 padding-top: 0;
                 padding-left: 100px;
-                background-color: #000000;
+                background-color: #000000; 
             }
 
             .sp-nav ul {
                 display: block;
-                padding-top: 6rem;
-                padding-left: 6rem;
+                padding-top: 6rem; /* index_workから移植 */
+                padding-left: 6rem; /* index_workから移植 */
                 height: auto;
-                margin-bottom: 4rem;
+                margin-bottom: 4rem; 
             }
             .sp-nav li {
-                margin-bottom: 4rem !important;
+                margin-bottom: 4rem !important; /* index_workから移植 */
             }
             .nav-link-sp {
                 padding: 0;
@@ -207,37 +213,36 @@
                 line-height: 1.2;
                 letter-spacing: 0.15em;
                 transition: color 0.3s;
-                color: var(--color-light);
+                color: var(--color-light); 
             }
             .nav-link-sp:hover {
                 color: var(--color-accent);
             }
-             
-            /* PC Nav Contact/Social */
+
+            /* PC Nav Contact/Social (index_workから移植・調整) */
             .pc-nav-contact-link-wrapper {
                 margin-top: 0;
                 margin-bottom: 2rem;
             }
-             /* index_workのクラス */
-            .col-ac{
-                color: var(--color-accent);
+            .pc-nav-contact-link-wrapper p.col-ac {
+                color: var(--color-accent); /* index_workのクラス */
             }
             .pc-nav-contact-link-wrapper a {
                 display: block;
-                margin-bottom: 1.5rem;
-                margin-top: 1rem;
-                font-size: 1.875rem;
+                margin-bottom: 1.5rem; /* index_workから移植 */
+                margin-top: 1rem; /* index_workから移植 */
+                font-size: 1.875rem; /* index_workから移植 */
                 letter-spacing: 0.1em;
                 color: var(--color-gray-light);
             }
-             .nav-pad{
+            .nav-pad{
                 padding-bottom: 6rem;
                 padding-left: 6rem;
                 margin-top: 0;
             }
         }
 
-        /* Mobile Menu Layout (Center Stacked) */
+        /* Mobile Menu Layout (Center Stacked) - index_top.htmlベース */
         @media (max-width: 1023px) {
             .sp-nav {
                 padding-top: 80px;
@@ -247,19 +252,27 @@
                 padding-top: 0;
             }
             .sp-nav li {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5rem!important;
+                margin-top: 0!important;                
                 padding-left: 2rem;
             }
             .nav-link-sp {
                 padding: 1rem 0;
                 font-size: 1.5rem;
-                display: block;
+                display: block; 
                 align-items: initial;
                 gap: initial;
             }
+            
+            /* SP Navのソーシャルアイコン配置 */
             .sp-nav-social {
-                padding: 3rem 2rem 1rem;
-                text-align: center;
+                padding: 0 4rem 1rem;
+                justify-content: flex-start!important;
+            }
+
+            .nav-pad{
+                padding-left: 2rem;
+                padding-top: 4rem;
             }
         }
 
@@ -272,7 +285,6 @@
         .social-icon:hover {
             color: var(--color-accent);
         }
-
         .z-51{
             z-index:51;
         }
