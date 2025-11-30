@@ -35,6 +35,7 @@
             letter-spacing: 0.05em;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            overflow: scroll;
         }
 
         /* カスタムリセット & ベーススタイル */
@@ -88,7 +89,7 @@
         /* =========================================================================
             Header & Navigation Styles (index_2511_work.html から移植)
             ========================================================================= */
-
+       /* --- ハンバーガーアイコンの修正部分 (index_top.htmlベース) --- */
         .hamburger {
             position: relative;
             z-index: 60; 
@@ -615,21 +616,21 @@
             ========================================================================= */
         @media (max-width: 767px) {
         #single{
-            padding-top:4rem;
+            padding-top:2.5rem;
         }}
 
         
         /* 既存のスタイルを調整/統合 */
         .bg-primary { background-color: #212836; } 
 
-        /* MV画像のパスを調整 (index_bimera.txtのパスを使用) */
+        /* MV画像のパスを調整 (index_2511_himesobaの既存パスを維持) */
         .work-top{
-            background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/bimera_sp.jpg");
-            background-attachment: fixed; 
+            background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/himesoba_sp.jpg");
+            /*background-attachment: fixed; */
         }
         @media (min-width: 768px) {
             .work-top{
-                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/bimera_pc.jpg");
+                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/himesoba_pc.jpg");
             }
         }
 
@@ -638,7 +639,7 @@
             height: 365px;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            padding-top: 130px;
+            padding-top: 5rem;
             padding-left: 2rem;
             padding-right: 2rem;
         }
@@ -702,7 +703,7 @@
         }
         /* Works詳細固有のクラスを維持 */
         .c-bg-white01__inner { position: relative; z-index: 1; }
-        .works-single__inner {  padding-bottom: 55px; }
+        .works-single__inner {  padding-bottom: 1.5rem; }
 
         .c-single02-info__sec{
             padding-left: 1.5rem;
@@ -712,7 +713,7 @@
 
         .c-single02-mv__img{
             position: relative;
-            padding: 0 3rem 1rem;
+            padding: 0 0.5rem 1rem;
             
         }
         
@@ -745,19 +746,31 @@
 
         .c-single02__txt{
             font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-            font-size: 0.8rem;
+            font-size: 1rem;
+            line-height: 2;
         }
+
+        
 
         .c-head01__en{
             font-family: "futura-pt", sans-serif;
             font-weight: 400;
             font-style: normal;
             color: var(--color-accent);
-            font-size: 0.8rem;
+            font-size: 1.1rem;
+            padding-bottom: 0.1rem;
         }
         .c-head01__ja{
             font-size: 2.5rem;
+            margin-top: 0.5rem;
         }
+
+        @media (max-width: 767px) {
+        .c-head01__ja{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }        
+        
         .c-single02__img-pc{
             width: 30vw;
         }
@@ -778,16 +791,81 @@
         @media (max-width: 767px) {
         .c-single02__area-img{
             flex-direction: column;
+            align-items: center;
         }}
         
-        .c-head01__txt{
-            font-size: 0.8rem;
-            line-height: 1.5rem;
+        .c-head01__txt {
+            font-size: 1rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            line-height: 2;
+            margin: 2rem 0 5rem;      
         }
+        
         .c-head01__lead{
-            font-size: 1.8rem;
+            font-size: 2rem;
+            line-height: 3.5rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo,
+            margin:2rem 0;
+            font-weight:bold;
         }
+            
+        .l-sub-img__works-info h1{
+            margin-bottom: 1rem;
+        }
+            
+        .l-sub-img__works-info-cat{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        }
+        
+        @media (max-width: 767px) {
+        .c-head01__lead{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }}
+
+
+
+
+        .works-single-other__heading-head{
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 767px) {
+        .works-single-other__heading-head{
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }}
+        
+        @media (max-width: 767px) {
+        .works-single-other__archive ul{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+
+        }
+
+        .works-single-other__heading-head h2{
+            margin-top: 0.5rem;
+        }
+
+     .c-archive03__item-info span{
+         font-size: 1rem;
+         line-height: 2;
+     }
+
+    .c-archive03__item-head{
+         font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    }
+            
+            .l-sub-img__works-url a{
+                font-family: "futura-pt", sans-serif;
+            }
     </style>
+    
 </head>
 <body id="bimera" class="bg-gray-light min-h-screen">
 
@@ -899,9 +977,9 @@
 
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
-                                                    <header class="c-head01 mb-4 md:mb-6">
-                                                        <h2 class="c-head01__ja font-bold">戦略</h2>
+                                                    <header class="c-head01 mb-4 md:mb-6">  
                                                         <p class="c-head01__en u-font-heebo">Strategy</p>
+                                                        <h2 class="c-head01__ja">戦略</h2>
                                                     </header>
                                                     <div class="c-head01__area-txt">
                                                         <p class="c-head01__lead mb-4 md:mb-6">「安心・技術・トレンド」の3要素を訴求し、気軽に通えるサロンであることを強調</p>
@@ -913,8 +991,8 @@
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
-                                                        <h2 class="c-head01__ja font-bold">デザイン</h2>
                                                         <p class="c-head01__en u-font-heebo">Design</p>
+                                                        <h2 class="c-head01__ja">デザイン</h2> 
                                                     </header>
                                                     <div class="c-head01__area-txt">
                                                         <p class="c-head01__txt">「高い技術力と親しみやすさの両立」をデザインコンセプトに掲げました。プロの技術を象徴する清潔感のある白をベースに、ターゲット層（女性）に響くような、明るく洗練されたカラーパレットを採用。各サービス（まつエク、脱毛など）の専門性を保ちつつ、プチプラで気軽に通える親しみやすい雰囲気を損なわないよう、写真を効果的に配置し、高い視認性で情報にアクセスしやすいモダンな佇まいを演出しました。</p>
@@ -964,10 +1042,10 @@
 
             <section id="other" class="works-single-other py-16 md:py-24">
                 <div class="works-single-other__inner max-w-7xl mx-auto px-4 md:px-6">
-                    <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16">
+                    <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center md:mb-16">
                         <header class="works-single-other__heading-head w-full md:w-auto">
-                            <p class="c-head01__en text-sm md:text-xl font-bold font-en text-gray-700">Other works</p>
-                            <h2 class="c-head01__ja text-2xl md:text-4xl font-bold">その他の制作実績</h2>
+                            <p class="c-head01__en text-sm md:text-xl font-en">Other works</p>
+                            <h2 class="c-head01__ja text-2xl md:text-4xl">その他の制作実績</h2>
                         </header>
                         <div class="works-single-other__heading-btn mt-4 md:mt-0 hidden md:block">
                             <a href="https://kuroyuki0327.github.io/kuroyuki/work/" class="custom-big-btn inline-flex items-center justify-center group">
@@ -976,7 +1054,7 @@
                                     <div class="btn-circle"></div>
                                     <div class="btn-arrow-container w-full h-full">
                                         <svg class="btn-arrow w-5 h-5 transition-transform duration-400 ease-out absolute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                            <path d="M5 12h14M12 5l7 7-7 7"></path>
                                         </svg>
                                     </div>
                                 </div>
@@ -997,7 +1075,7 @@
                                             <span class="c-archive03__item-info-in">十割そばの店 ひめそば</span>
                                             <span class="c-archive03__item-info-cat hidden md:inline">｜ブランディング</span>
                                         </p>
-                                        <p class="c-archive03__item-head text-sm md:text-lg font-bold">十割そば ひめそばの魅力を伝えるサイトづくり</p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">十割そば ひめそばの魅力を伝えるサイトづくり</p>
                                     </div>
                                 </a>
                             </li>
@@ -1012,7 +1090,7 @@
                                             <span class="c-archive03__item-info-in">SALONS Beauty Group</span>
                                             <span class="c-archive03__item-info-cat hidden md:inline">｜求人サイト</span>
                                         </p>
-                                        <p class="c-archive03__item-head text-sm md:text-lg font-bold">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
                                     </div>
                                 </a>
                             </li>
@@ -1027,7 +1105,7 @@
                                             <span class="c-archive03__item-info-in">SALONSアカデミー</span>
                                             <span class="c-archive03__item-info-cat hidden md:inline">｜求人サイト</span>
                                         </p>
-                                        <p class="c-archive03__item-head text-sm md:text-lg font-bold">その先を共に創り出す、和の力が可能性を広げる印象を与えるサイト</p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">その先を共に創り出す、和の力が可能性を広げる印象を与えるサイト</p>
                                     </div>
                                 </a>
                             </li>-->
