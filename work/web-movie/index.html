@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求人WEB広告バナー｜制作実績</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lpw2bst.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sxz8txc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&amp;family=Noto+Sans+JP:wght@500;700&amp;display=swap" rel="stylesheet">
+        
+    <style>
+        /*
+         * --- 変数とベーススタイルの統合 ---
+         */re
+        @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+
+        :root {
+            --color-dark: #333;
+            --color-accent: #f1d506;
+            --color-light: #fcfcfc;
+            --color-gray-light: #dddddd;
+            --color-hover-orange: #333; 
+            --font-jp: "Zen Kaku Gothic New", sans-serif;
+            --font-en: "Albert Sans", sans-serif;
+            --color-primary-dark: #363d4b;
+        }
+
+        body {
+            font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            overflow: scroll;
+        }
+
+        /* カスタムリセット & ベーススタイル */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        img {
+            vertical-align: bottom;
+            max-width: 100%;
+            height: auto;
+        }
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; }
+        button{
+            border:none;
+        }
+
+        /* --- Worksページのフォントクラスを維持 --- */
+        .u-font-heebo {
+            font-family: 'Heebo', sans-serif;
+        }
+        .font-minerva{
+            font-family: "minerva-modern", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .font-futura{
+            font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .font-en{ /* for nav */
+             font-family: var(--font-en);
+        }
+        .text-dark{
+            color: var(--color-dark);
+        }
+        .bg-accent{
+            background-color: var(--color-accent);
+        }
+        .border-accent{
+            border-color: var(--color-accent);
+        }
+        .text-base{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        }
+        .col-ac{
+            color: var(--color-accent);
+        }
+
+        /* =========================================================================
+            Header & Navigation Styles (index_2511_work.html から移植)
+            ========================================================================= */
+       /* --- ハンバーガーアイコンの修正部分 (index_top.htmlベース) --- */
+        .hamburger {
+            position: relative;
+            z-index: 60; 
+            width: 40px; 
+            height: 40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 1.5px; 
+            width: 80%;
+            background: var(--color-dark);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+        }
+        .hamburger.open span {
+            background-color: var(--color-light); 
+        }
+        .hamburger span:nth-child(1) { top: 38%; }
+        .hamburger span:nth-child(2) { bottom: 38%; }
+
+        /* Close Button (X) Animation */
+        .hamburger.open span:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            bottom: auto; 
+            top: 50%; 
+            transform: rotate(-45deg);
+        }
+        /* ---------------------------------- */
+
+        /* =========================================================================
+            Navigation Menu Styles (index_top.htmlベース & index_work.htmlのコンテンツ)
+            ========================================================================= */
+
+        /* Full-screen Nav Container */
+        .sp-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #000000; 
+            z-index: 50;
+            overflow-y: auto;
+            opacity: 0; 
+            transition: opacity 0.5s ease; 
+        }
+        /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
+        .sp-nav a {
+            color: var(--color-light); 
+            font-family: "minerva-modern", sans-serif; /* index_workから移植 */
+            font-weight: 400; /* index_workから移植 */
+            font-style: normal; /* index_workから移植 */
+        }
+
+        /* フェードイン用クラス (JSで付与) */
+        .sp-nav.opacity-100 {
+            opacity: 1;
+        }
+
+
+        /* PC Menu Layout (Side-by-Side) */
+        @media (min-width: 1024px) {
+            /* Image Side Container: 透過エフェクト付きの画像を保持するラッパー */
+            .nav-image-side-wrapper {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                background-color: #000000; 
+                overflow: hidden; 
+            }
+            
+            /* 画像コンテナ: 画像の切り替えアニメーションを管理する */
+            .nav-image-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transform: scale(1.05);
+                transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            }
+
+            /* アクティブ時のスタイル (正常サイズに戻り、フェードイン完了) */
+            .nav-image-container.active {
+                opacity: 1;
+                transform: scale(1); 
+            }
+            
+            .nav-content-side {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; /* index_workから修正 */
+                align-items: flex-start; 
+                padding-top: 0;
+                padding-left: 100px;
+                background-color: #000000; 
+            }
+
+            .sp-nav ul {
+                display: block;
+                padding-top: 6rem; /* index_workから移植 */
+                padding-left: 6rem; /* index_workから移植 */
+                height: auto;
+                margin-bottom: 4rem; 
+            }
+            .sp-nav li {
+                margin-bottom: 4rem !important; /* index_workから移植 */
+            }
+            .nav-link-sp {
+                padding: 0;
+                font-size: 2.5rem;
+                line-height: 1.2;
+                letter-spacing: 0.15em;
+                transition: color 0.3s;
+                color: var(--color-light); 
+            }
+            .nav-link-sp:hover {
+                color: var(--color-accent);
+            }
+
+            /* PC Nav Contact/Social (index_workから移植・調整) */
+            .pc-nav-contact-link-wrapper {
+                margin-top: 0;
+                margin-bottom: 2rem;
+            }
+            .pc-nav-contact-link-wrapper p.col-ac {
+                color: var(--color-accent); /* index_workのクラス */
+            }
+            .pc-nav-contact-link-wrapper a {
+                display: block;
+                margin-bottom: 1.5rem; /* index_workから移植 */
+                margin-top: 1rem; /* index_workから移植 */
+                font-size: 1.875rem; /* index_workから移植 */
+                letter-spacing: 0.1em;
+                color: var(--color-gray-light);
+            }
+            .nav-pad{
+                padding-bottom: 6rem;
+                padding-left: 6rem;
+                margin-top: 0;
+            }
+        }
+
+        /* Mobile Menu Layout (Center Stacked) - index_top.htmlベース */
+        @media (max-width: 1023px) {
+            .sp-nav {
+                padding-top: 80px;
+            }
+            .sp-nav ul {
+                height: 100%;
+                padding-top: 0;
+            }
+            .sp-nav li {
+                margin-bottom: 1.5rem!important;
+                margin-top: 0!important;                
+                padding-left: 2rem;
+            }
+            .nav-link-sp {
+                padding: 1rem 0;
+                font-size: 1.5rem;
+                display: block; 
+                align-items: initial;
+                gap: initial;
+            }
+            
+            /* SP Navのソーシャルアイコン配置 */
+            .sp-nav-social {
+                padding: 0 4rem 1rem;
+                justify-content: flex-start!important;
+            }
+
+            .nav-pad{
+                padding-left: 2rem;
+                padding-top: 4rem;
+            }
+        }
+
+        /* ソーシャルアイコン共通スタイル */
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--color-light);
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: var(--color-accent);
+        }
+        .z-51{
+            z-index:51;
+        }
+        
+        /* -----------------------------------------------------------
+        // [移植] Footer / Contact Styles (index_work.htmlに完全統一)
+        // ----------------------------------------------------------- */
+
+        footer{
+            position: relative;
+            padding-top: 30px;
+            margin-top: 0;
+        }
+        
+        @media (min-width: 768px) {
+        footer{
+            margin-top: 6rem; 
+        }}
+            
+        
+
+        footer::before {
+            content: '';
+            top: 0;
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            z-index: 5;
+            bottom: 0;
+            background-color: #433f37; /* index_workに合わせる */
+        }
+
+        footer .contact__content-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            z-index: 5;
+            top: 0;
+            background-color: white;
+        }
+        
+        .footer__contact{
+            position: relative;
+            padding: 9rem auto 4rem;
+            height: 43rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow: auto; /* index_workに合わせる */
+        }
+
+        @media (min-width: 768px) {
+            .footer__contact{
+                padding: 8rem auto 4rem;
+                height:700px;
+            }
+        }
+
+        /* 背景画像の設定 */
+        .footer__contact:before{
+            background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg.jpg") no-repeat center; 
+            content: '';
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        @media (min-width: 768px) { 
+            .footer__contact:before{
+                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg-pc.jpg")!important; 
+                background-size: cover;
+            }
+        }
+    
+        .contact__content-wrapper{
+            padding: 9rem 0 0; /* index_workに合わせる */
+            position:relative;
+        }
+
+        @media (min-width: 768px) { 
+        .contact__content-wrapper{
+            padding: 9rem 0 0; /* index_workに合わせる */
+        }}
+
+        .contact__thanks-message{
+            font-size: 35px;
+            color: #fff;
+            text-shadow: 0 0 10px #5f493b;
+            margin-bottom: 5rem;
+            margin-top: 32px; /* index_workに合わせる */
+        }
+
+        @media (min-width: 768px) { 
+        .contact__thanks-message{
+            margin-bottom: 5rem;
+        }}
+
+        .contact-title{
+            font-family: "minerva-modern", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 4rem;
+            letter-spacing: 0.2rem;
+            display: flex;
+            justify-content: center;
+            color: var(--color-dark); /* index_workに合わせる */
+        }
+        
+        @media (min-width: 768px) { 
+        .contact-title{
+            font-size: 7rem;
+        }}
+
+        .footer__content-wrapper{
+            background-color: #000;
+            color: #fff;
+            margin-top: 4rem;
+        }
+        
+        /* Mail Button */
+        .mail-btn {
+            position: relative;
+            transition: all 0.3s;
+        }
+        .mail-btn:hover {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+        }
+        .mail-btn:hover i {
+            color: var(--color-light);
+        }
+        
+        .email{
+            width:80vw;
+            margin:0 auto;
+        }
+
+        /* -----------------------------------------------------------
+        // [修正] Page Top Button Styles - index_workに完全統一
+        // ----------------------------------------------------------- */
+        .page-top-btn {
+            position: fixed;
+            /* PC: 右下 */
+            right: 40px; 
+            bottom: 40px;
+            z-index: 40;
+            opacity: 0;
+            /* ふわっと出現/消滅のアニメーション */
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            visibility: hidden; /* 初期状態では非表示 */
+        }
+        
+        .page-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ボタン本体のデザイン */
+        .page-top-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80px; /* 丸のサイズ */
+            height: 80px; /* 丸のサイズ */
+            border-radius: 50%;
+            background-color: var(--color-accent); /* アクセントカラー */
+            color: var(--color-dark);
+            text-align: center;
+            font-size: 0.75rem; /* Page Top の文字サイズ */
+            font-weight: 500;
+            line-height: 1.2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+        }
+        
+        .page-top-link:hover {
+            background-color: #ffd700; /* ホバーで少し明るく */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 矢印のデザイン */
+        .page-top-icon {
+            font-size: 1.5rem; /* 矢印のサイズ */
+            margin-bottom: 2px; /* Page Top の文字との隙間 */
+            /* 矢印を少し上に配置するための調整 */
+            transform: translateY(-2px); 
+        }
+
+        @media (max-width: 768px) {
+            .page-top-btn {
+                /* SP: 右下 */
+                right: 20px;
+                bottom: 20px;
+            }
+            .page-top-link {
+                width: 60px; /* 丸のサイズを小さく */
+                height: 60px; /* 丸のサイズを小さく */
+            }
+            .page-top-icon {
+                font-size: 1.2rem;
+            }
+            .page-top-link span {
+                font-size: 0.6rem;
+            }
+        }
+
+
+        /* index_top.htmlから移植 - SP時の背景画像非表示用 */
+        .sp{
+            display: none;
+        }
+
+        .pc{
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+        .sp{
+            display: block!important;
+        }
+
+        .pc{
+            display: none!important;
+        }
+        }
+        
+        /* --- 「すべてみる」ボタンのカスタムスタイル (index_top.htmlから移植) --- */
+        .custom-big-btn {
+            border: 1px solid var(--color-gray-light);
+            border-radius: 9999px;
+            background-color: var(--color-light);
+            transition: all 0.4s ease;
+            height: 65px;
+            padding: 0 40px;
+            min-width: 200px;
+            overflow: hidden;
+        }
+
+        .custom-big-btn:hover {
+            border-color: var(--color-accent);
+        }
+
+        .custom-big-btn .btn-text-jp {
+            color: var(--color-dark);
+            transition: color 0.4s ease;
+        }
+
+        .custom-big-btn:hover .btn-text-jp {
+            color: var(--color-hover-orange); 
+        }
+        
+        .custom-big-btn .btn-circle-wrapper {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .custom-big-btn .btn-circle {
+            background-color: var(--color-accent);
+            transform: scale(1);
+            transition: transform 0.4s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .custom-big-btn:hover .btn-circle {
+            transform: scale(1.2); 
+        }
+        
+        /* Arrow Container */
+        .custom-big-btn .btn-arrow-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Arrow element needs to be centered within its container */
+        .custom-big-btn .btn-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            transition: all 0.4s ease; 
+        }
+
+        /* Arrow animation */
+        .custom-big-btn:hover .btn-arrow {
+            animation: arrow-slide 1.2s ease-in-out forwards;
+        }
+        
+        @keyframes arrow-slide {
+            0% { transform: translate(-50%, -50%) translateX(0) scale(1); opacity: 1; }
+            45% { transform: translate(-50%, -50%) translateX(150%) scale(0.8); opacity: 0; } 
+            50% { transform: translate(-50%, -50%) translateX(-150%) scale(0.8); opacity: 0; }
+            51% { transform: translate(-50%, -50%) translateX(-150%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) translateX(0) scale(1); opacity: 1; }
+        }
+
+
+        /* =========================================================================
+            Works Detail Specific Styles (既存スタイルを維持・調整)
+            ========================================================================= */
+        @media (max-width: 767px) {
+        #single{
+            padding-top:2.5rem;
+        }}
+
+        
+        /* 既存のスタイルを調整/統合 */
+        .bg-primary { background-color: #212836; } 
+
+        /* MV画像のパスを調整 (index_2511_himesobaの既存パスを維持) */
+        .work-top{
+            background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/design04_sp-bg.jpg");
+            /*background-attachment: fixed; */
+        }
+        @media (min-width: 768px) {
+            .work-top{
+                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/design04_pc-bg.jpg");
+            }
+        }
+
+        /* Works詳細ページ用のトップセクションの高さとパディングを調整 */
+        .top-inner{
+            height: 365px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-top: 5rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .u-inner {
+               width: 100%;
+               max-width: 60rem;
+               margin: auto;
+               padding-left: 0;
+               padding-right: 0;
+            }
+        }
+
+        @media all and (min-width: 768px) {
+        .top-inner {
+            height: 41rem;
+            padding-top:10rem;
+            width: 100%;
+            max-width: 72rem;
+            margin: auto;
+            padding-left: 5rem;
+            padding-right:5rem;
+        }}
+
+        /* c-bg-white01 (Works詳細のコンテンツラッパー) の背景スタイルを調整 */
+        .c-bg-white01 {
+            position: relative;
+            background:#fbfbf5;
+        }
+
+        .c-bg-white01::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #fff;
+            border-top: solid 6px var(--color-accent); 
+            border-radius: 5rem 0 0 0;
+        }
+
+        /* PCでのコンテンツ領域の調整 */
+        @media all and (min-width: 768px) {
+            .c-bg-white01.is-top-130::before {
+                top: -130px;
+            }
+        }
+        @media all and (min-width:1801px) {
+            .c-bg-white01.is-top-130::before {
+                left: 11rem;
+            }
+        }
+
+        
+        @media all and (max-width: 767px) {
+            .c-bg-white01::before {
+                border-radius: 0;
+            }
+        }
+        /* Works詳細固有のクラスを維持 */
+        .c-bg-white01__inner { position: relative; z-index: 1; }
+        .works-single__inner {  padding-bottom: 1.5rem; }
+
+        .c-single02-info__sec{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 4.5rem!important;
+        }
+
+        .c-single02-mv__img{
+            position: relative;
+            box-shadow: 7px 6px 10px 1px rgb(0 0 0 / 8%);
+            /*padding: 0 0.5rem 1rem;*/
+            
+        }
+        
+        @media (min-width: 768px) {
+        .c-single02-mv__img{
+            /*padding: 0 3rem 2rem;*/
+            
+        }
+        }
+
+.c-single02-mv__img::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    bottom: 0;
+    height: 32vw;
+    /*background: #f4f7f8;*/
+    z-index: -1;
+}
+        
+@media (min-width: 768px) {
+    .c-single02-mv__img::before {
+        bottom: 0;
+        left: 0px;
+        right: 0px;
+        height: 400px;
+    }
+}
+
+        .c-single02__txt{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            font-size: 1rem;
+            line-height: 2;
+        }
+
+        
+
+        .c-head01__en{
+            font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            padding-bottom: 0.1rem;
+        }
+        .c-head01__ja{
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 767px) {
+        .c-head01__ja{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }   }      
+        
+        .c-single02__img-pc{
+            width: 30vw;
+        }
+        @media (max-width: 767px) {
+        .c-single02__img-pc{
+            width: 100vw;
+        }}  
+        
+        .c-single02__img-sp{
+            width: 27.5vw;
+        }
+
+        @media (max-width: 767px) {
+        .c-single02__img-sp{
+            width: 100vw;
+        }}  
+            
+        .c-single02__area-img{
+            align-items: center;
+        }
+            
+        @media (max-width: 767px) {
+        .c-single02__area-img{
+            flex-direction: column;
+        }}
+
+        .c-single02__img-pc{
+            box-shadow: 7px 6px 10px 1px rgb(0 0 0 / 8%);
+        }
+
+        .c-single02__img-sp{
+            box-shadow: 7px 6px 10px 1px rgb(0 0 0 / 8%);
+        }
+            
+        .c-head01__txt {
+            font-size: 1rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            line-height: 2;
+            margin: 2rem 0 5rem;      
+        }
+        
+        .c-head01__lead{
+            font-size: 2rem;
+            line-height: 3.5rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo,
+            margin:2rem 0;
+            font-weight:bold;
+        }
+            
+        .l-sub-img__works-info h1{
+            margin-bottom: 1rem;
+        }
+            
+        .l-sub-img__works-info-cat{
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        }
+        
+        @media (max-width: 767px) {
+        .c-head01__lead{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }}
+
+
+
+
+        .works-single-other__heading-head{
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 767px) {
+        .works-single-other__heading-head{
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }}
+        
+        @media (max-width: 767px) {
+        .works-single-other__archive ul{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+
+        }
+
+        .works-single-other__heading-head h2{
+            margin-top: 0.5rem;
+        }
+
+     .c-archive03__item-info span{
+         font-size: 1rem;
+         line-height: 2;
+     }
+
+    .c-archive03__item-head{
+         font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    }
+            
+            .l-sub-img__works-url a{
+                font-family: "futura-pt", sans-serif;
+            }
+    </style>
+</head>
+   <body id="himesoba" class="bg-gray-light min-h-screen">
+
+    <div class="body-wrapper">
+<div id="cursor" class="hidden lg:block fixed w-2.5 h-2.5 rounded-full bg-gray-500 z-[9999] pointer-events-none transition-all duration-500 ease-out"></div>
+        
+        <header class="fixed top-0 left-0 w-full h-20 z-51">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-end items-center">
+                <button id="main-hamburger" class="hamburger z-50 w-10 h-10 relative" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <nav id="sp-nav" class="sp-nav hidden lg:flex-row bg-black">
+            <div id="nav-image-side-wrapper" class="nav-image-side-wrapper hidden lg:block">
+                </div>
+
+            <div class="nav-content-side flex flex-col items-start justify-center p-8 lg:p-0">
+                <ul id="nav-list" class="flex flex-col h-full space-y-8 lg:space-y-4">
+                     <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_contact.png">
+                        <a class="nav-link-sp font-en font-medium" href="https://kuroyuki0327.github.io/kuroyuki/">
+                             TOP
+                        </a>
+                    </li>
+                    <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png">
+                        <a class="nav-link-sp font-en font-medium" href="https://kuroyuki0327.github.io/kuroyuki/work/">
+                            WORKS
+                        </a>
+                    </li>
+                    <li data-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png" data-sp-img="https://kuroyuki0327.github.io/kuroyuki/images/bg_about.png">
+                        <a class="nav-link-sp font-en font-medium" href="https://kuroyuki0327.github.io/kuroyuki/about/">
+                           ABOUT
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-pad">
+                    <div class="pc-nav-contact-link-wrapper">
+                        <p class="text-sm col-ac mb-2">CONTACT</p>
+                        <a href="mailto:kuro.kuro.yuki0327@gmail.com" class="text-xs">Email: kuro.kuro.yuki0327@gmail.com</a>
+                        
+                        <div class="pc-nav-social hidden lg:flex space-x-4 mt-4">
+                            <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&amp;utm_source=qr" class="social-icon text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-lg" aria-label="LINE"><i class="fab fa-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sp-nav-social block lg:hidden flex justify-center space-x-10 mt-auto">
+                <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&amp;utm_source=qr" class="social-icon text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-2xl" aria-label="LINE"><i class="fab fa-line"></i></a>
+            </div>
+        </nav>
+
+        <main role="main">
+            <div id="work-top" class="work-top relative flex items-center justify-center bg-cover bg-center">
+                <div class="inset-0 top-inner">
+                <div class="l-sub-img__works text-white ttl-wrap">
+                        <div class="l-sub-img__works-info">
+                            <h1 class="l-sub-img__works-info-name text-2xl md:text-4xl font-bold" style="　margin-bottom: 1rem;">求人WEB広告バナー</h1>
+                            <p class="l-sub-img__works-info-cat inline-block bg-primary text-white px-3 py-1 text-xs md:text-sm rounded-full mt-2">求人広告</p>
+                        </div>
+                        <p class="l-sub-img__works-txt text-xl md:sub-ttl font-bold mt-4 md:mt-6">惹きつけるビジュアルとキャッチで魅力を伝える</p>
+                       <!-- <p class="l-sub-img__works-url mt-6 md:mt-8">
+                            <a href="https://www.ixw.co.jp/himesoba/" target="_blank" rel="noopener noreferrer" class="text-white opacity-75 text-sm md:text-base hover:opacity-100 transition-opacity duration-300">
+                                https://www.ixw.co.jp/himesoba/ <span class="ml-1 inline-block">↗</span>
+                            </a>
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-bg-white01">
+                <div class="c-bg-white01__inner">
+                    <div class="l-container is-col1">
+                        <div class="l-contents">
+                            <div id="single" class="works-single c-single02 c-bg-white01 pt-8 md:pt-0 pb-16 md:pb-28 is-top-130">
+                                <div class="works-single__inner c-single02__inner c-bg-white01__inner u-inner">
+                                    <div class="">
+                                        <div class="c-single02-mv px-6 md:px-0">
+                                            <div class="c-single02-mv__img mb-8">
+                                                <img src="https://kuroyuki0327.github.io/kuroyuki/images/design04.jpg" alt="モックアップ" class="w-full h-auto mx-auto md:max-w-full">
+                                            </div>
+                                        </div>
+
+                                        <div class="c-single02__area-txt px-6 md:px-0">
+                                            <p class="c-single02__txt">西日本を中心に50店舗以上を展開する「SALONS Beauty Group」様のスタイリスト募集を目的としたInstagram広告の画像と動画を制作しました。求職者が最も重視する「働きやすさ」と「業務への集中」をメッセージの核とし、カジュアルかつ誠実なトーンで魅力的な労働条件を訴求しました。</p>
+                                        </div>
+
+                                        <div class="c-single02-info mt-8 md:mt-20">
+                                            <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
+                                                <div class="c-head01__wrap">
+                                                    <header class="c-head01 mb-4 md:mb-6">
+                                                        <p class="c-head01__en u-font-heebo">Strategy</p> 
+                                                        <h2 class="c-head01__ja">課題</h2> 
+                                                    </header>
+                                                    <div class="c-head01__area-txt">
+                                                        <p class="c-head01__lead mb-4 md:mb-6">競争の激しい美容業界で、他社に差をつける「働き方の魅力」を明確に提示する。</p>
+                                                        <p class="c-head01__txt">求職者が抱く「長時間労働」「電話対応などの雑務」「不安定な収入（ノルマ）」といったネガティブなイメージを解消することが求められました。限られた広告時間・スペースの中で、「マンツーマン制」「電話対応なし」という業務の効率性と集中度を強調しつつ、「社会保険完備」「ノルマ・残業なし」「土日休みOK」といった具体的な好待遇を簡潔に伝えることが課題でした。</p>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
+                                                <div class="c-head01__wrap">
+                                                    <header class="c-head01 mb-4 md:mb-6">
+                                                        <p class="c-head01__en u-font-heebo">Strategy</p>
+                                                        <h2 class="c-head01__ja">戦略</h2>
+                                                    </header>
+                                                    <div class="c-head01__area-txt">
+                                                        <p class="c-head01__lead mb-4 md:mb-6">「施術への集中」と「プライベートの両立」を保証する、新しい働き方をビジュアルで訴求。</p>
+                                                        <p class="c-head01__txt">応募者の不安を解消するため、休日制度や社会保険完備といった安定性を強調する情報をサイト上部に配置しました。その上で、具体的なスタッフインタビューや店舗ごとの雰囲気を伝えるビジュアルコンテンツを展開しました。多店舗展開のスケールメリットを生かした充実の研修プログラムや、ライフステージに応じた働き方が可能であることを示すことで、ターゲット層の関心を引きつけ、エントリーへ繋げる導線を設計しました。</p>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
+                                                <div class="c-head01__wrap">
+                                                    <header class="c-head01 mb-4 md:mb-6">
+                                                        <p class="c-head01__en u-font-heebo">Design</p>
+                                                        <h2 class="c-head01__ja">デザイン</h2>
+                                                    </header>
+                                                    <div class="c-head01__area-txt">
+                                                        <p class="c-head01__txt">実際に働くスタイリストが笑顔で、顧客と真摯に向き合っている様子を動画と静止画で使用し、職場の明るい雰囲気を強調しました。メインコピー「施術だけに集中できる。」は大きく太いフォントで力強く配置し、メッセージの重要性を強調。職種名の「Stylist Recruit」は手書き風のフォントを使用し、美容業界らしいトレンド感と親しみやすさを加えました。濃い背景（動画）や赤・オレンジ系の暖色（静止画）を使用し、活気と情熱を演出しつつ、待遇情報には黄色い背景を用いて視認性を高めました。</p>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+
+                                        <div class="c-single02__area-img mt-12 md:mt-32 px-6 md:px-auto flex md:justify-center space-y-8 md:space-y-0 md:space-x-8">
+                                            <div class="c-single02__img-pc">
+                                                <img src="https://kuroyuki0327.github.io/kuroyuki/images/251029スタイリスト募集4_5.jpg" alt="PCイメージ" class="w-full h-auto mx-auto">
+                                            </div>
+                                            <div class="c-single02__img-sp">
+                                                <video class="top-movie" loop="" muted="" autoplay="" playsinline="" src="https://kuroyuki0327.github.io/kuroyuki/images/251029_スタイリスト募集ストーリー広告.mp4" aria-alt="動画広告"></video>
+                                            </div>
+                                        </div>
+
+                                        <div class="c-single02-about mt-12 md:mt-24 px-6 md:px-0">
+                                            <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
+                                                <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Company</dt>
+                                                <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">イーサロングループ</dd>
+                                            </dl>
+                                            <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
+                                                <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Location</dt>
+                                                <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">広島県広島市</dd>
+                                            </dl>
+                                            <dl class="flex justify-between flex-wrap border-t border-gray-med py-3 md:py-4">
+                                                <dt class="c-single02-about__item-head w-20 md:w-32 font-bold text-sm md:text-base u-font-heebo">Category</dt>
+                                                <dd class="c-single02-about__item-content w-4/5 md:w-auto md:flex-1 text-sm md:text-base pl-2">求人広告</dd>
+                                            </dl>
+ 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="other" class="works-single-other py-16 md:py-24">
+                <div class="works-single-other__inner max-w-7xl mx-auto px-4 md:px-6">
+                    <div class="works-single-other__heading flex flex-col md:flex-row justify-between items-start md:items-center md:mb-16">
+                        <header class="works-single-other__heading-head w-full md:w-auto">
+                            <p class="c-head01__en text-sm md:text-xl font-en">Other works</p>
+                            <h2 class="c-head01__ja text-2xl md:text-4xl">その他の制作実績</h2>
+                        </header>
+                        <div class="works-single-other__heading-btn mt-4 md:mt-0 hidden md:block">
+                            <a href="https://kuroyuki0327.github.io/kuroyuki/work/" class="custom-big-btn inline-flex items-center justify-center group">
+                                <p class="btn-text-jp font-medium tracking-[0.1em] text-sm ml-6 mr-6">すべてみる</p>
+                                <div class="btn-circle-wrapper w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                                    <div class="btn-circle"></div>
+                                    <div class="btn-arrow-container w-full h-full">
+                                        <svg class="btn-arrow w-5 h-5 transition-transform duration-400 ease-out absolute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="works-single-other__archive">
+                        <ul class="c-archive03 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
+                            <li class="c-archive03__item">
+                                <a href="https://kuroyuki0327.github.io/kuroyuki/work/recruit-site/index.html" class="c-archive03__item-link block relative overflow-hidden group">
+                                    <div class="c-archive03__item-img">
+                                        <img src="https://kuroyuki0327.github.io/kuroyuki/images/design03.jpg" alt="制作実績画像1" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
+                                    <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
+                                        <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
+                                            <span class="c-archive03__item-info-in">SALONS Beauty Group</span>
+                                            <span class="c-archive03__item-info-cat hidden md:inline">｜求人サイト</span>
+                                        </p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">求職者へ向けて働く環境・スタッフの雰囲気を伝える</p>
+                                    </div>
+                                </a>
+                            </li>
+                              <li class="c-archive03__item">
+                                <a href="https://kuroyuki0327.github.io/kuroyuki/work/bimera/" class="c-archive03__item-link block relative overflow-hidden group">
+                                    <div class="c-archive03__item-img">
+                                        <img src="https://kuroyuki0327.github.io/kuroyuki/images/design02.jpg" alt="制作実績画像2" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
+                                    <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
+                                        <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
+                                            <span class="c-archive03__item-info-in">BIMERA（ビメラ）</span>
+                                            <span class="c-archive03__item-info-cat hidden md:inline">｜ブランディング</span>
+                                        </p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">サービス内容や店舗の雰囲気が伝わるサイトづくり</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-archive03__item">
+                                <a href="https://kuroyuki0327.github.io/kuroyuki/work/himesoba/" class="c-archive03__item-link block relative overflow-hidden group">
+                                    <div class="c-archive03__item-img">
+                                        <img src="https://kuroyuki0327.github.io/kuroyuki/images/design01.jpg" alt="制作実績画像3" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
+                                    <div class="c-archive03__item-area-txt absolute bottom-0 left-0 p-3 md:p-5 text-white z-10">
+                                        <p class="c-archive03__item-info text-xs md:text-sm opacity-75 font-bold mb-1">
+                                            <span class="c-archive03__item-info-in">十割そばの店 ひめそば</span>
+                                            <span class="c-archive03__item-info-cat hidden md:inline">｜ブランディング</span>
+                                        </p>
+                                        <p class="c-archive03__item-head text-sm md:text-lg">十割そば ひめそばの魅力を伝えるサイトづくり</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="c-btn01 mt-8 md:mt-16 block md:hidden text-center">
+                            <a href="https://kuroyuki0327.github.io/kuroyuki/work/" class="custom-big-btn inline-flex items-center justify-center group w-full max-w-xs h-12">
+                                <p class="btn-text-jp font-medium tracking-[0.1em] text-sm ml-6 mr-6">すべてみる</p>
+                                <div class="btn-circle-wrapper w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                                    <div class="btn-circle"></div>
+                                    <div class="btn-arrow-container w-full h-full">
+                                        <svg class="btn-arrow w-5 h-5 transition-transform duration-400 ease-out absolute" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <footer>
+            <div id="contact" class="footer__contact text-center">
+                <div class="contact__content-wrapper mx-auto relative">
+                    <p class="contact__thanks-message">ご覧いただき<br class="sp">ありがとうございます</p>
+   
+                </div>
+
+               <p class="contact-title">CONTACT</p>
+                
+                <div class="contact__mail mb-8">
+                    <span class="block mb-6 text-sm">下記の連絡先にお気軽にご連絡ください</span>
+                    
+                    <div class="email">
+                        <a class="mail-btn contact__mail-link inline-flex items-center justify-center w-full max-w-sm py-4 px-8 border border-accent rounded-full bg-white text-accent font-en tracking-wider text-sm" href="mailto:kuro.kuro.yuki0327@gmail.com">
+                            <i class="fas fa-envelope mr-3"></i> kuro.kuro.yuki0327@gmail.com
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.instagram.com/kryk_0327?igsh=dDBwaW5uMmhjcTVt&amp;utm_source=qr" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://chat.google.com/room/AAQAtKjAcII/R-1JEqurSfU/R-1JEqurSfU?cls=10" class="social-icon text-3xl text-gray-700 hover:text-accent transition-colors" aria-label="LINE"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer__content-wrapper mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
+                <nav class="hidden sm:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="https://kuroyuki0327.github.io/kuroyuki/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity">トップ</a></li>
+                        <li><a href="https://kuroyuki0327.github.io/kuroyuki/work/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-white">制作実績</a></li>
+                        <li><a href="https://kuroyuki0327.github.io/kuroyuki/about/" class="text-sm font-medium tracking-[0.16em] hover:opacity-60 transition-opacity relative before:content-['/'] before:absolute before:-left-3 before:text-white">私について</a></li>
+                    </ul>
+                </nav>
+                <small class="text-xs font-medium tracking-[0.16em] text-center w-full sm:w-auto">© 2025 YUKI KURONOTSUBO</small>
+            </div>
+        </footer>
+    
+        <div id="page-top" class="page-top-btn" role="button" aria-label="ページトップへ">
+            <a href="#work-top" class="page-top-link">
+                <i class="fas fa-arrow-up page-top-icon"></i> 
+                <span>Page Top</span>
+            </a>
+        </div>
+    
+    </div>
+
+    <script>
+        // --- Global Variables & Constants ---
+        const cursor = document.getElementById('cursor');
+        const mainHamburger = document.getElementById('main-hamburger');
+        const spNav = document.getElementById('sp-nav');
+        const navLinks = document.querySelectorAll('.nav-link-sp');
+        const navImageSideWrapper = document.getElementById('nav-image-side-wrapper'); 
+        const navListItems = document.querySelectorAll('#sp-nav li[data-img]');
+        const navListContainer = document.getElementById('nav-list');
+        const topSection = document.getElementById('work-top'); // メインビジュアルセクションを基準に
+        const pageTopBtn = document.getElementById('page-top');
+
+        // WORKSのナビゲーションアイテムからデフォルト画像URLを取得
+        const defaultNavImageItem = Array.from(navListItems).find(item => item.querySelector('a').getAttribute('href').includes('work'));
+        const defaultImageUrl = defaultNavImageItem ? defaultNavImageItem.getAttribute('data-img') : 'https://kuroyuki0327.github.io/kuroyuki/images/bg_work.png';
+        
+        let lastShownImageUrl = defaultImageUrl; 
+        let currentNavImageElement = null;
+
+        // --- Utility Functions ---
+        function isDesktop() {
+            return window.innerWidth >= 1024;
+        }
+
+        // --- Custom Cursor Logic (Desktop Only) ---
+        function updateCursor() {
+            if (!isDesktop() || !cursor) return;
+            let mouseX = 0;
+            let mouseY = 0;
+            let posX = window.innerWidth / 2;
+            let posY = window.innerHeight / 2;
+
+            document.addEventListener('mousemove', function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateCursor() {
+                posX += (mouseX - posX) * 0.1;
+                posY += (mouseY - posY) * 0.1;
+                cursor.style.transform = `translate(${posX}px, ${posY}px)`;
+                requestAnimationFrame(animateCursor);
+            }
+            if (!cursor.dataset.isAnimating) {
+                cursor.dataset.isAnimating = 'true';
+                animateCursor();
+            }
+
+            // Hover effect for links
+            document.querySelectorAll('a, button, .works-card, .custom-big-btn, .c-archive03__item-link').forEach(el => {
+                el.addEventListener('mouseover', () => cursor.classList.add('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
+                el.addEventListener('mouseout', () => cursor.classList.remove('lg:w-16', 'lg:h-16', 'lg:bg-opacity-50', 'lg:bg-accent'));
+            });
+        }
+
+
+        // --- PC Navigation Image Logic (Element Switching) ---
+
+        function showNavImage(imageUrl, forceTransition = true) {
+            if (!isDesktop() || !navImageSideWrapper || !imageUrl) return;
+
+            if (imageUrl === lastShownImageUrl && currentNavImageElement) {
+                 return;
+            }
+
+            const oldImageElement = currentNavImageElement;
+
+            // 1. 新しい画像コンテナを作成
+            const newImageContainer = document.createElement('div');
+            newImageContainer.classList.add('nav-image-container');
+            newImageContainer.style.backgroundImage = `url('${imageUrl}')`;
+
+            // 2. 新しい要素をラッパーに追加
+            navImageSideWrapper.appendChild(newImageContainer);
+
+            // 3. アニメーションをトリガー
+            if (forceTransition) {
+                 setTimeout(() => {
+                    newImageContainer.classList.add('active');
+                }, 10);
+            } else {
+                newImageContainer.classList.add('active');
+            }
+
+            // 4. 現在の画像要素と最後に表示されたURLを更新
+            currentNavImageElement = newImageContainer;
+            lastShownImageUrl = imageUrl;
+
+
+            // 5. 古い画像要素を管理し、消去する
+            if (oldImageElement) {
+                oldImageElement.classList.remove('active');
+
+                setTimeout(() => {
+                    if (oldImageElement.parentNode === navImageSideWrapper && oldImageElement !== currentNavImageElement) {
+                        navImageSideWrapper.removeChild(oldImageElement);
+                    }
+                }, 600);
+            }
+        }
+
+        function setInitialNavImage() {
+            if (isDesktop() && !currentNavImageElement) {
+                showNavImage(defaultImageUrl, false); 
+            }
+        }
+
+        // --- Hamburger Menu Logic ---
+        function toggleMenu() {
+            const isOpen = mainHamburger.classList.toggle('open');
+
+            if (isOpen) {
+                spNav.classList.remove('hidden');
+                
+                if (isDesktop()) {
+                    spNav.classList.add('flex');
+                    setInitialNavImage();
+                } else {
+                    spNav.classList.add('block');
+                }
+
+                setTimeout(() => {
+                    spNav.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden'; 
+
+            } else {
+                spNav.classList.remove('opacity-100');
+
+                setTimeout(() => {
+                    spNav.classList.add('hidden');
+                    spNav.classList.remove('flex', 'block');
+                    document.body.style.overflow = ''; 
+
+                    // PCホバー画像をリセット
+                    if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
+                        navImageSideWrapper.removeChild(currentNavImageElement);
+                    }
+                    currentNavImageElement = null;
+                    lastShownImageUrl = defaultImageUrl; 
+                }, 500);
+            }
+        }
+
+        mainHamburger.addEventListener('click', toggleMenu);
+        
+        // ナビゲーションリンクのクリック処理
+        navLinks.forEach(link => link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // ページ内リンクの場合 (#contact, #work-top)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if(targetElement) {
+                    // スムーズスクロール
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                    setTimeout(toggleMenu, 500); 
+                } else {
+                    // #work-top がターゲットだが、IDがwork-topなので、そのままスクロール
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(toggleMenu, 500);
+                }
+            } else {
+                 // 外部リンク（index_work.htmlなど）の場合はそのまま遷移
+                setTimeout(toggleMenu, 500);
+            }
+        }));
+
+        // PC Navigation Hover Logic
+        navListItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (isDesktop()) {
+                    const imageUrl = item.getAttribute('data-img');
+                    showNavImage(imageUrl, true);
+                }
+            });
+        });
+        
+        // ナビゲーションリスト全体からマウスが離れたら、WORKSの画像に戻す
+        if (navListContainer) {
+            navListContainer.addEventListener('mouseleave', () => {
+                if (isDesktop() && mainHamburger.classList.contains('open')) {
+                    showNavImage(defaultImageUrl, true); 
+                }
+            });
+        }
+
+
+        // Handle PC/SP layout on resize
+        window.addEventListener('resize', () => {
+            const isOpen = mainHamburger.classList.contains('open');
+            updateCursor();
+
+            if (isOpen) {
+                spNav.classList.remove('hidden', 'flex', 'block');
+                spNav.classList.add('opacity-100');
+                if (isDesktop()) {
+                    spNav.classList.add('flex');
+                    setInitialNavImage();
+                } else {
+                    spNav.classList.add('block');
+                    if (currentNavImageElement && currentNavImageElement.parentNode === navImageSideWrapper) {
+                        navImageSideWrapper.removeChild(currentNavImageElement);
+                        currentNavImageElement = null;
+                        lastShownImageUrl = defaultImageUrl;
+                    }
+                }
+            } else {
+                spNav.classList.add('hidden');
+                spNav.classList.remove('flex', 'block', 'opacity-100');
+            }
+        });
+
+
+        // --- Scroll Logic (Page Top Button Visibility) ---
+
+        // Page Top Button Visibility
+        function updatePageTopButton() {
+            // index_workのロジックに合わせて、FVセクションの高さを超えたら表示
+            const fvHeight = topSection ? topSection.offsetHeight : 0; 
+            if (window.scrollY > fvHeight) { 
+                pageTopBtn.classList.add('visible');
+            } else {
+                pageTopBtn.classList.remove('visible');
+            }
+        }
+
+        pageTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // ページトップへスムーズスクロール
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCursor();
+            updatePageTopButton();
+            // Force initial state check to ensure menu is closed and layout is correct
+            window.dispatchEvent(new Event('resize'));
+        });
+
+        window.addEventListener('scroll', () => {
+            updatePageTopButton();
+        });
+    </script>
+
+</body></html>
