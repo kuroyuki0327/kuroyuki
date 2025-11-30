@@ -280,30 +280,66 @@
             z-index:51;
         }
 
-        /* =========================================================================
-            Footer Styles (index_top.html から完全に移植)
-            ========================================================================= */
+        /* -----------------------------------------------------------
+        // [移植] Footer / Contact Styles (index_work.htmlに完全統一)
+        // ----------------------------------------------------------- */
 
+        footer{
+            position: relative;
+            padding-top: 30px;
+            margin-top: 0;
+        }
+        
+        @media (min-width: 768px) {
+        footer{
+            margin-top: 6rem; 
+        }}
+            
+        
+
+        footer::before {
+            content: '';
+            top: 0;
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            z-index: 5;
+            bottom: 0;
+            background-color: #433f37; /* index_workに合わせる */
+        }
+
+        footer .contact__content-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            z-index: 5;
+            top: 0;
+            background-color: white;
+        }
+        
         .footer__contact{
             position: relative;
             padding: 9rem auto 4rem;
-            height: 43rem; 
+            height: 43rem;
             display: flex;
             flex-direction: column;
             width: 100%;
-            overflow: hidden; 
+            overflow: auto; /* index_workに合わせる */
         }
 
         @media (min-width: 768px) {
-        .footer__contact{
-            padding: 8rem auto 4rem;
-            height:700px; 
+            .footer__contact{
+                padding: 8rem auto 4rem;
+                height:700px;
             }
         }
 
-        /* 背景画像の設定 - index_top.htmlから移植 */
+        /* 背景画像の設定 */
         .footer__contact:before{
-            background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg.jpg") no-repeat center; /* index_topのSP画像を想定 */
+            background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg.jpg") no-repeat center; 
             content: '';
             width: 100%;
             height: 400px;
@@ -318,45 +354,48 @@
             transform: translateX(-50%);
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 768px) { 
             .footer__contact:before{
-                background: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg-pc.jpg") no-repeat center; /* index_topのPC画像を想定 */
+                background-image: url("https://kuroyuki0327.github.io/kuroyuki/images/footer-contact-bg-pc.jpg")!important; 
                 background-size: cover;
             }
         }
-
+    
         .contact__content-wrapper{
-            padding: 10rem 0 0; 
+            padding: 9rem 0 0; /* index_workに合わせる */
+            position:relative;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 768px) { 
         .contact__content-wrapper{
-            padding: 12rem 0 0; 
+            padding: 9rem 0 0; /* index_workに合わせる */
         }}
 
         .contact__thanks-message{
             font-size: 35px;
             color: #fff;
             text-shadow: 0 0 10px #5f493b;
-            margin-bottom: 5rem; 
+            margin-bottom: 5rem;
+            margin-top: 32px; /* index_workに合わせる */
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 768px) { 
         .contact__thanks-message{
-            margin-bottom: 5rem; 
+            margin-bottom: 5rem;
         }}
 
         .contact-title{
             font-family: "minerva-modern", sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 4rem; 
-            letter-spacing: 0.2rem; 
+            font-size: 4rem;
+            letter-spacing: 0.2rem;
             display: flex;
             justify-content: center;
+            color: var(--color-dark); /* index_workに合わせる */
         }
-
-        @media (min-width: 768px) {
+        
+        @media (min-width: 768px) { 
         .contact-title{
             font-size: 7rem;
         }}
@@ -366,7 +405,7 @@
             color: #fff;
             margin-top: 4rem;
         }
-
+        
         /* Mail Button */
         .mail-btn {
             position: relative;
@@ -379,11 +418,12 @@
         .mail-btn:hover i {
             color: var(--color-light);
         }
-        .email{ 
+        
+        .email{
             width:80vw;
             margin:0 auto;
         }
-
+		
         /* Page Top Button (index_top.htmlから移植) */
         .page-top-btn {
             position: fixed;
@@ -669,10 +709,11 @@
 		.recommend::before{
 		    content: '';
 			position: absolute;
-			left: 0;
+			left: 11rem;
 			right: 0;
 			top: 0;
 			bottom: 0;
+		    width: 100vw;
 			background:#F7F3EB;
 		}
 
