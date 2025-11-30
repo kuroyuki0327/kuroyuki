@@ -40,6 +40,26 @@
 		    overflow: scroll;
         }
 
+		        /* index_top.htmlから移植 - SP時の背景画像非表示用 */
+        .sp{
+            display: none;
+        }
+
+        .pc{
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+        .sp{
+            display: block!important;
+        }
+
+        .pc{
+            display: none!important;
+        }
+        }
+		
+
         /* カスタムリセット & ベーススタイル */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -1023,7 +1043,7 @@
 }
 
 .midashi01 .jp {
-    font-size: 3rem;
+    font-size: 2.2rem;
     display: block;
     margin-bottom: 2rem;
 }
@@ -1152,7 +1172,7 @@
                         <div class="l-sub-img__works-info">
                             <h1 class="l-sub-img__works-info-name text-5xl md:text-6xl font-minerva">About Me</h1>
                             </div>
-                        <p class="l-sub-img__works-txt text-sm text-xl md:sub-ttl mt-4 md:mt-6">私について：デザインスキルと強み</p>
+                        <p class="l-sub-img__works-txt text-sm text-xl md:sub-ttl mt-4 md:mt-6">私について<br class="sp">&デザインスキルと強み</p>
                     </div>
                 </div>
             </div>
@@ -1235,7 +1255,7 @@
                                                     <div class="strength-card">
                                                         <span class="card-number">02</span>
                                                         <span class="card-icon">🛒</span> 
-                                                        <p class="card-title">集客導線を意識したECスキル</p>
+                                                        <p class="card-title">集客導線を意識した<br class="sp">ECスキル</p>
                                                         <div class="card-text">
                                                             ECサイト（Shopify等）の制作・運営経験<br>
                                                             化粧品ECサイトの構築・運用経験を持つため、デザインだけでなく、集客から販売、そしてコンバージョンに至るまでのユーザー導線を意識した制作が可能です。
@@ -1245,7 +1265,7 @@
                                                     <div class="strength-card">
                                                         <span class="card-number">03</span>
                                                         <span class="card-icon">⚙️</span> 
-                                                        <p class="card-title">マルチな制作対応力と効率化</p>
+                                                        <p class="card-title">マルチな制作対応力と<br class="sp">効率化</p>
                                                         <div class="card-text">
                                                             幅広い媒体とAI技術を駆使<br>
                                                             Web、グラフィック、SNS、ECといった多媒体に対応可能。また、AI技術を積極的に活用することで、短期間で質の高いアウトプットを生み出し、制作時間を大幅に短縮しています。
