@@ -61,7 +61,6 @@
         ul { list-style: none; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- ハンバーガーアイコンの修正部分 (index_2511から移植) --- */
         .hamburger {
             position: relative;
             z-index: 60; 
@@ -97,11 +96,12 @@
             top: 50%; 
             transform: rotate(-45deg);
         }
-        
+        /* ---------------------------------- */
+
         /* =========================================================================
-            Navigation Menu Styles (index_2511から移植)
+            Navigation Menu Styles (index_top.htmlベース & index_work.htmlのコンテンツ)
             ========================================================================= */
-        
+
         /* Full-screen Nav Container */
         .sp-nav {
             position: fixed;
@@ -115,17 +115,19 @@
             opacity: 0; 
             transition: opacity 0.5s ease; 
         }
+        /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
+        .sp-nav a {
+            color: var(--color-light); 
+            font-family: "minerva-modern", sans-serif; /* index_workから移植 */
+            font-weight: 400; /* index_workから移植 */
+            font-style: normal; /* index_workから移植 */
+        }
+
+        /* フェードイン用クラス (JSで付与) */
         .sp-nav.opacity-100 {
             opacity: 1;
         }
 
-        /* Mobile: ナビゲーションメニューのリンク色を白に統一 */
-        .sp-nav a {
-            color: var(--color-light);
-            font-family: "minerva-modern", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
 
         /* PC Menu Layout (Side-by-Side) */
         @media (min-width: 1024px) {
@@ -152,7 +154,7 @@
                 transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             }
 
-            /* アクティブ時のスタイル */
+            /* アクティブ時のスタイル (正常サイズに戻り、フェードイン完了) */
             .nav-image-container.active {
                 opacity: 1;
                 transform: scale(1); 
@@ -163,23 +165,22 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center; 
+                justify-content: space-between; /* index_workから修正 */
                 align-items: flex-start; 
                 padding-top: 0;
                 padding-left: 100px;
                 background-color: #000000; 
-               justify-content: space-between; 
             }
 
             .sp-nav ul {
                 display: block;
-                padding-top: 6rem;
-                padding-left: 6rem;
+                padding-top: 6rem; /* index_workから移植 */
+                padding-left: 6rem; /* index_workから移植 */
                 height: auto;
-                margin-bottom: 4rem;
+                margin-bottom: 4rem; 
             }
             .sp-nav li {
-                margin-bottom: 4rem !important;
+                margin-bottom: 4rem !important; /* index_workから移植 */
             }
             .nav-link-sp {
                 padding: 0;
@@ -193,41 +194,30 @@
                 color: var(--color-accent);
             }
 
-            /* PC Nav Contact/Social */
-            .pc-nav-contact-btn {
-                display: inline-block;
-                padding: 0.75rem 2rem;
-                border: 1px solid var(--color-light);
-                color: var(--color-light);
-                text-align: center;
-                transition: all 0.3s ease;
-                font-size: 1rem;
-                letter-spacing: 0.1em;
-                margin-bottom: 1rem;
-            }
-            .pc-nav-contact-btn:hover {
-                background-color: var(--color-light);
-                color: var(--color-dark);
-            }
+            /* PC Nav Contact/Social (index_workから移植・調整) */
             .pc-nav-contact-link-wrapper {
-                margin-top: 4rem;
+                margin-top: 0;
                 margin-bottom: 2rem;
+            }
+            .pc-nav-contact-link-wrapper p.col-ac {
+                color: var(--color-accent); /* index_workのクラス */
             }
             .pc-nav-contact-link-wrapper a {
                 display: block;
-                margin-bottom: 1.5rem;
-                margin-top: 1rem;
-                font-size: 1.875rem;
+                margin-bottom: 1.5rem; /* index_workから移植 */
+                margin-top: 1rem; /* index_workから移植 */
+                font-size: 1.875rem; /* index_workから移植 */
                 letter-spacing: 0.1em;
                 color: var(--color-gray-light);
             }
+            .nav-pad{
+                padding-bottom: 6rem;
+                padding-left: 6rem;
+                margin-top: 0;
+            }
         }
 
-        .col-ac{
-            color: var(--color-accent);
-        }
-
-        /* Mobile Menu Layout (Center Stacked) */
+        /* Mobile Menu Layout (Center Stacked) - index_top.htmlベース */
         @media (max-width: 1023px) {
             .sp-nav {
                 padding-top: 80px;
@@ -237,19 +227,27 @@
                 padding-top: 0;
             }
             .sp-nav li {
-                /*margin-bottom: 1.5rem;
-                padding-left: 2rem;*/
+                margin-bottom: 1.5rem!important;
+                margin-top: 0!important;                
+                padding-left: 2rem;
             }
             .nav-link-sp {
-                /*padding: 1rem 0;*/
+                padding: 1rem 0;
                 font-size: 1.5rem;
                 display: block; 
                 align-items: initial;
                 gap: initial;
             }
+            
+            /* SP Navのソーシャルアイコン配置 */
             .sp-nav-social {
-                /*padding: 3rem 2rem 1rem;*/
-                text-align: center;
+                padding: 0 4rem 1rem;
+                justify-content: flex-start!important;
+            }
+
+            .nav-pad{
+                padding-left: 2rem;
+                padding-top: 4rem;
             }
         }
 
@@ -1323,6 +1321,7 @@
 </body>
 
 </html>
+
 
 
 
