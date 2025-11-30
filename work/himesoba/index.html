@@ -737,11 +737,13 @@
             font-weight: 400;
             font-style: normal;
             color: var(--color-accent);
-            font-size: 0.8rem;
+            font-size: 1.1rem;
+            padding-bottom: 0.1rem;
         }
         .c-head01__ja{
             font-size: 2.5rem;
         }
+        
         .c-single02__img-pc{
             width: 30vw;
         }
@@ -762,14 +764,32 @@
         @media (max-width: 767px) {
         .c-single02__area-img{
             flex-direction: column;
+            align-items: center;
         }}
         
-        .c-head01__txt{
-            font-size: 0.8rem;
-            line-height: 1.5rem;
+        .c-head01__txt {
+            font-size: 1rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            line-height: 2;
         }
+        
         .c-head01__lead{
-            font-size: 1.8rem;
+            font-size: 2rem;
+            line-height: 3.5rem;
+            font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo,
+            margin:2rem 0;
+            font-weight:bold;
+        }
+        
+        @media (max-width: 767px) {
+        .c-head01__lead{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }}
+
+
+        .l-sub-img__works-info-cat{
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -869,8 +889,8 @@
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
-                                                        <h2 class="c-head01__ja font-bold">課題</h2>
                                                         <p class="c-head01__en u-font-heebo">Strategy</p> 
+                                                        <h2 class="c-head01__ja">課題</h2> 
                                                     </header>
                                                     <div class="c-head01__area-txt">
                                                         <p class="c-head01__lead mb-4 md:mb-6">厳選された十割そばの「本物」の味と、店舗の温かい雰囲気をウェブ上で伝える</p>
@@ -882,8 +902,8 @@
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
-                                                        <h2 class="c-head01__ja font-bold">戦略</h2>
                                                         <p class="c-head01__en u-font-heebo">Strategy</p>
+                                                        <h2 class="c-head01__ja">戦略</h2>
                                                     </header>
                                                     <div class="c-head01__area-txt">
                                                         <p class="c-head01__lead mb-4 md:mb-6">「伝統と新しさの融合」をテーマに、こだわりを深く掘り下げて伝える構成</p>
@@ -895,8 +915,8 @@
                                             <section class="c-single02-info__sec mt-8 md:mt-20 border-t border-gray-med pt-8">
                                                 <div class="c-head01__wrap">
                                                     <header class="c-head01 mb-4 md:mb-6">
-                                                        <h2 class="c-head01__ja font-bold">デザイン</h2>
                                                         <p class="c-head01__en u-font-heebo">Design</p>
+                                                        <h2 class="c-head01__ja">デザイン</h2>
                                                     </header>
                                                     <div class="c-head01__area-txt">
                                                         <p class="c-head01__txt">洗練された和モダン」**をデザインコンセプトに掲げ、上質なそばの体験を視覚的に表現しました。そばの素朴な色合いや自然な木材を思わせるアースカラーを基調とし、アクセントカラーには品格を感じさせる色（例：深い紺や濃緑）を使用。余白を大きくとったミニマルなレイアウトを採用することで、写真の美しさを際立たせ、落ち着きと誠実さを感じさせる佇まいを演出しました。</p>
@@ -909,7 +929,7 @@
                                             <div class="c-single02__img-pc flex-shrink-0">
                                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/himesoba01_pc.png" alt="PCイメージ" class="w-full h-auto mx-auto">
                                             </div>
-                                            <div class="c-single02__img-sp flex-shrink-0 mx-auto">
+                                            <div class="c-single02__img-sp flex-shrink-0">
                                                 <img src="https://kuroyuki0327.github.io/kuroyuki/images/himesoba01_sp.png" alt="SPイメージ" class="w-full h-auto">
                                             </div>
                                         </div>
@@ -1336,6 +1356,7 @@
 
 </body>
 </html>
+
 
 
 
