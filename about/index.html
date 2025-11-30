@@ -510,41 +510,40 @@
 
         /* Works詳細ページ用のトップセクションの高さとパディングを調整 */
         .top-inner{
-            height: 365px;
+            height: 27rem;
+            padding-top: 8rem;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            padding-top: 130px;
             padding-left: 2rem;
             padding-right: 2rem;
         }
 
+
         @media (min-width: 768px) {
             .u-inner {
-               width: 100%;
-               max-width: 73rem;
+                width: 100%;
+               max-width: 1100px;
                margin: auto;
                padding-left: 0;
                padding-right: 0;
-				left: 7rem;
             }
         }
 
         @media all and (min-width: 768px) {
         .top-inner {
-            height: 41rem;
-            padding-top:10rem;
-            width: 88%;
-            max-width: 72rem;
-            margin: auto;
-            padding-left: 5rem;
-            padding-right:5rem;
+        height: 35rem;
+        padding-top: 11rem;
+        width: 100%;
+        max-width: 72rem;
+        margin: auto;
+        padding-left: 0;
+        padding-right: 0;
         }}
 
         /* c-bg-white01 (Works詳細のコンテンツラッパー) の背景スタイルを調整 */
         .c-bg-white01 {
             position: relative;
             background:#fbfbf5;
-			padding:0 1rem;
         }
 
         .c-bg-white01::before {
@@ -579,7 +578,7 @@
             }
         }
         /* Works詳細固有のクラスを維持 */
-        .c-bg-white01__inner { position: relative; z-index: 1; }
+        .c-bg-white01__inner { position: relative; z-index: 1; padding: 0 0.5rem;}
         .works-single__inner {  padding-bottom: 55px; }
 
         .c-single02-info__sec{
@@ -615,7 +614,8 @@
 
         .c-single02__txt{
             font-family: 游ゴシック体, YuGothic, 'Yu Gothic', "游ゴシック Medium", "Yu Gothic Medium", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-            font-size: 0.8rem;
+            font-size: 1rem;
+		    line-height: 2;
         }
 
         .c-head01__en{
@@ -654,15 +654,17 @@
         .intro .ttl{font-family: "游明朝", YuMincho, serif;font-size: 7vw;}
         .intro_img{width: 100%; border-radius: 10px; display: flex; flex-direction: column; align-items: center;}
         .intro_img img{width: 100%;border-radius: 10px;}
-        .intro_img img:nth-child(1){position: relative;left: -6vw;margin-bottom: 4vw; border-radius: 10px;}
+        .intro_img img:nth-child(1){position: relative;left: -6vw;margin:2rem; border-radius: 10px;}
         .intro_img img:nth-child(2){width: 100%;margin: 0 0 0 auto;}
         
         .recommend{
             padding: 10vw 0; 
             margin-bottom: 6vw;
-			left: 11rem;
+			left: 0;
 			position:relative;
         }
+
+		
 
 		.recommend::before{
 		    content: '';
@@ -823,6 +825,10 @@
             background-size: 100% 100%;
         }
 
+		.l-sub-img__works{
+			color:#fff;
+		}
+
 
         /* =============================================
         pc-size
@@ -839,6 +845,10 @@
             .intro_img img:nth-child(2){width: 50%;margin: -60px 0 0 -80px;position: relative;}
             .intro_img .deco{width: 25%;bottom: -50px;right: auto;transform: translateX(92.5%);left: 50%;}
 
+	        .recommend{
+			left: 11rem;
+			}
+			
 			.recommend-inner{width: 100%; max-width: 73rem; margin: auto;}
             .recommend{margin-bottom: 70px; padding:80px 50px;} /* paddingをPC向けに調整 */
             .recommend .ttl{margin-bottom: 40px;padding-top: 0;}
@@ -908,10 +918,20 @@
             }
         }
 
+		.midashi01 {
+        display: flex;
+        flex-direction: column;
+		}
+
+		.midashi01 .en {
+	    font-family: minerva-modern;
+			
+		}
+		
 /* common sp
 ----------------------------------------------- */
 
-        @media screen and (max-width: 735px) {		
+@media screen and (max-width: 735px) {		
 .midashi01 {
     margin: 0 auto 8vw;
     position: relative;
@@ -955,9 +975,7 @@
     margin-bottom: 2rem;
 }		
 
-.l-sub-img__works{
-	color:#fff;
-}}
+}
 
            /* common pc
 ----------------------------------------------- */
@@ -972,7 +990,7 @@
         font-size: 45px;
         letter-spacing: 2px;
         color: var(--color-accent);
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         left: 0;
     }
 
