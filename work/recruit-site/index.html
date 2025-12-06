@@ -443,15 +443,34 @@
         // [修正] Page Top Button Styles - index_workに完全統一
         // ----------------------------------------------------------- */
         .page-top-btn {
-            position: fixed;
+            /* スクロール追従時のデフォルト */
+            position: fixed; 
             /* PC: 右下 */
             right: 40px; 
             bottom: 40px;
             z-index: 40;
             opacity: 0;
             /* ふわっと出現/消滅のアニメーション */
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out, transform 0s, bottom 0s; /* bottom, transform の変化をJSで制御するためトランジションを外す */
             visibility: hidden; /* 初期状態では非表示 */
+        }
+        
+        /* ボタンがフッターで静止する時のスタイル */
+        .page-top-btn.is-bottom-fixed {
+            position: absolute;
+            bottom: auto !important; /* bottom プロパティを解除 */
+        }
+
+        @media (max-width: 768px) {
+            .page-top-btn {
+                /* SP: 右下 */
+                right: 20px;
+                bottom: 20px;
+            }
+            /* SP用の静止スタイル */
+            .page-top-btn.is-bottom-fixed {
+                bottom: auto !important;
+            }
         }
         
         .page-top-btn.visible {
@@ -1422,13 +1441,40 @@
 
         // --- Scroll Logic (Page Top Button Visibility) ---
 
-        // Page Top Button Visibility
+        // Page Top Button Visibility & Stopping Logic
         function updatePageTopButton() {
-            // work-topセクションの約半分の高さを超えたら表示
-            if (topSection && window.scrollY > topSection.offsetHeight / 2) {
+            if (!pageTopBtn || !topSection || !footerContentWrapper) return;
+
+            // 1. スクロールによる表示/非表示の判定 (既存ロジック)
+            if (window.scrollY > topSection.offsetHeight / 2) {
                 pageTopBtn.classList.add('visible');
             } else {
                 pageTopBtn.classList.remove('visible');
+            }
+            
+            // 2. フッターの黒い領域との接触判定
+            // 黒い領域の上端のY座標
+            const footerTop = footerContentWrapper.getBoundingClientRect().top + window.scrollY; 
+            // 画面下端からボタンまでの距離 (CSSで設定した bottom の値)
+            const buttonBottomOffset = isDesktop() ? 40 : 20; 
+            // ボタンの高さ (PC: 80px, SP: 60px)
+            const buttonHeight = isDesktop() ? 80 : 60;
+
+            // ボタンの上端が、フッターの黒い領域の上端より下に来る場合、静止させる
+            // 画面のビューポート下端 + ボタンのbottomオフセット + ボタンの高さ の位置
+            // が、フッターの黒い領域の上端に到達する点をチェック
+            const stopPoint = footerTop - buttonHeight - buttonBottomOffset;
+
+            if (window.scrollY + window.innerHeight > stopPoint) {
+                // 静止させる
+                pageTopBtn.classList.add('is-bottom-fixed');
+                // フッターの黒い領域のY座標からボタンの高さとオフセットを引いた位置に絶対配置
+                pageTopBtn.style.top = `${stopPoint}px`;
+                pageTopBtn.style.right = `${isDesktop() ? 40 : 20}px`; // right位置を再指定 (absoluteになるため)
+            } else {
+                // 追従させる
+                pageTopBtn.classList.remove('is-bottom-fixed');
+                pageTopBtn.style.top = ''; // absolute解除でtopプロパティを削除
             }
         }
 
