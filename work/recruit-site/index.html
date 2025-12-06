@@ -1177,7 +1177,7 @@
         </footer>
     </div>
 
-<script>
+    <script>
         // --- Global Variables & Constants (index_2511_work.html から移植) ---
         const cursor = document.getElementById('cursor');
         const mainHamburger = document.getElementById('main-hamburger');
@@ -1188,7 +1188,6 @@
         const navListContainer = document.getElementById('nav-list');
         const topSection = document.querySelector('.work-top'); // メインビジュアルセクションを基準に
         const pageTopBtn = document.getElementById('page-top');
-        const footerBlack = document.querySelector('.footer__content-wrapper'); // 【追加】フッターの黒い部分を取得
 
         // WORKSのナビゲーションアイテムからデフォルト画像URLを取得
         const defaultNavImageItem = Array.from(navListItems).find(item => item.querySelector('a').getAttribute('href') === 'index_work.html#works');
@@ -1409,33 +1408,15 @@
         });
 
 
-        // --- Scroll Logic (Page Top Button Visibility & Position) ---
+        // --- Scroll Logic (Page Top Button Visibility) ---
 
-        // Page Top Button Visibility & Position Control
+        // Page Top Button Visibility
         function updatePageTopButton() {
-            // 1. Visibility (Existing)
             // work-topセクションの約半分の高さを超えたら表示
             if (topSection && window.scrollY > topSection.offsetHeight / 2) {
                 pageTopBtn.classList.add('visible');
             } else {
                 pageTopBtn.classList.remove('visible');
-            }
-
-            // 2. Position Control (New)
-            if (footerBlack) {
-                const footerRect = footerBlack.getBoundingClientRect();
-                // CSSの定義に合わせて基準となるbottomの値を設定 (SP: 20px, PC: 40px)
-                const baseBottom = window.innerWidth < 768 ? 20 : 40;
-
-                // フッターの黒い部分が画面内に入ってきた場合
-                if (footerRect.top < window.innerHeight) {
-                    // 画面下からフッター上部までの距離を計算して、bottomの値を増やすことでボタンを押し上げる
-                    const pushUp = window.innerHeight - footerRect.top;
-                    pageTopBtn.style.bottom = `${baseBottom + pushUp}px`;
-                } else {
-                    // フッターがまだ見えていない場合はスタイルをクリア（CSSの定義に戻す）
-                    pageTopBtn.style.bottom = '';
-                }
             }
         }
 
